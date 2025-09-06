@@ -71,14 +71,15 @@ function unmountIframe(card){
   // Replace with lightweight placeholder (thumbnail or gray block)
   const thumbURL = card.dataset.thumb || "";
   let placeholder;
-    placeholder = document.createElement('div');
-    placeholder.className = "play";
-    placeholder.innerHTML = '<button>Load sketch</button>';
-    placeholder.querySelector('button').addEventListener('click', () => {
-      // manual mount ignores concurrency (user intent)
-      mountIframe(card, card.dataset.url);
-    );
-  }
+  placeholder = document.createElement('div');
+  placeholder.className = "play";
+  placeholder.innerHTML = '<button>Load sketch</button>';
+  placeholder.querySelector('button').addEventListener('click', () => {
+    // manual mount ignores concurrency (user intent)
+    mountIframe(card, card.dataset.url);
+    });
+    
+  
   wrap.replaceChild(placeholder, iframe);
   card.dataset.mounted = "0";
   liveSet.delete(card);
