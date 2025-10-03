@@ -36,19 +36,77 @@
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTFuMBiiN-fGqQbAIhGYTv5vOTJUD8O-9W-wYpr3rCDPpe7GxhphxFfT_dIO_wHR68tkNC255GywBQl/pub?output=csv"; // File → Share → Publish to web → CSV
 const MAX_LIVE_IFRAMES = 6; // tune for your machines
 
-function csvToRows(csv){
-  return csv.trim().split("\n").map(r =>
-    r.split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/).map(s => s.replace(/^"|"$/g,''))
-  );
+function csvToRows(csv) {
+  const rows = [];
+  let row = [];
+  let field = '';
+
+  let i = 0, inQuotes = false;
+  while (i < csv.length) {
+    const c = csv[i];
+
+    if (inQuotes) {
+      if (c === '"') {
+        // Peek next char for escaped quote
+        if (i + 1 < csv.length && csv[i + 1] === '"') {
+          field += '"';
+          i += 2;
+          continue;
+        } else {
+          inQuotes = false;
+          i++;
+          continue;
+        }
+      } else {
+        field += c;
+        i++;
+        continue;
+      }
+    } else {
+      if (c === '"') {
+        inQuotes = true;
+        i++;
+        continue;
+      }
+      if (c === ',') {
+        row.push(field);
+        field = '';
+        i++;
+        continue;
+      }
+      if (c === '\r') { // normalize CRLF
+        i++;
+        continue;
+      }
+      if (c === '\n') {
+        row.push(field);
+        rows.push(row);
+        row = [];
+        field = '';
+        i++;
+        continue;
+      }
+      field += c;
+      i++;
+    }
+  }
+  // flush last field/row
+  row.push(field);
+  rows.push(row);
+
+  return rows;
 }
 
 const liveSet = new Set();
+
 function mountIframe(card, url){
   if (card.dataset.mounted === "1") return;
-  // Respect concurrency limit
-  if (liveSet.size >= MAX_LIVE_IFRAMES) return;
-
-  const wrap = card.querySelector('.frameWrap');
+  if (liveSet.size >= MAX_LIVE_IFRAMES) {
+    // evict least-recently-used
+    const oldest = liveSet.values().next().value;
+    if (oldest) unmountIframe(oldest);
+  }
+    const wrap = card.querySelector('.frameWrap');
   const stub = wrap.firstElementChild; // thumb or play overlay
   const iframe = document.createElement('iframe');
   iframe.src = url;
@@ -98,11 +156,21 @@ function buildCard(row, idx){
 
   // initial lightweight placeholder
   let placeholder;
+   if (!url || url === '#') {
+  placeholder = document.createElement('div');
+  placeholder.className = "play";
+  placeholder.innerHTML = '<button disabled style="opacity:.6;cursor:not-allowed">No link</button>';
+} else {
     placeholder = document.createElement('div');
     placeholder.className = "play";
     placeholder.innerHTML = '<button>Load sketch</button>';
+   }
+  
     placeholder.querySelector('button').addEventListener('click', () => mountIframe(card, url));
   frameWrap.appendChild(placeholder);
+
+ 
+
 
   const meta = document.createElement('div');
   meta.className = "meta";
