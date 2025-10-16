@@ -1,1 +1,227 @@
-adsfadsf
+<!doctype html>
+<meta charset="utf-8">
+<title>p5.js Week 7 Gallery (Live Embeds)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root { --gap: 16px; }
+  body{font-family:system-ui, -apple-system, Segoe UI, Roboto; margin:24px; max-width:1200px}
+  header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(500px,1fr));gap:var(--gap)}
+  .card{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .frameWrap{position:relative;background:#f6f6f6}
+  .frameWrap::after{content:"";display:block;padding-top:62.5%} /* 16:10 aspect */
+  .frameWrap > *{position:absolute;inset:0;width:100%;height:100%}
+  .thumb{object-fit:cover}
+  .play{display:grid;place-items:center;cursor:pointer}
+  .play button{background:rgba(0,0,0,.55);color:#fff;border:0;border-radius:999px;padding:10px 16px;font-weight:600}
+  iframe{border:0}
+  .meta{padding:12px}
+  .meta h3{margin:0 0 4px;font-size:16px;line-height:1.2}
+  .meta p{margin:0;color:#555;font-size:13px}
+  .meta a{color:inherit;text-decoration:none}
+  .tags{margin-top:6px;font-size:12px;color:#666}
+</style>
+
+<header>
+  <div>
+    <h1 style="margin:0">Creative Computation Week-7 Gallery</h1>
+    <div style="color:#666;font-size:14px">Embeds load as you scroll; click name to open standalone.</div>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScdI_fVvifk56PLq00BAn44i1-6c5q8WCj4yGA9AOePGyE9yQ/viewform?usp=dialog" target="_blank" rel="noopener">Submit a project →</a>
+</header>
+
+<div id="grid" class="grid" aria-live="polite"></div>
+
+<script>
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-rGi7CEvktv1MNlAw1W0o8pyfrF8Q_6S_TMR8RxWV-Ma_45gZM8IALdrM4-ivZPmoUUK6n-gLGed-/pub?output=csv"; // File → Share → Publish to web → CSV
+const MAX_LIVE_IFRAMES = 6; // tune for your machines
+
+function csvToRows(csv) {
+  const rows = [];
+  let row = [];
+  let field = '';
+
+  let i = 0, inQuotes = false;
+  while (i < csv.length) {
+    const c = csv[i];
+
+    if (inQuotes) {
+      if (c === '"') {
+        // Peek next char for escaped quote
+        if (i + 1 < csv.length && csv[i + 1] === '"') {
+          field += '"';
+          i += 2;
+          continue;
+        } else {
+          inQuotes = false;
+          i++;
+          continue;
+        }
+      } else {
+        field += c;
+        i++;
+        continue;
+      }
+    } else {
+      if (c === '"') {
+        inQuotes = true;
+        i++;
+        continue;
+      }
+      if (c === ',') {
+        row.push(field);
+        field = '';
+        i++;
+        continue;
+      }
+      if (c === '\r') { // normalize CRLF
+        i++;
+        continue;
+      }
+      if (c === '\n') {
+        row.push(field);
+        rows.push(row);
+        row = [];
+        field = '';
+        i++;
+        continue;
+      }
+      field += c;
+      i++;
+    }
+  }
+  // flush last field/row
+  row.push(field);
+  rows.push(row);
+
+  return rows;
+}
+
+const liveSet = new Set();
+
+function mountIframe(card, url){
+  if (card.dataset.mounted === "1") return;
+  if (liveSet.size >= MAX_LIVE_IFRAMES) {
+    // evict least-recently-used
+    const oldest = liveSet.values().next().value;
+    if (oldest) unmountIframe(oldest);
+  }
+    const wrap = card.querySelector('.frameWrap');
+  const stub = wrap.firstElementChild; // thumb or play overlay
+  const iframe = document.createElement('iframe');
+  iframe.src = url;
+  iframe.loading = "lazy";
+  iframe.referrerPolicy = "no-referrer";
+  iframe.allow = "fullscreen; gamepad; xr-spatial-tracking; clipboard-read; clipboard-write";
+  // sandbox keeps you safe but still lets sketches run JS & get same-origin page assets
+  iframe.sandbox = "allow-scripts allow-pointer-lock allow-same-origin allow-popups allow-popups-to-escape-sandbox";
+  wrap.replaceChild(iframe, stub);
+  card.dataset.mounted = "1";
+  liveSet.add(card);
+}
+
+function unmountIframe(card){
+  if (card.dataset.mounted !== "1") return;
+  const wrap = card.querySelector('.frameWrap');
+  const iframe = wrap.querySelector('iframe');
+  if (!iframe) return;
+
+  // Replace with lightweight placeholder (thumbnail or gray block)
+  const thumbURL = card.dataset.thumb || "";
+  let placeholder;
+  placeholder = document.createElement('div');
+  placeholder.className = "play";
+  placeholder.innerHTML = '<button>Load sketch</button>';
+  placeholder.querySelector('button').addEventListener('click', () => {
+    // manual mount ignores concurrency (user intent)
+    mountIframe(card, card.dataset.url);
+    });
+    
+  
+  wrap.replaceChild(placeholder, iframe);
+  card.dataset.mounted = "0";
+  liveSet.delete(card);
+}
+
+function buildCard(row, idx){
+  const author = row[idx.name] || '';
+  const url = row[idx.link] || '#';
+
+  const card = document.createElement('article');
+  card.className = "card";
+  card.dataset.url = url;
+
+  const frameWrap = document.createElement('div');
+  frameWrap.className = "frameWrap";
+
+  // initial lightweight placeholder
+  let placeholder;
+   if (!url || url === '#') {
+  placeholder = document.createElement('div');
+  placeholder.className = "play";
+  placeholder.innerHTML = '<button disabled style="opacity:.6;cursor:not-allowed">No link</button>';
+} else {
+    placeholder = document.createElement('div');
+    placeholder.className = "play";
+    placeholder.innerHTML = '<button>Load sketch</button>';
+   }
+  
+    placeholder.querySelector('button').addEventListener('click', () => mountIframe(card, url));
+  frameWrap.appendChild(placeholder);
+
+ 
+
+
+  const meta = document.createElement('div');
+  meta.className = "meta";
+  meta.innerHTML = `
+    <h3><a href="${url}" target="_blank" rel="noopener">${author}</a></h3>
+    `;
+
+  card.appendChild(frameWrap);
+  card.appendChild(meta);
+  return card;
+}
+
+function setupObservers(cards){
+  const opts = { root: null, rootMargin: "200px", threshold: 0.01 };
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      const card = entry.target;
+      const url = card.dataset.url;
+      if (entry.isIntersecting){
+        // If we’re under limit, mount immediately; otherwise try later (next scroll / unmount)
+        if (liveSet.size < MAX_LIVE_IFRAMES) mountIframe(card, url);
+      } else {
+        // When it leaves the viewport by a comfortable margin, unmount to free resources
+        unmountIframe(card);
+      }
+    });
+  }, opts);
+
+  cards.forEach(c => io.observe(c));
+
+  // Failsafe: on scroll, if we have “room”, try to mount any visible, unmounted cards
+  window.addEventListener('scroll', () => {
+    if (liveSet.size >= MAX_LIVE_IFRAMES) return;
+    cards.forEach(c => {
+      const rect = c.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight + 160 && rect.bottom > -160;
+      if (inView && c.dataset.mounted !== "1") mountIframe(c, c.dataset.url);
+    });
+  }, { passive: true });
+}
+
+fetch(SHEET_CSV_URL).then(r=>r.text()).then(csv=>{
+  const rows = csvToRows(csv);
+  const header = rows.shift().map(h => h.trim().toLowerCase());
+  const idx = {
+    name: header.indexOf('name'),
+    link: header.indexOf('link')
+  };
+  const grid = document.getElementById('grid');
+  const cards = rows.map(row => buildCard(row, idx));
+  cards.forEach(c => grid.appendChild(c));
+  setupObservers(cards);
+});
+</script>
