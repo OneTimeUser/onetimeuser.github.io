@@ -1,8 +1,12 @@
         // Hex color palette
         const hexColors = [
-            '#effe54', '#ff6b6b', '#4ecdc4', '#45b7d1', 
-            '#f9ca24', '#6c5ce7', '#a29bfe', '#fd79a8',
-            '#fdcb6e', '#00b894', '#ff7675', '#74b9ff'
+            '#effe54', '#575c45', '#625dc1', '#e6e1de', 
+            '#061316'
+        ];
+
+        const secColors = [
+            '#fb5142', '#e10f77', '#9c7f3b', '#e6e1de', 
+            '#898989'
         ];
 
         let currentColorIndex = 0;
