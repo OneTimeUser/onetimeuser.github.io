@@ -1,4 +1,4 @@
-* {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -9,40 +9,38 @@
             background-color: #effe54;
             color: #000;
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="black"/></svg>'), auto;
-            padding: 40px 20px;
             transition: background-color 0.3s ease;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            padding: clamp(20px, 3vh, 40px) clamp(20px, 3vw, 60px);
+            gap: clamp(20px, 3vh, 40px);
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
             font-weight: bold;
             letter-spacing: 1px;
         }
 
         .hex-selector {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 2vw, 1.5rem);
             font-weight: bold;
             cursor: pointer;
-            padding: 10px 20px;
+            padding: clamp(8px, 1vh, 10px) clamp(15px, 2vw, 20px);
             border: 2px solid #000;
             background: transparent;
             transition: all 0.2s;
@@ -54,21 +52,23 @@
         }
 
         .main-content {
-            flex: 1;
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr 300px;
+            gap: clamp(30px, 4vw, 60px);
+            align-items: start;
+            overflow: hidden;
         }
 
         .text-section {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: clamp(15px, 2.5vh, 30px);
+            max-height: 100%;
+            overflow: hidden;
         }
 
         .tagline {
-            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-size: clamp(1.1rem, 2.2vw, 2.2rem);
             line-height: 1.2;
             font-weight: 300;
         }
@@ -90,24 +90,23 @@
         }
 
         .philosophy {
-            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-size: clamp(1rem, 1.8vw, 1.6rem);
             line-height: 1.3;
             font-weight: 300;
         }
 
         .description {
-            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-            line-height: 1.6;
-            max-width: 800px;
+            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+            line-height: 1.5;
             font-family: 'Courier New', monospace;
         }
 
         .model-container {
-            position: fixed;
-            bottom: 80px;
-            right: 40px;
-            width: 300px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
+            max-width: 300px;
+            max-height: 300px;
+            justify-self: end;
         }
 
         #canvas3d {
@@ -117,20 +116,18 @@
 
         footer {
             border-top: 2px solid #000;
-            padding-top: 20px;
-            margin-top: auto;
+            padding-top: clamp(10px, 2vh, 20px);
         }
 
         .contact-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
             gap: 20px;
         }
 
         .contact-item {
-            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+            font-size: clamp(0.75rem, 1.2vw, 1rem);
             font-weight: 500;
         }
 
@@ -143,37 +140,45 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 15px;
-            }
-
-            header {
-                margin-bottom: 30px;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-                margin-bottom: 15px;
-            }
-
-            .hex-selector {
-                font-size: 1.2rem;
-                padding: 8px 15px;
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr auto;
             }
 
             .model-container {
-                position: relative;
-                bottom: auto;
-                right: auto;
-                width: 200px;
-                height: 200px;
-                margin: 30px auto;
+                justify-self: center;
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tagline {
+                font-size: clamp(0.9rem, 3vw, 1.1rem);
+            }
+
+            .philosophy {
+                font-size: clamp(0.85rem, 2.5vw, 1rem);
+            }
+
+            .description {
+                font-size: clamp(0.7rem, 2vw, 0.8rem);
+            }
+
+            .model-container {
+                max-width: 150px;
+                max-height: 150px;
             }
 
             .contact-info {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 10px;
+            }
+
+            .contact-item {
+                font-size: clamp(0.7rem, 2.5vw, 0.85rem);
             }
         }
 
