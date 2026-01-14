@@ -1,189 +1,266 @@
+ @font-face {
+  font-family: 'Futurist';
+  src:
+    url('assets/fg_futurist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Prevents invisible text while font loads */
+ 
+}
+
+@font-face {
+  font-family: 'Futurist';
+  src:
+    url('assets/fg_futurist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+ 
+}
+
+ @font-face {
+  font-family: 'Anon-Pro';
+  src:
+    url('assets/anonpro.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Prevents invisible text while font loads */
+}
+
+ @font-face {
+  font-family: 'Display';
+  src:
+    url('assets/display.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Prevents invisible text while font loads */
+}
+ 
+ :root {
+    --font-display: 'Display', sans-serif;
+    --font-anon: 'Anon-Pro', monospace;
+    --font-futurist: 'Futurist', sans-serif;
+ }
+
+
  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            background-color: #effe54;
-            color: #000;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="black"/></svg>'), auto;
-            transition: background-color 0.3s ease;
-            height: 100vh;
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-        }
+    body {
+        font-family: var(--font-anon);
+        background-color: #625dc1;
+        color: #061316;
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpolygon points='10 0, 0 20, 20 20' fill='%23000000'/%3E%3C/svg%3E") 10 10, auto;
+        transition: background-color 0.3s ease;
+        height: 100vh;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
 
-        .container {
-            height: 100vh;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            padding: clamp(20px, 3vh, 40px) clamp(20px, 3vw, 60px);
-            gap: clamp(20px, 3vh, 40px);
-        }
+    button {
+        border: none;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
+    .container {
+        position: relative;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: clamp(20px, 3vh, 40px) clamp(20px, 3vw, 60px);
+        gap: clamp(20px, 3vh, 40px);
+    }
 
-        .logo {
-            font-size: clamp(1.2rem, 2.5vw, 2rem);
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-        .hex-selector {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            font-weight: bold;
-            cursor: pointer;
-            padding: clamp(8px, 1vh, 10px) clamp(15px, 2vw, 20px);
-            border: 2px solid #000;
-            background: transparent;
-            transition: all 0.2s;
-        }
+    .logo {
+        font-family: var(--font-futurist);
+        font-size: clamp(2rem, 2.5vw, 3rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+    }
+    .logo span {
+        font-size: 0.5em;
+        vertical-align: top;
+    }
 
-        .hex-selector:hover {
-            background: #000;
-            color: #effe54;
-        }
+    .dash {
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
+    .hex-selector {
+        font-family: var(--font-display);
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        font-weight: bold;
+        padding: clamp(8px, 1vh, 10px) clamp(15px, 2vw, 20px);
+        background: transparent;
+        transition: all 0.2s;
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpolygon points='10 0, 0 20, 20 20' fill='%23000000'/%3E%3C/svg%3E") 10 10, auto;
+
+    }
+
+    .hex-selector:hover {
+        /* background: #000;
+        color: #effe54; */
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: clamp(30px, 4vw, 60px);
+        align-items: start;
+        overflow: hidden;
+    }
+
+    .text-section {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(15px, 2.5vh, 30px);
+        max-height: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+    }
+
+    .tagline {
+        font-family: var(--font-futurist);
+        font-size: clamp(2.1rem, 2.2vw, 3.2rem);
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        line-height: 1.4em;
+    }
+
+    .tagline sup {
+        font-size: 0.5em;
+        vertical-align: super;
+    }
+
+    .i-heart-ny {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .heart {
+        color: #ff1493;
+        font-size: 1.2em;
+    }
+
+    .philosophy {
+        font-family: var(--font-futurist);
+        font-size: clamp(1rem, 1.8vw, 1.6rem);
+        line-height: 1.3;
+        font-weight: 400;
+    }
+
+    .description {
+        font-size: clamp(1rem, 1.1vw, 1.5rem);
+        line-height: 1.5;
+    }
+
+    .model-container {
+        position: absolute;
+        bottom: calc(clamp(20px, 3vh, 40px) + 60px);
+        right: clamp(20px, 3vw, 60px);
+        width: clamp(180px, 22vw, 300px);
+        height: clamp(180px, 22vw, 300px);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    #canvas3d {
+        width: 100%;
+        height: 100%;
+    }
+
+    footer {
+        font-family: var(--font-display);
+        border-top: 2px solid #000;
+        padding-top: clamp(10px, 2vh, 20px);
+    }
+
+    .contact-info {
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contact-item {
+        font-size: clamp(1.5rem, 1.1vw, 1.8rem);
+        font-weight: 400;
+    }
+
+    .contact-item a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .contact-item a:hover {
+        text-decoration: underline;
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpolygon points='10 0, 0 20, 20 20' fill='%23000000'/%3E%3C/svg%3E") 10 10, auto;
+    }
+
+    #nylogo img{
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: -5px 0;
+    }
+
+    @media (max-width: 1024px) {
         .main-content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: clamp(30px, 4vw, 60px);
-            align-items: start;
-            overflow: hidden;
-        }
-
-        .text-section {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(15px, 2.5vh, 30px);
-            max-height: 100%;
-            overflow: hidden;
-        }
-
-        .tagline {
-            font-size: clamp(1.1rem, 2.2vw, 2.2rem);
-            line-height: 1.2;
-            font-weight: 300;
-        }
-
-        .tagline sup {
-            font-size: 0.5em;
-            vertical-align: super;
-        }
-
-        .i-heart-ny {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .heart {
-            color: #ff1493;
-            font-size: 1.2em;
-        }
-
-        .philosophy {
-            font-size: clamp(1rem, 1.8vw, 1.6rem);
-            line-height: 1.3;
-            font-weight: 300;
-        }
-
-        .description {
-            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-            line-height: 1.5;
-            font-family: 'Courier New', monospace;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
         }
 
         .model-container {
-            width: 100%;
-            height: 100%;
-            max-width: 300px;
-            max-height: 300px;
-            justify-self: end;
+            justify-self: center;
+            max-width: 200px;
+            max-height: 200px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .tagline {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
         }
 
-        #canvas3d {
-            width: 100%;
-            height: 100%;
+        .philosophy {
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
         }
 
-        footer {
-            border-top: 2px solid #000;
-            padding-top: clamp(10px, 2vh, 20px);
+        .description {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+        }
+
+        .model-container {
+            max-width: 150px;
+            max-height: 150px;
         }
 
         .contact-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
         }
 
         .contact-item {
-            font-size: clamp(0.75rem, 1.2vw, 1rem);
-            font-weight: 500;
+            font-size: clamp(0.7rem, 2.5vw, 0.85rem);
         }
+    }
 
-        .contact-item a {
-            color: #000;
-            text-decoration: none;
+    @media (min-width: 1024px) {
+        .main-content {
+            grid-template-columns: 4fr 1fr;
         }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 1024px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                grid-template-rows: 1fr auto;
-            }
-
-            .model-container {
-                justify-self: center;
-                max-width: 200px;
-                max-height: 200px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .tagline {
-                font-size: clamp(0.9rem, 3vw, 1.1rem);
-            }
-
-            .philosophy {
-                font-size: clamp(0.85rem, 2.5vw, 1rem);
-            }
-
-            .description {
-                font-size: clamp(0.7rem, 2vw, 0.8rem);
-            }
-
-            .model-container {
-                max-width: 150px;
-                max-height: 150px;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .contact-item {
-                font-size: clamp(0.7rem, 2.5vw, 0.85rem);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .main-content {
-                grid-template-columns: 2fr 1fr;
-            }
-        }
+    }
