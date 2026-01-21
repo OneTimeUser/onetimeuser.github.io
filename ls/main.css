@@ -1,7 +1,7 @@
  @font-face {
   font-family: 'Futurist';
   src:
-    url('assets/fg_futurist-Regular.woff2') format('woff2');
+    url('assets/fg_futurist-Light.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap; /* Prevents invisible text while font loads */
@@ -42,6 +42,11 @@
     --font-futurist: 'Futurist', sans-serif;
  }
 
+ ::selection {
+  background: #fb5142; /* Change the background color (e.g., a light red) */
+  color: #fff;      /* Change the text color (e.g., black) */
+}
+
 
  * {
         margin: 0;
@@ -51,14 +56,50 @@
 
     body {
         font-family: var(--font-anon);
-        background-color: #625dc1;
+        background-color: #effe54;
         color: #061316;
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpolygon points='10 0, 0 20, 20 20' fill='%23000000'/%3E%3C/svg%3E") 10 10, auto;
         transition: background-color 0.3s ease;
+        cursor: none;
         height: 100vh;
         overflow: hidden;
         padding: 0;
         margin: 0;
+    }
+
+    .custom-cursor {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        pointer-events: none; 
+        z-index: 9999;
+        
+        transform: translate(-15px, -15px);
+
+        /* Invert and desaturate what's behind it */
+        backdrop-filter: invert(1) grayscale(1) contrast(200%);
+        -webkit-backdrop-filter: invert(1) grayscale(1) contrast(200%);
+        
+        /* Use a semi-transparent background instead of solid white */
+        background: rgba(255, 255, 255, 0.01);
+        
+        /* Mask to your cursor shape */
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpolygon points='15 10, 10 50, 50 30' fill='%23ffffff'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpolygon points='15 10, 10 50, 50 30' fill='%23ffffff'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+    }
+
+        /* Hide on touch devices */
+    @media (hover: none) and (pointer: coarse) {
+        .custom-cursor {
+            display: none;
+        }
+    
+    body {
+            cursor: auto; /* Restore default cursor */
+        }
     }
 
     button {
@@ -86,6 +127,16 @@
         font-weight: 600;
         letter-spacing: -0.03em;
     }
+
+    .logo svg {
+        display: block;
+        width: clamp(200px, 36vw, 420px);
+        height: auto;
+    }
+
+    .logo svg path {
+        fill: currentColor;
+    }
     .logo span {
         font-size: 0.5em;
         vertical-align: top;
@@ -99,16 +150,37 @@
         font-family: var(--font-display);
         font-size: clamp(1rem, 2vw, 1.5rem);
         font-weight: bold;
-        padding: clamp(8px, 1vh, 10px) clamp(15px, 2vw, 20px);
+        text-transform: uppercase;
+        /* padding: clamp(8px, 1vh, 10px) clamp(15px, 2vw, 20px); */
         background: transparent;
         transition: all 0.2s;
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpolygon points='10 0, 0 20, 20 20' fill='%23000000'/%3E%3C/svg%3E") 10 10, auto;
 
+    }
+
+    .hex-section .hex-selector {
+        color: inherit;
+    }
+
+    .hex-section:hover .hex-selector,
+    .hex-section .hex-selector:hover {
+        color: var(--next-hex, currentColor);
+    }
+
+    @keyframes hex-blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    .hex-section:has(#hexSelector:hover) span.hex-selector,
+    .hex-section span.hex-selector:hover {
+        animation: hex-blink 0.2s steps(1, end) infinite;
     }
 
     .hex-selector:hover {
         /* background: #000;
         color: #effe54; */
+        cursor: none;
     }
 
     .main-content {
@@ -131,9 +203,9 @@
 
     .tagline {
         font-family: var(--font-futurist);
-        font-size: clamp(2.1rem, 2.2vw, 3.2rem);
+        font-size: clamp(3.1rem, 2.2vw, 4.2rem);
         font-weight: 400;
-        letter-spacing: -0.03em;
+        /* letter-spacing: -0.03em; */
         line-height: 1.4em;
     }
 
@@ -182,7 +254,7 @@
 
     footer {
         font-family: var(--font-display);
-        border-top: 2px solid #000;
+        /* border-top: 2px solid #000; */
         padding-top: clamp(10px, 2vh, 20px);
     }
 
@@ -194,9 +266,13 @@
         gap: 20px;
     }
 
-    .contact-item {
+    .contact-info > div{
         font-size: clamp(1.5rem, 1.1vw, 1.8rem);
         font-weight: 400;
+    }
+
+    .contact-item:hover {
+        filter: blur(3px);
     }
 
     .contact-item a {
@@ -205,9 +281,9 @@
     }
 
     .contact-item a:hover {
-        text-decoration: underline;
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpolygon points='10 0, 0 20, 20 20' fill='%23000000'/%3E%3C/svg%3E") 10 10, auto;
+        cursor: none;
     }
+
 
     #nylogo img{
         width: 60px;
@@ -227,30 +303,44 @@
             justify-self: center;
             max-width: 200px;
             max-height: 200px;
+            position: absolute;
         }
     }
 
     @media (max-width: 768px) {
         .tagline {
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
-        }
-
-        .philosophy {
-            font-size: clamp(0.85rem, 2.5vw, 1rem);
-        }
-
-        .description {
-            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            font-size: clamp(1.5rem, 2vw, 2rem)
         }
 
         .model-container {
-            max-width: 150px;
-            max-height: 150px;
+            position: absolute;
+            top: 8vh;
+            right: 50%;
+            transform: translateX(50%);
+            width: 70vw;
+            height: 80vh;
+            max-width: none;
+            max-height: none;
+            z-index: -2;
+            pointer-events: none;
         }
+
+        .philosophy {
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
+        }
+
+        .description {
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
+        }
+
+        .hex-selector{
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
+        }
+
 
         .contact-info {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             gap: 10px;
         }
 

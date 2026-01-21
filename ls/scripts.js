@@ -1,6 +1,6 @@
         // Hex color palette for background colors
         const hexColors = [
-            '#625dc1','#effe54', '#575c45', '#e6e1de', 
+            '#effe54', '#575c45', '#e6e1de','#625dc1',
             '#061316'
         ];
 
@@ -28,12 +28,15 @@
             document.querySelectorAll('a').forEach(link => {
                 link.style.color = secColor;
             });
-            document.querySelectorAll('button').forEach(btn => {
+            document.querySelectorAll('button:not(.hex-selector)').forEach(btn => {
                 btn.style.color = secColor;
             });
             document.querySelectorAll('footer').forEach(foot => {
                 foot.style.borderColor = secColor;
             });
+            const nextColor = hexColors[(currentColorIndex + 1) % hexColors.length];
+            hexSelector.textContent = nextColor;
+            document.documentElement.style.setProperty('--next-hex', nextColor);
             applyModelColor(newColor);
 
             if (ambientLight && directionalLight) {
@@ -50,6 +53,29 @@
             currentColorIndex = (currentColorIndex + 1) % hexColors.length;
             const newColor = hexColors[currentColorIndex];
             setThemeColor(newColor);
+        });
+
+        const cursor = document.querySelector('.custom-cursor');
+
+        document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        });
+
+        // Optional: Hide cursor when it leaves the window
+        document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+        });
+
+        let targetRotationY = 0;
+
+        window.addEventListener('mousemove', (event) => {
+            const normalizedX = (event.clientX / window.innerWidth) * 2 - 1;
+            targetRotationY = normalizedX * 2.5;
         });
 
         // Three.js setup
@@ -117,27 +143,38 @@
             });
         }
 
+        function frameModel(obj) {
+            const box = new THREE.Box3().setFromObject(obj);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+            obj.position.sub(center);
+
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const fov = (camera.fov * Math.PI) / 180;
+            const cameraDistance = (maxDim / 2) / Math.tan(fov / 2);
+            const isMobile = window.innerWidth <= 768;
+            const padding = isMobile ? 1.6 : 1.4;
+            camera.position.z = cameraDistance * padding;
+            camera.near = cameraDistance / 100;
+            camera.far = cameraDistance * 100;
+            camera.updateProjectionMatrix();
+        }
+
+        let loadedObj = null;
         const loader = new THREE.OBJLoader();
         loader.load(
             'assets/ls.obj',
             (obj) => {
-                obj.scale.set(30, 30, 30); // Adjust scale as needed
+                const isMobile = window.innerWidth <= 768;
+                const baseScale = 30;
+                const mobileScale = 50;
+                const scaleValue = isMobile ? mobileScale : baseScale;
+                obj.scale.set(scaleValue, scaleValue, scaleValue);
                 modelGroup.add(obj);
-                // Auto-center and auto-frame the model in the camera view.
-                const box = new THREE.Box3().setFromObject(obj);
-                const size = box.getSize(new THREE.Vector3());
-                const center = box.getCenter(new THREE.Vector3());
-                obj.position.sub(center);
-
-                const maxDim = Math.max(size.x, size.y, size.z);
-                const fov = (camera.fov * Math.PI) / 180;
-                const cameraDistance = (maxDim / 2) / Math.tan(fov / 2);
-                camera.position.z = cameraDistance * 1.4;
-                camera.near = cameraDistance / 100;
-                camera.far = cameraDistance * 100;
-                camera.updateProjectionMatrix();
+                frameModel(obj);
+                loadedObj = obj;
                 mesh = modelGroup; // Store reference for rotation
-                applyModelColor(hexSelector.textContent.trim());
+                applyModelColor(hexColors[currentColorIndex]);
             },
             undefined,
             (error) => {
@@ -155,20 +192,15 @@
 
         camera.position.z = 5;
 
-        const initialColor = hexSelector.textContent.trim();
-        const initialIndex = hexColors.indexOf(initialColor);
-        if (initialIndex !== -1) {
-            currentColorIndex = initialIndex;
-        }
         setThemeColor(hexColors[currentColorIndex]);
 
         // Animation loop - rotates on X axis
         function animate() {
             requestAnimationFrame(animate);
             
-            // Rotate on X-axis
+            // Rotate on Y-axis based on cursor X position
             if (mesh) {
-                mesh.rotation.y += 0.01;
+                mesh.rotation.y += (targetRotationY - mesh.rotation.y) * 0.08;
             }
             
             renderer.render(scene, camera);
@@ -179,10 +211,19 @@
         // Handle responsive canvas
         function handleResize() {
             const container = document.querySelector('.model-container');
-            const size = Math.min(container.offsetWidth, container.offsetHeight);
-            renderer.setSize(size, size);
-            camera.aspect = 1;
+            const width = container.offsetWidth;
+            const height = container.offsetHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
             camera.updateProjectionMatrix();
+            if (loadedObj) {
+                const isMobile = window.innerWidth <= 768;
+                const baseScale = 30;
+                const mobileScale = 50;
+                const scaleValue = isMobile ? mobileScale : baseScale;
+                loadedObj.scale.set(scaleValue, scaleValue, scaleValue);
+                frameModel(loadedObj);
+            }
         }
 
         window.addEventListener('resize', handleResize);
