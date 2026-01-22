@@ -1,0 +1,24 @@
+Title: Week 08-2:In-Class-Work
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture:**
+
+Today we spent all of our in-class time on refining our description, research, site map and wireframes.  
+
+Another example of a fleshed out device centric wireframe with TWO breakpoints, thus for three screen sizes (desktop, tablet, phone)
+(image: wireframe_sample.png)
+
+Follow these links to see my website, BOT SOCCER...
+(file: img_9045.jpg text: SITEMAP)
+(file: img_9044.jpg text: WIREFRAME)
+(link: https://codepen.io/onetimeuser/pen/NwqXMN text: Dont forget to check out my CODED HTML PROTOTYPE in Codepen!!) 
+
+**Homework/Assignment:**
+Assignment 5

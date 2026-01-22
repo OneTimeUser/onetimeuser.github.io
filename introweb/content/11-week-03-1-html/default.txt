@@ -1,0 +1,121 @@
+Title: Week 03-1:HTML
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Let's round out some of the additional elements we would put in the head element besides what we have so far: 
+We added certain `<meta>` elements to describe our webpage more fully for ourselves, the viewers, and for search engines. 
+`<meta name="author" content="Jason Aston">`
+`<meta name="description" content="A website devoted to the things I love about New York">`
+
+Including an icon for your page (visible in the browser tab window) is easy using the following code:
+`<link rel="shortcut icon" href="icon.ico" type="image/x-icon">`
+
+And while not necessary, we should really get in the habit of assigning the language for screen readers and proper indexing of our sites like so:
+`<html lang="en">` 
+
+We will add some other elements that go in the head later on in the semester.
+
+You know how sometimes you want the images you post to have captions? Easy way to do this is to wrap the `<img>` element in a `<figure>` element and add a `<figcaption>` to hold the caption. Check it out below:
+```
+<figure>
+   <img src="path/to/image.jpg>
+   <figcaption>My caption for the image.</figcaption>
+</figure>
+```
+Otherwise if you do not intend to use a caption, just use the `img` element only. 
+
+Now lets revisit those HTML5 semantic elements for semantic structuring of our page. We already talked about a few: `<header>, <nav>,<footer>,<section>,<article>` but lets add two for safe measure. 
+
+The `<main>` element wraps around all content *unique* to the page. So that excludes, usually, the `<header>`, `<nav>`, and `<footer>` sections of our site...since those elements we tend to put in all of our pages. 
+
+Finally, the `<aside>` element contains content that is not directly related to the main content but can provide additional information indirectly related to it (glossary entries, author biography, related links, etc.)
+
+So now we have our basic structure ready to go!
+(image:basic_html5_semanticstructure.jpg)
+
+It's also a good idea to use comments in your markup. As your code base grows, comments will be an important element to help you stay organized and clear headed, especially if/when you come back to your code or have someone else work on your code. 
+We write comments like so:  `<!-- Within here write your comments! -->`. I typically use comments within HTML to either give distinction to sections or help explain why I am marking something up the way that I am. 
+`<!-- Begin Profile Section -->` or `<!-- This is a temporary search function that only searches existing posts -->`
+
+Finally, the `<table>` element.
+Let's look at some examples:
+**Simple table**
+```
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>Doe</td>
+  </tr>
+</table>
+```
+As you can see, a `<table>` element is comprised of `<tr>` elements. These are table rows. So you can think of organizing your table in terms of how many rows comprise the table. After you figure this out, within each row is the number of columns or cells each row has. So if your row has two columns, then within the `<tr>` element would either be two `<th>` elements (table headers or titles for each column) or `<td>` elements - table data, or a combination of the two.
+
+Also worth mentioning, certain table cells can span multiple columns or rows like in the following example:
+```
+<table>
+<tr>
+  <th>Name</th>
+  <th colspan="2">Telephone</th>
+</tr>
+<tr>
+  <td>Bill Gates</td>
+  <td>555 77 854</td>
+  <td>555 77 855</td>
+</tr>
+</table>
+```
+or
+```
+<table>
+<tr>
+  <th>First Name:</th>
+  <td>Bill Gates</td>
+</tr>
+<tr>
+  <th rowspan="2">Telephone:</th>
+  <td>555 77 854</td>
+</tr>
+<tr>
+  <td>555 77 855</td>
+</tr>
+</table>
+```
+Note: even if a cell in your table is empty, you must still represent its html markup with an empty `<td>` or `<th>` tag. For example:
+  
+```
+<table>
+  <tr>
+    <th>First name</th>
+   <th>Middle name</th>
+    <th>Last name</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Bob</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td></td>
+    <td>Doe</td>
+  </tr>
+</table>
+```
+
+
+READING
+Read Chapters 8 and 12, particularly 8

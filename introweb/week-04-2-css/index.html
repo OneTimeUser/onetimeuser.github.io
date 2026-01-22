@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113019983-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113019983-1');
+
+    </script>
+
+    <title>
+        Week 04-2:CSS - Intro to Web Design & Computer Principles    </title>
+
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="The fundamentals of building web presences" />
+    <!--[if lte IE 8]><script src="./../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="./../assets/css/main.css">
+<!--[if lte IE 9]><link rel="stylesheet" href="./../assets/css/ie9.css"><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="./../assets/css/ie8.css"><![endif]-->    <!-- User Heat Tag -->
+    <script type="text/javascript">
+        (function(add, cla) {
+            window['UserHeatTag'] = cla;
+            window[cla] = window[cla] || function() {
+                (window[cla].q = window[cla].q || []).push(arguments)
+            }, window[cla].l = 1 * new Date();
+            var ul = document.createElement('script');
+            var tag = document.getElementsByTagName('script')[0];
+            ul.async = 1;
+            ul.src = add;
+            tag.parentNode.insertBefore(ul, tag);
+        })('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');
+        _uhtracker({
+            id: 'uho0M4NamS'
+        });
+
+    </script>
+    <!-- End User Heat Tag -->
+</head>
+
+<body class="template-default page-week-04-2-css">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="./../index.html" class="logo">
+            <h1 class="title">Intro to Web Design &amp; Computer Principles</h1>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+        <!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="./../index.html">Home</a></li>
+
+                    <li><a href="./../syllabus/index.html">Syllabus</a></li>
+                    <li><a href="./../assignments/index.html">Assignments</a></li>
+                    <li><a href="./../grading/index.html">Grading</a></li>
+                    <li><a href="./../working-with-local-files/index.html">Working With Local Files</a></li>
+                    <li><a href="./../useful-links/index.html">Useful Links</a></li>
+                    <li><a href="./../unix/index.html">Unix</a></li>
+                    <li><a href="./../week-1/index.html">Week 01-1: Intro</a></li>
+                    <li><a href="./../week-01-2-unix/index.html">Week 01-2: Operating Systems and UNIX</a></li>
+                    <li><a href="./../week-02-1-html/index.html">Week 02-1: HTML</a></li>
+                    <li><a href="./../week-02-2-html/index.html">Week 02-2:HTML</a></li>
+                    <li><a href="./../week-03-1-html/index.html">Week 03-1:HTML</a></li>
+                    <li><a href="./../week-03-2-html-css/index.html">Week 03-2:HTML/CSS</a></li>
+                    <li><a href="./../week-04-1-css/index.html">Week 04-1:CSS</a></li>
+                    <li><a href="./index.html">Week 04-2:CSS</a></li>
+                    <li><a href="./../week-05-1-css-layout/index.html">Week 05-1:CSS Layout</a></li>
+                    <li><a href="./../week-05-2-layout/index.html">Week 05-2:CSS Layout</a></li>
+                    <li><a href="./../week-06-1-images-and-animation/index.html">Week 06-1:Images and Animation</a></li>
+                    <li><a href="./../week-06-2-midterm-review/index.html">Week 06-2:Midterm Review</a></li>
+                    <li><a href="./../week-07-1-midterm/index.html">Week 07-1:Midterm</a></li>
+                    <li><a href="./../week-07-2-midterm/index.html">Week 07-2:Design</a></li>
+                    <li><a href="./../week-08-1-wireframes/index.html">Week 08-1: Wireframes</a></li>
+                    <li><a href="./../week-08-2-in-class-work/index.html">Week 08-2:In-Class-Work</a></li>
+                    <li><a href="./../week-09-1-responsive-web-design/index.html">Week 09-1:Responsive Web Design</a></li>
+                    <li><a href="./../week-9-2-responsive-web-design/index.html">Week 9-2:Responsive Web Design</a></li>
+                    <li><a href="./../week-10-1-css3-extravaganza/index.html">Week 10-1:CSS3 Extravaganza</a></li>
+                    <li><a href="./../week-10-2-bootstrap-intro/index.html">Week 10-2:Bootstrap Intro</a></li>
+                    <li><a href="./../week-11-1-bootstrap-fundamentals/index.html">Week 11-1:Bootstrap Fundamentals</a></li>
+                    <li><a href="./../week-11-2-forms/index.html">Week 11-2:Forms</a></li>
+                    <li><a href="./../week-12-1-audio-video/index.html">Week 12-1:Audio/Video</a></li>
+                    <li><a href="./../week-12-2-javascript/index.html">Week 12-2:Javascript Essentials</a></li>
+                    <li><a href="./../week-13-1-javascript/index.html">Week 13-1:Javascript Examples</a></li>
+                    <li><a href="./../week-13-2-jquery/index.html">Week 13-2:JQuery</a></li>
+                    <li><a href="./../week-14-1-wrap/index.html">Week 14-1:Wrapping It Up</a></li>
+                    <li><a href="./../week-14-2-final-review/index.html">Week 14-2:Final Review</a></li>
+            </ul>
+</nav>
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <h1>
+                    Week 04-2:CSS                </h1>
+
+                
+                <p><strong>Lecture:</strong></p>
+<p>Today we continued with CSS, covering some ways to style your pages. </p>
+<p>We went over the various color methods in CSS. There are six ways to define a color for the <code>color</code> property, <code>background-color</code> property or <code>border</code>:</p>
+<ol>
+<li>
+<p>RGB - RED, GREEN, BLUE DIGITAL COLOR SPACE. Each takes a value from 0-255 with 0 = none of that color and 255 = all of that color. The values are mixed to create different colors.<br />
+<code>background-color: rgb(100,100,100);</code> produces a darkish gray. </p>
+</li>
+<li>
+<p>RGBA - RED, GREEN, BLUE, ALPHA (OPACITY 0 - 1.0)<br />
+<code>background-color: rgbA(100,100,100,.5);</code> produces a darkish gray that is translucent. </p>
+</li>
+<li>
+<p>HEXADECIMAL - EQUATION VERSION OF RGB<br />
+<code>background-color: #00FFFF</code> produces a yellow color since Red is completely turned off and green and blue are turned on.</p>
+</li>
+<li>
+<p>COLOR NAMES<br />
+<code>background-color: red;</code></p>
+</li>
+<li>
+<p>HSL - HUE (degrees on color wheel), SATURATION (%), LIGHTNESS (%)<br />
+<code>background-color: hsl(270, 15%, 15%);</code></p>
+</li>
+</ol>
+<p>6.HSLA - like above but with added ALPHA  (OPACITY 0 - 1.0)<br />
+<code>background-color: hsla(270, 15%, 15%, 1.0);</code></p>
+<p><strong>GRADIENTS<br />
+</strong><br />
+A basic gradient linearly positioned (top to bottom)</p>
+<pre><code>.simple-linear {
+  background: linear-gradient(blue, pink);
+}</code></pre>
+<p>Gradient that moves from left to right</p>
+<pre><code>.horizontal-gradient {
+  background: linear-gradient(to right, blue, pink);
+}</code></pre>
+<p>Diagonal gradient</p>
+<pre><code>.diagonal-gradient {
+  background: linear-gradient(to bottom right, blue, pink);
+}</code></pre>
+<p>You can also use angles </p>
+<pre><code>.angled-gradient {
+  background: linear-gradient(70deg, rgb(0,0,255), rgb(255,0,127));
+}</code></pre>
+<p>More than two colors:</p>
+<pre><code>.auto-spaced-linear {
+  background: linear-gradient(red, yellow, blue, orange);
+}</code></pre>
+<p>Radial</p>
+<pre><code>.simple-radial {
+  background: radial-gradient(red, blue);
+}</code></pre>
+<p>We can also supply our page with background images. Here is a way to write in the background using most available properties (feel free to look in your book for all available values):</p>
+<pre><code>body {
+  background:
+     url(sweettexture.jpg)    /* image ex background-image*/
+     top center / 200px 200px /* position / size */
+     no-repeat                /* repeat ex. does it repeat on x or y or both*/
+     fixed                    /* attachment */
+     padding-box              /* origin */
+     content-box              /* clip */
+     red;                     /* color */
+}</code></pre>
+<p>Sometimes you want an image to be the background of your page, and you want it to be positioned well all the time:</p>
+<pre><code>html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}</code></pre>
+<p><em><a href="https://cims.nyu.edu/~aston/backgrounds/">GO HERE</a> for some recipes that you can use: <a href="https://cims.nyu.edu/~aston/backgrounds/">https://cims.nyu.edu/~aston/backgrounds/</a></em></p>
+<p>We also talked about text-decoration, which in its most wide use gets rid of the default underlining of links in our documents. </p>
+<pre><code>a{
+    text-decoration: none;
+}</code></pre>
+<p>The anchor element has states that are associated with it. This allows you to customize how your link looks and acts when interacted with.</p>
+<p><code>a:link</code> - a normal, unvisited link<br />
+<code>a:visited</code> - a link the user has visited<br />
+<code>a:hover</code> - a link when the user mouses over it<br />
+<code>a:active</code> - a link the moment it is clicked</p>
+<p>So your css may look like this:</p>
+<pre><code>       a {
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+        }
+
+        a:link {
+            color: aqua;
+        }
+
+        a:visited {
+            color: aqua;
+
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+            font-family: monospace;   /*Change of font for different link states indeed works!!! BTW this is a CSS comment*/
+        }
+
+        a:active {
+            text-decoration: line-through;
+        }</code></pre>
+<p>We can add custom fonts to our website regardless if a user has them on his/her/their system.<br />
+One way is to use an existing service. Many are paid, but some are free, like <a href="https://fonts.google.com/">Google Fonts</a>.<br />
+You can find all of the fonts that you like and add them by clicking the plus sign. When you have all of the fonts you want to use, follow the embed and specify fucntions google provides.<br />
+Adding the font looks like this:<br />
+<code>&lt;link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"&gt;</code><br />
+This bit of html goes inside of the <code>&lt;head&gt;</code> element. </p>
+<p>In your CSS, use the font like so:</p>
+<pre><code>h1{
+   font-family: 'Roboto', sans-serif;
+ }</code></pre>
+<p>We can also use @font-face to load in our own custom fonts we want to use. But first we must make sure that they are in the right format. Follow the instructions here: <a href="https://transfonter.org">https://transfonter.org</a> to get your fonts in the following two formats: <code>woff</code> and <code>woff2</code>.<br />
+Then you'll have those two font formats that you need to place in your project folder somewhere and load them in like so:<br />
+(inside of your CSS file or inside of the <code>&lt;style&gt;</code> in your <code>&lt;head&gt;</code> element:</p>
+<pre><code>@font-face {
+   font-family: 'MyWebFont';/*the name you want to use for your font*/
+   src:  url('myfont.woff2') format('woff2'),  
+        url('myfont.woff') format('woff');
+}</code></pre>
+<p>Then use the font by using the font name you have assigned it:</p>
+<pre><code>h1{
+    font-family: 'MyWebFont', sans-serif;
+}</code></pre>
+<p>Finally we talked about <code>table</code> styles and how to make our tables look better than their default look.<br />
+The following code sets the width of the table to half the viewable page with center text alignment and collapsed, touching borders:</p>
+<pre><code>table {
+  width: 50%;
+  text-align: center;
+  border-collapse: collapse;
+}</code></pre>
+<p>Then I want the cells to be a little more spaced out and have a border, so:</p>
+<pre><code>th, td{
+  padding: 20px;
+  border: 3px solid purple;  
+}</code></pre>
+<p>Then I also want to make all even rows a color, while leaving the odd rows out:</p>
+<pre><code>tr:nth-child(even) {
+  background-color: #e495e4;
+}</code></pre>
+<p>This last bit involves specific selectors used to get at children elements in a group of other elements. See some of these examples:</p>
+<pre><code>element:nth-child(1) /*chooses the first child element only*/
+element:nth-child(2) /*chooses the second child element only*/
+element:nth-child(odd) /*chooses odd child elements starting at 1 only*/
+element:nth-child(even) /*chooses even child elements starting at 2 only*/
+element:nth-child(3n+3) /*chooses every third child whereas n starts at 0*/</code></pre>
+<p><strong>Homework/Reading:</strong><br />
+Read Chapter 16</p>            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+            <section id="contact">
+        <h2>Have Questions?</h2>
+
+        
+        <form method="post" action="#contact">
+            <div class="field half first">
+                <input type="text" name="contact[name]" id="name" placeholder="Name" />
+            </div>
+
+            <div class="field half">
+                <input type="email" name="contact[email]" id="email" placeholder="Email" />
+            </div>
+
+            <div class="field">
+                <textarea name="contact[message]" id="message" placeholder="Message"></textarea>
+            </div>
+
+            <input type="text" name="contact[antibot]" id="antibot" style="display:none" />
+
+            <ul class="actions">
+                <li><input type="submit" value="Send" name="contact[submit]" class="special" /></li>
+            </ul>
+        </form>
+    </section>
+
+        <div class="copyright">
+            <ul>
+<li>© 2018 All right reserved</li>
+</ul>        </div>
+    </div>
+</footer>
+    </div>
+
+    <script src="./../assets/js/jquery.min.js"></script><script src="./../assets/js/skel.min.js"></script><script src="./../assets/js/util.js"></script><!--[if lte IE 8]><script src="./../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="./../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+Title: Week 12-2:Javascript Essentials
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Check out a small program written in Javascript (link: https://codepen.io/onetimeuser/pen/GdJGLe text: here)
+
+**INTRO**
+JavaScript is a widely used web-based programming language that powers the dynamic behavior on most websites. It enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else, sorta.
+
+You can store values and data in things called variables, work with text in a dynamic way (to print out messages or show the user, you can run code in response to certain events (so something more advanced that what css allows. You can tie in API’s other javascript that extends your abilities and functionalities
+
+Javascript runs in order...from top down. Situated in html, in runs in place...usually why you see javascript below all of the html content (just before closing body tag) that is because usually we are manipulating css or html and we need those to load first before we start iterating or modifying it.  Sometimes you’ll see it in the head and usually that is js that isn’t content dependent. Js can also be put elsewhere in our html and it will run in place. 
+
+How do you add it? Using the `<script></script>` element. Javascript can just be written inside of these tags. Or you can link to it similarly to css like so: `<script src="path/to/script.js"></script>`
+
+So for our cases, our use of javascript can take a number of forms: user interactions that are simple, like button clicks or prompts/messages; style changes or content changes that have nothing to do with the user (dates, update information regarding availablitily); full on programs; app like functionality that ties into the various API’s; countless other things.
+
+First off, let me introduce you to a way for you to debug and understand your javascript code- this necessitates the use of a console. The console helps you understand where there may be code misses. 
+Think of it as a debug...you can put a console statement anywhere to print out a variable or a message or status of some kind. 
+
+We do this with `console.log();`. The parentheses means that this is a function. This function takes in an argument- basically something to show you when it is run in the course of your javascript. This can be a value or variable or even a string message (all described below!), like `console.log("I'm running!");`.
+
+**Data Types**
+Data types are the building blocks of all languages and essential pieces of any program.
+In JS there are four of whats called “primitive” data types which form the foundation of all JS programs. - they are just the simplest built-in forms of data.
+
+**STRINGS** - any keyboard characters (letters, spaces, numbers, symbols- text as text essentially- surrounded by single or double quotes. `"I am a string"`, `1,345`
+**NUMBERS **- any number, inc. decimals. `4, 4.13, 10093`
+**BOOLEANS** - true or false
+**NULL** - represented by null and represents no value or absence of a value
+
+**Operators**
+Math operators are  `+ - * /`
+These math operators allow you to do some simple math (more complex math equations are also possible).
+So far we have been logging direct data types to the console. Let’s do something with some logic to it.  Type of the following in a script element or codepen's JS section and open the console window in codepen or developer's window.
+`console.log(3 + 4 / 2 - 6 * 2); //which operators are rendered first?`
+
+Other math operators: 
+`++` -increment by one, like `numberOfDogs++`
+`--` -decrement by one
+`%`- remainder `5%2` returns `1` becase 5/2 has a remainder of 1)
+`+=` or `-=` is a simple way of writing a variable equals its value plus the number. 
+So 
+```
+let x=4;
+x+=2; //returns 6; could also be written x=x+2;
+```
+
+We have other operators too.  
+
+`=` is the assignment operator...this basically says one thing is another. Literally...thats what it says. Use with caution because you could  possibly overwrite smth.
+
+` +` to combine strings together like `"Hello" + "Everyone"; //returns "HelloEveryone"
+
+Comparison operators
+`>`,` <`, `==`
+We use these in some of our programs to check for value.
+
+
+**Properties**
+In javascript, certain types of data carry certain types of properties and each data type you introduce is stored in the computers memory as an instance of that data type.
+So an instance of a string `‘New York’ `has additional information attached to it. 
+For example, every string instance has a property called `length` that stores the number of characters in it. 
+Retrieving this property information is as easy as appending the property to the data type with a period and the property name. 
+
+Try this:
+`console.log(‘New York’.length); `//prints 8
+
+Read up on this here:
+https://www.w3schools.com/js/js_string_methods.asp
+https://www.w3schools.com/js/js_number_methods.asp
+
+
+
+**Built in JS Methods**
+Methods are functions or programs that execute something or calculate something as needed and usually generate an output. This looks similar to a property, it has a period and a name but also includes parentheses afterwords....like:
+
+`Console.log(’New York’.toUpperCase());` 
+
+Empty parentheses usually means the method executes on what precedes it and returns without needing any information or data to run.
+
+Some methods needs data or value to run:
+`console.log(’New York’.startsWith(’N’)); //returns true`
+ 
+Read up on all of the JS methods here:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index
+
+
+**LIBRARIES**
+Javascript Libraries  contain methods that you can call without having an instance like above? What do you mean?  Lets say I want a random number that I am using to eventually choose a random picture to show the user on my site. 
+
+`console.log(Math.random());//returns random between 0-1`
+
+I use the Math library above and use the random method. 
+The Math library is very handy and useful in the way math fits in with logic...which you will soon come to see. 
+
+Want to increase the result like say...beetween 0-100
+`Math.random() * 100`
+
+`Math.floor`- round down to nearest whole number
+`Math.ceil `- round up
+
+`Math.floor(Math.random() * 50);`
+
+Similarly we have libraries for Number and Date
+
+`console.log(Number.isInteger(2017));`
+
+Read up a bit more about this below:
+https://www.w3schools.com/js/js_number_methods.asp
+https://www.w3schools.com/js/js_date_methods.asp
+https://www.w3schools.com/js/js_math.asp
+
+
+**Comments**
+We all know comments...they are just for us or someone else and don’t run in code. 
+`// ` is used for single line comments
+```
+/*
+Multiple line comments 
+HERE!
+*/
+```
+Comments are great for several reasons.  Sometimes its nice while debugging to just strike a possible problem line of code or section of code to see if the code runs without errors. 
+
+**Variables**
+We use variables to write code that is easy to understand and work with. So far our examples use hard values that we write over and over again. Variables let us store this information so we can reuse it, change it, or modify it in some other way. 
+
+`const` is short for constant...its a keyword that creates a new variable with a value that doesn’t change, your name is the name given to the variable. This variable cannot be reassigned or revalued. It also must be defined when you create it.
+```
+const yourName = ‘bob’;
+console.log(yourName);
+```
+Check out the following using concatenation:
+`Console.log(‘Your name is’ + yourName + ‘.’); `
+
+`Const` variables cannot be reassigned, but `let `variables can be reassigned
+```
+let timesExercisedThisWeek = 3;
+timesExercisedThisWeek = 4; //results in 4
+```
+You don’t have to define the `let` variable in the beginning if there is no value yet. 
+`let timesExercisedThisWeek;`
+
+Inserting variable into strings:
+```
+const myName = 'Jason';
+const myCity = 'NYC';
+console.log(`My name is ${myName}. My favorite city is ${myCity}`);
+```
+
+**HOMEWORK**
+Think about something simple and dynamic you would want to introduce into your current site. Try not to be bothered by what you don't know and just think about something that fits into your site theme. 
+Past projects:
+Making the date show on the page, which also affects the background color of the page. 
+Creating a little mini interactive game for the page. 
+Showing random images 
+
+Once you have an idea, try to Pseudo Code it, that is... try and break the process down of creating this into little programmatic bites. You don't have to know how to program yet in order to do this as this is preliminary. As you learn more about code, you will begin to understand the best method for breaking this down.
+
+Here are some simple examples:
+```
+Examples:
+
+1. If student's grade is greater than or equal to 60
+
+Print "passed"
+else
+Print "failed"
+
+
+2. Set total to zero
+
+Set grade counter to one
+
+While grade counter is less than or equal to ten
+
+Input the next grade
+Add the grade into the total
+Set the class average to the total divided by ten
+
+Print the class average.
+
+
+3.
+
+Initialize total to zero
+
+Initialize counter to zero
+
+Input the first grade
+
+while the user has not as yet entered the sentinel
+
+add this grade into the running total
+add one to the grade counter
+input the next grade (possibly the sentinel)
+if the counter is not equal to zero
+
+set the average to the total divided by the counter
+print the average
+else
+
+print 'no grades were entered'
+
+
+4.
+
+initialize passes to zero
+
+initialize failures to zero
+
+initialize student to one
+
+while student counter is less than or equal to ten
+
+input the next exam result
+if the student passed
+add one to passes
+else
+
+add one to failures
+add one to student counter
+
+print the number of passes
+
+print the number of failures
+
+if eight or more students passed
+
+print "raise tuition"
+```

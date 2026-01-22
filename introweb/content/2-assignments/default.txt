@@ -1,0 +1,18 @@
+Title: Assignments
+
+----
+
+Text: 
+
+1. (link: assignments/assignment-1 text: UNIX - due Tuesday January 30)
+2. (link: assignments/html-assignment-2 text: HTML - due Thursday February 8)
+3. (link: assignments/css-assignment-3 text: CSS - due Tuesday February 27)
+4. (link: assignments/images-and-animation-assignment-4 text: Images and Animation - due Thursday March 8)
+5. (link: assignments/wireframing-5 text:Sitemap and Wireframes - due March 27)
+6. (link: assignments/responsive-design-assignment-6 text:Responsive Design- due April 5)
+7. (link: assignments/web-frameworks-assignment-7 text: Web Framework-due April 19)
+8. (link: assignments/javascript-and-jquery-assignment-8 text: JS and JQuery-due May 3)
+
+----
+
+Cover: 

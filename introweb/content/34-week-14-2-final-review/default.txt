@@ -1,0 +1,151 @@
+Title: Week 14-2:Final Review
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture:**
+There is a lot of information to go over, so lets just start from the beginning:
+
+       
+**Lecture:**
+In preparation for the midterm, we briefly covered the following topics. This is a guide with general topics or examples. Please study the topics more thoroughly as I/we have gone into them with much more depth than what's presented here.
+
+Computer Principles:
+1. Computer Basics 
+   -e.g. difference between the Internet and the Web
+2. History
+    -know key dates, e.g. who and when the Internet was developed
+3. Digital Media and Storage Size
+    -digital signals, 1s and 0s
+    -bits and bytes
+    -Moore's Law
+
+Unix:
+1. Operating Systems 
+2. Commands
+    -review the list of the various UNIX commands from the slides
+3. History
+4. Functionality
+    -command line vs. gui (graphical user interface)
+
+HTML:
+1. HTML Basics
+    -History
+    -Anatomy of HTML
+    -local vs. remote
+    -browser relationship
+    -HTML5
+2. Document Structure
+    -`<head>`, `<body>`, etc.
+3. Basic Elements and HTML Tags
+    -structural text/elements
+    -semantic text/elements
+    -HTML5 semantic elements
+    -types of lists
+    -links (`<a>`) and types of href attributes (internal, external, emailto, etc.)
+    -div and span
+    -id and class
+    -img and figure elements
+    -meta element
+    -table element
+4. Basic Principles
+    -anatomy of URL
+    -traversing the directory, e.g. `../images/hello.png`
+    -differences between div and span
+    -differences between id and class
+    -commenting and how to write comments
+
+CSS:
+1. Style Rules
+    -anatomy of style rule: selector, declaration, property, value
+2. Types of Style Sheets
+    -how can style sheets be applied (external, internal, inline)
+3. Principles of Cascade
+    -css styles will conflict, but which style wins out depends on some factors:
+    -in order of importance:
+     1. !important
+     2. specificity of the selector
+           -in order of importance: 
+              a. id selectors 
+              b. class selectors
+              c. element selectors
+     3. location (in style sheet, for example conflicting or the same styles within a style sheet will be governed by whichever is lower in the sheet).
+
+-idea of CSS inheritance - what is it? 
+-the various methods of and types of style sheets or invoking styles have an order of importance in case of **conflict**:
+       1. Author inline styles
+       2. Author embedded styles (aka: internal style sheets)
+       3. Author external style sheet
+       4. Default browser style sheet
+
+4. Defining Selectors
+    -take a look at all the ways we can select elements not just by id and class (space, >)
+    -nth-child and nth-of-type
+5. Link States
+6. Box Model
+    -pay particular attention to padding and margin and where each one adds spacing.
+7. Units of Measurement (fixed and variable: px, %, em, vh, vw)
+8. Display and Visibility (what is the main difference?)
+9. Float and Clear
+    -understand the behavior of floated items and cases where you would 'clear' 
+10. Position
+    -practice relative and absolute and fixed positioning (remember to use top, left, bottom, and right to control position) and z-index.
+11. Color
+    -RGB, RGBA, HSL, HSLA, Hex, Color Name
+
+Flexbox and Grid
+1. Know the difference between them in terms of use cases and characteristics
+2. Know what properties and structure you change in order to instantiate a grid or a flexbox
+
+Image: (page through the Image section in the book)
+1. File Formats
+    -JPG, GIF, PNG, SVG: when would you use each 
+
+__________
+
+Design and Wireframing:
+-understand the principles behind design and wireframing. Think about why it is such an important step in web development and process.
+-I expect you to be able to pick out the most logical site map and wireframing mockups for a given scenario. I'll give you a situation (agency/client relationship and target market) and present you with options.
+
+Responsive Web Design:
+-Why do we prioritize it?
+-Know how to write media queries and know about what they are doing when you look at them (are they overwriting previous media queries, are they mobile first, etc.). Essentially know how to interpret them.
+-Know about how we treat `<img>` in responsive design
+-Also understand why we use and how to write the `srcset` attribute of an `<img>` element
+-there are dozens of elements that can comprise a media query but we will deal only with how we have been writing it:
+
+`@media only screen and (min-width:480px){ ... }` or `@media (max-width: 12450px) { ... }`
+
+CSS3:
+-will not test on anything from this CSS3 Extravaganza class
+
+Bootstrap:
+-Know about "Frontend" vs "Backend"
+-What is it and why is it used? Know some of it's history.
+
+Forms:
+Freebie, there will be no FORMS questions on the test.
+
+Audio/Video:
+-know how to write out the video and audio element as well as some of the options you have in writing them out. The final will not include questions of some of the third party software we used to handle or export those files.
+
+JQuery:
+-What is it and why do we use it?
+-Know where to put scripts in our HTML document and the various types of methods of putting the in.
+-Be able to dissect a JQuery object and know how to write it. You will be tested on how you retrieve HTML elements.
+-I will only use JQuery methods/functions that are obvious in their use like `addClass`. This is so that you know what the object is doing at all times. 
+
+Javascript:
+-most important sections to understand: variables, operators, types, console, comments
+-what is a property, method, and library? 
+-know how to recognize the components of an `if` statement
+
+Domain Names, Hosting, SEO, Analytics:
+-we went over a bunch of informational tidbits on the above- please view the slides. KNOW THEM!
+
+BRING A PENCIL AND PEACE OF MIND!!!!!!!

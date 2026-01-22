@@ -1,0 +1,177 @@
+Title: Week 10-1:CSS3 Extravaganza
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Today we covered a good amount of CSS3 properties, rounding out some of the more advanced functions of CSS3 that deal with interaction and animation and other advanced, non-strict structure/style elements.  
+
+Remember it's always a good idea to double check browser adoptability at (link: caniuse.com text: CANIUSE.COM) before implementing the following css in any production ready document. In events that you need to plan for legacy browsers support, use the following prefixes:
+
+|Legacy Prefixes|Example Usage|
+| --- | --- |
+|-ms-|-ms-transform: rotateX(20deg); |  
+|-webkit-|-webkit-transform: rotateX(20deg);|
+|-moz-|-moz-transform: rotateX(20deg);|
+|-o-|-o-transform: rotateX(20deg);|
+
+**Multiple Backgrounds**
+It's easy to display multiple backgrounds (for example a logo over a textured back background). Keep in mind that the largest background or the the one that goes below the other elements is listed first. 
+
+<pre><code>body{
+     background-image: url(image1.png), url(image2.png);
+     background-position: center, right bottom;
+     background-repeat: no-repeat, repeat;
+}
+</code></pre>
+
+**Background-size**
+For more asset related background elements that do not cover the entire background, resizing and positioning is typically called for.
+
+<pre><code>
+body{
+     background: url(image1.png), url(image2.png);
+     background-size: 100px 80px;
+     background-position: 500px 100px;
+}
+</pre></code>
+<p data-height="350" data-theme-id="0" data-slug-hash="MOJqxB" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Background resize and reposition" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/MOJqxB/">Background resize and reposition</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+Also try experimenting with `background-position: contain;` and `background-position:cover;` to see the nuances of each. See examples below (probably a good idea to view it on the codepen website so you can drag the window.
+<br>
+Contain:
+<p data-height="350" data-theme-id="dark" data-slug-hash="XzpxJQ" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Background Contain" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/XzpxJQ/">Background Contain</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+Cover:
+<p data-height="350" data-theme-id="dark" data-slug-hash="MOJqMq" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Background Cover" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/MOJqMq/">Background Cover</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<br>
+
+<strong>Gradients</strong>
+<br>
+There are two types of CSS gradients: linear and radial.
+Linear gradients accept the following values:<br>
+<pre><codelinear-gradient(angle/direction, color, color, ...) </code></pre>
+and in praxis looks something like 
+<pre><code>body{
+     background: linear-gradient(35deg, rgba(255, 0, 0, 0.5), rgba(255,255,0,1));
+}
+</code></pre>
+The various possible values for angle/direction are any number of degrees, e.g. (25deg), OR directives: top bottom, to right, to left, to bottom right, etc. 
+
+<p data-height="380" data-theme-id="dark" data-slug-hash="zPNmpx" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="gradient" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/zPNmpx/">gradient</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<strong>2D Transforms</strong>
+<br>
+2D transforms occurr in the 2D space along the x and y axis. 
+<code>translate()</code> moves the element from its current position to a new position however many pixels or percentage width or height defined.  Using a percentage measurement references the translated elements percentage width and height. For example, translate(50%, 50%) on an image that is 100px wide and 100px tall will result in movement of the image 50px to the right and 50px down. 
+<code>rotate()</code>
+<code>scale()</code>
+<code>skew()</code>  skews the image along the x or y axis by way of degrees.
+<p data-height="346" data-theme-id="dark" data-slug-hash="VrPVVE" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="2D" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/VrPVVE/">2D</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<strong>3D Transforms</strong>
+<br>
+3D transforms add in the Z Axis.
+There is a good amount to cover here, too much for me at this point in time. But if you want a super slick intro then please read the following by (link:https://desandro.github.io/3dtransforms/ text:David Desandro!) <br>
+But we will concern ourselves with the following:<br>
+<code>perspective</code> - this initiates the 3D world.<br>
+<code>rotateX( angle )</code><br>
+<code>rotateY( angle )</code><br>
+<code>rotateZ( angle )</code><br>
+<code>translateZ( tz )</code><br>
+<code>scaleZ( sz )</code><br>
+which can also be written as:<br>
+<code>translate3d( tx, ty, tz )</code><br>
+<code>scale3d( sx, sy, sz )</code><br>
+<code>rotate3d( rx, ry, rz, angle )</code><br>
+<p data-height="265" data-theme-id="0" data-slug-hash="qoyOQV" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="CSS 3D transform Colorful Animated Carousel" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/qoyOQV/">CSS 3D transform Colorful Animated Carousel</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<strong>Transitions</strong>
+<br>
+Transitions allow you to change property values smoothly.
+To use Transitions, you need to specify two things:<br>
+1.CSS property to add effect<br>
+2. Duration
+
+<p data-height="349" data-theme-id="dark" data-slug-hash="ZaLVZq" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Transition" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/ZaLVZq/">Transition</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<strong>Animations</strong>
+<br>
+Animations let you gradually change from one style to another with greater control than Transitions. This is executed via the <code>@keyframes</code> rule. Check out the example below and the codepen below that.
+<pre><code>
+@keyframes animationName{
+   0%{background-color: red;}
+   50%{background-color: purple;}
+   100%{background-color: blue;}
+}
+
+#elementWithAnimation{
+   width: 100px;
+   height: 100px;
+   animation-name: animationName;
+   animation-duration: 4s;
+   animation-timing-function: ease-out;
+   animation-delay: 2s; //optional
+   animation-direction: alternate; //optional- alternate= ping pong effect, reverse= reversed. Default is linear.
+   animation-iteration-count: infinite; //optional -can also take a number
+   animation-fill-mode: none;
+   animation-play-state: running;
+}
+/* the above is the same as :
+#elementWithAnimation{
+  animation: animationName 4s ease-out 2s alternate infinite none running;
+}
+}
+*/
+</pre></code>
+
+animation-name: declares the name of the @keyframes at-rule to manipulate.<br />
+animation-duration: the length of time it takes for an animation to complete one cycle.<br />
+animation-timing-function: establishes preset acceleration curves such as ease or linear.<br />
+animation-delay: the time between the element being loaded and the start of the animation sequence.<br />
+animation-direction: sets the direction of the animation after the cycle. Its default resets on each cycle.<br />
+animation-iteration-count: the number of times the animation should be performed.<br />
+animation-fill-mode: sets which values are applied before/after the animation.<br />
+For example, you can set the last state of the animation to remain on screen, or you can set it to switch back to before when the animation began.<br />
+animation-play-state: pause/play the animation.<br />
+
+
+<p data-height="351" data-theme-id="dark" data-slug-hash="YENdbw" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Animated Gradient" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/YENdbw/">Animated Gradient</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Here is another:</p>
+<p data-height="345" data-theme-id="0" data-slug-hash="xWJGdv" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="xWJGdv" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/xWJGdv/">xWJGdv</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>Here is one with multiple animations on a single element:</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="eMjNQa" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="eMjNQa" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/eMjNQa/">eMjNQa</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<strong>Image Filters</strong>
+<br>
+Image Filters can be used statically to alter the appearance of your image or used in conjunction with transitions to animate the image on hovering or other input. 
+<p data-height="355" data-theme-id="dark" data-slug-hash="aVpPQM" data-default-tab="html,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="img filters" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/aVpPQM/">img filters</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+<strong>EXTRAS</strong>
+<br>
+Hamburger Menu:
+<p data-height="346" data-theme-id="dark" data-slug-hash="GOrRLK" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="CSS Hamburger menu" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/GOrRLK/">CSS Hamburger menu</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+Parallax Scrolling:
+<p data-height="348" data-theme-id="dark" data-slug-hash="xPgPbd" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Parallax" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/xPgPbd/">Parallax</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

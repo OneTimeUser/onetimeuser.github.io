@@ -1,0 +1,201 @@
+Title: Week 04-2:CSS
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture:**
+
+Today we continued with CSS, covering some ways to style your pages. 
+
+We went over the various color methods in CSS. There are six ways to define a color for the `color` property, `background-color` property or `border`:
+
+1. RGB - RED, GREEN, BLUE DIGITAL COLOR SPACE. Each takes a value from 0-255 with 0 = none of that color and 255 = all of that color. The values are mixed to create different colors. 
+`background-color: rgb(100,100,100);` produces a darkish gray. 
+
+2. RGBA - RED, GREEN, BLUE, ALPHA (OPACITY 0 - 1.0)
+`background-color: rgbA(100,100,100,.5); ` produces a darkish gray that is translucent. 
+
+3. HEXADECIMAL - EQUATION VERSION OF RGB
+`background-color: #00FFFF` produces a yellow color since Red is completely turned off and green and blue are turned on.
+
+4. COLOR NAMES
+`background-color: red;`
+
+5. HSL - HUE (degrees on color wheel), SATURATION (%), LIGHTNESS (%)
+`background-color: hsl(270, 15%, 15%);`
+
+6.HSLA - like above but with added ALPHA  (OPACITY 0 - 1.0)
+`background-color: hsla(270, 15%, 15%, 1.0);`
+
+
+**GRADIENTS
+**
+A basic gradient linearly positioned (top to bottom)
+```
+.simple-linear {
+  background: linear-gradient(blue, pink);
+}
+```
+Gradient that moves from left to right
+```
+.horizontal-gradient {
+  background: linear-gradient(to right, blue, pink);
+}
+```
+Diagonal gradient
+```
+.diagonal-gradient {
+  background: linear-gradient(to bottom right, blue, pink);
+}
+```
+You can also use angles 
+```
+.angled-gradient {
+  background: linear-gradient(70deg, rgb(0,0,255), rgb(255,0,127));
+}
+```
+More than two colors:
+```
+.auto-spaced-linear {
+  background: linear-gradient(red, yellow, blue, orange);
+}
+```
+
+Radial
+```
+.simple-radial {
+  background: radial-gradient(red, blue);
+}
+```
+
+We can also supply our page with background images. Here is a way to write in the background using most available properties (feel free to look in your book for all available values):
+```
+body {
+  background:
+     url(sweettexture.jpg)    /* image ex background-image*/
+     top center / 200px 200px /* position / size */
+     no-repeat                /* repeat ex. does it repeat on x or y or both*/
+     fixed                    /* attachment */
+     padding-box              /* origin */
+     content-box              /* clip */
+     red;                     /* color */
+}
+```
+Sometimes you want an image to be the background of your page, and you want it to be positioned well all the time:
+```
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+```
+
+*(link: https://cims.nyu.edu/~aston/backgrounds/ text: GO HERE) for some recipes that you can use: https://cims.nyu.edu/~aston/backgrounds/*
+
+We also talked about text-decoration, which in its most wide use gets rid of the default underlining of links in our documents. 
+```
+a{
+    text-decoration: none;
+}
+```
+The anchor element has states that are associated with it. This allows you to customize how your link looks and acts when interacted with.
+
+` a:link` - a normal, unvisited link
+`a:visited` - a link the user has visited
+`a:hover` - a link when the user mouses over it
+`a:active` - a link the moment it is clicked
+
+So your css may look like this:
+```
+       a {
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+        }
+
+        a:link {
+            color: aqua;
+        }
+
+        a:visited {
+            color: aqua;
+
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+            font-family: monospace;   /*Change of font for different link states indeed works!!! BTW this is a CSS comment*/
+        }
+
+        a:active {
+            text-decoration: line-through;
+        }
+```
+
+We can add custom fonts to our website regardless if a user has them on his/her/their system. 
+One way is to use an existing service. Many are paid, but some are free, like (link: https://fonts.google.com/ text: Google Fonts). 
+You can find all of the fonts that you like and add them by clicking the plus sign. When you have all of the fonts you want to use, follow the embed and specify fucntions google provides.
+Adding the font looks like this:
+ `<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`
+ This bit of html goes inside of the `<head>` element. 
+
+In your CSS, use the font like so:
+ ```
+h1{
+   font-family: 'Roboto', sans-serif;
+ }
+ ```
+We can also use @font-face to load in our own custom fonts we want to use. But first we must make sure that they are in the right format. Follow the instructions here: https://transfonter.org to get your fonts in the following two formats: `woff` and `woff2`.
+Then you'll have those two font formats that you need to place in your project folder somewhere and load them in like so:
+(inside of your CSS file or inside of the `<style>` in your `<head>` element:
+```
+@font-face {
+   font-family: 'MyWebFont';/*the name you want to use for your font*/
+   src:  url('myfont.woff2') format('woff2'),  
+        url('myfont.woff') format('woff');
+}
+```
+Then use the font by using the font name you have assigned it:
+```
+h1{
+    font-family: 'MyWebFont', sans-serif;
+}
+```
+
+Finally we talked about `table` styles and how to make our tables look better than their default look. 
+The following code sets the width of the table to half the viewable page with center text alignment and collapsed, touching borders:
+```
+table {
+  width: 50%;
+  text-align: center;
+  border-collapse: collapse;
+}
+```
+Then I want the cells to be a little more spaced out and have a border, so:
+```
+th, td{
+  padding: 20px;
+  border: 3px solid purple;  
+}
+```
+Then I also want to make all even rows a color, while leaving the odd rows out:
+```
+tr:nth-child(even) {
+  background-color: #e495e4;
+}
+```
+This last bit involves specific selectors used to get at children elements in a group of other elements. See some of these examples:
+```
+element:nth-child(1) /*chooses the first child element only*/
+element:nth-child(2) /*chooses the second child element only*/
+element:nth-child(odd) /*chooses odd child elements starting at 1 only*/
+element:nth-child(even) /*chooses even child elements starting at 2 only*/
+element:nth-child(3n+3) /*chooses every third child whereas n starts at 0*/
+```
+
+**Homework/Reading:**
+Read Chapter 16

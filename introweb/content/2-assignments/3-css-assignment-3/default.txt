@@ -1,0 +1,50 @@
+Title: CSS:Assignment-3
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**CSS**
+In this assignment, you are to use CSS to style your original Web pages from the HTML assignment.
+
+**Instructions**
+Here is a list of required elements to include.
+
+-Create an external style sheet (.css document) with at least six different CSS rule sets (consisting of a selector and declaration block) and link it to all of your original HTML pages.
+-At least one HTML page should include an internal style sheet (within the head section of the document, below the external style sheet link) with at least one rule set.
+-At least one HTML page should include an inline style rule (as a style attribute of an HTML element).
+-Your style rules should specify font family and font size for paragraph and heading text.
+-Your style rules should specify link states including link, visited, hover, and active.
+-You should specify either a background image or background color for your pages.
+-Create a class somewhere in your HTML that is targeted and styled with CSS.
+-Create an id somewhere in your HTML that is targeted and styled with CSS.
+-Beyond these requirements, feel free to include additional CSS to design your pages as you like! Remember to test your pages locally in the web browser as you proceed.
+
+**Publishing Your Site**
+Upload your files (including the HTML, CSS, and image files) to the i6 Unix server with an FTP client. Test your files again in the web browser once they are live on the server to make sure they are accessible.
+
+Finally, create a link from the “CSS” line of your assignments directory to the home page of your newly styled website.
+
+**Submitting Your Assignment**
+Submit the following via NYU Classes. 
+
+1. The URL to your website on i6
+2. A compressed archive containing all the files (HTML, CSS, and images) of your website
+Please note that you are required to submit files along with the URL in order to receive credit for your work.
+
+**Grading**
+This assignment is worth 10 points.
+
+-An external style sheet (.css document) with at least six different CSS rule sets, linked to all of the studentʼs original HTML pages. (3 points)
+-One HTML page should include an internal style sheet—within the head section of the document—with at least one rule set. (1 point)
+ -One HTML page should include an inline style rule, as a style attribute of an HTML element. (1 point)
+-Style rules should specify font family and font size for paragraph and heading text. (1 point)
+-Style rules should specify link states: link, visited, hover, and active. (1 points)
+-A background image or background color should also be specified for the pages. (1 point)
+-An HTML class, styled with CSS (1 point)
+-An HTML id, styled with CSS (1 point)
+Points may be deducted for improperly formed CSS rule sets.

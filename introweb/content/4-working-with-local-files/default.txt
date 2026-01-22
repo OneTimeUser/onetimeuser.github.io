@@ -1,0 +1,46 @@
+Title: Working With Local Files
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**WORKFLOW SETUP**
+I see that some of you were unclear as to how Cyberduck/Transmit/Fetch and Sublime/Atom/Brackets interacted with each other and how you interact with it.  
+
+First off, after you have downloaded Cyberduck/Transmit/Fetch and Sublime/Atom/Brackets , you want to create a folder structure on your computer (these are your local files) that will mimic the folder structure on your site (those are your remote files that live online, in your server, and are visible from a URL).   
+
+|Folder | Structure | For  | Class |
+|  ---  |  ---  |  ---  |  ---  |
+| public_html → | index.html |||
+|   | **assignment1_folder →** |**index.html**||
+|   |   |**styles.css**||
+|   |   |**assets_folder→**|**image.jpg**|
+|   |   |   |**image2.jpg**|
+|   | **assignment2_folder →** |**index.html**||
+|   |   |**styles.css**||
+|   |   |**assets_folder→**|**image.jpg**|
+|   |   |   |**image2.jpg**|
+
+This way, you would navigate to your site via a url structure like this for example:  `http://i6.nyu.edu/~jwa241/assignment1_folder`
+
+While you are programming REMOTELY, meaning on your computer, you want these two programs open: Sublime/Atom/Brackets and Chrome/Firefox.  The reason why we want Chrome/Firefox is so that we can use Development Tools to aide in programming and manipulating.  When you get a chance, take a look at (link: https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-getting-started-and-keyboard-shortcuts text: Sublime Text tutorial) and (link: https://developer.chrome.com/devtools text: Chrome Dev Tools Tutorial).  These are invaluable to making your life easier!   
+
+So when you are editing your files in Sublime Text, drag the html file you are editing to Chrome to preview your site as you work.  You can keep refreshing the browser as you edit to get an idea of how your project is coming along.  
+
+![alt text](http://webtwo.jason-aston.com/content/1-notes/capture.png "Sublime")
+![alt text](http://webtwo.jason-aston.com/content/1-notes/capture2.png "Page in Chrome")
+
+
+When you are editing the CSS of your site, its best to try things out using the Chrome Developer Tools with the CSS window open.  This CSS window shows all of the styles you have applied to the current file.  If you inspect an element, it will show you all of the styles you have applied to that element and you can manipulate and change the styles live.   Awesome!
+
+![alt text](http://webtwo.jason-aston.com/content/1-notes/dev-tools.png "Chrome Dev Tools")
+
+When you are finished, use Cyberduck to connect to your live website (email me if you need help with this) and literally drag and drop your folder in its appropriate location to update all of the files.  You can either replace the entire Web2 folder or just the individual files you have changed.  Be careful that you don't OVERWRITE files you don't want to change.
+
+**Let me know if any of this is unclear and we can go over it in class or individually.**
+
+Also, if you prefer, you can also experiment with Codepen.io site I showed in class.  You can build and toy around with fully functioning sites from withing Codepen.  Make sure you create an account so that your work is saved!

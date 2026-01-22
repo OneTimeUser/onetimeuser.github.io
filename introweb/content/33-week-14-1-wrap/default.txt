@@ -1,0 +1,131 @@
+Title: Week 14-1:Wrapping It Up
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Now that we have covered how to build, style, and program some behavior, all you need to know are the finishing touches on getting the website up and running. 
+
+
+Presentation Slides:
+(file: 14-1.pdf text:Download)
+
+**Domain Names**
+The domain name is the web address that you choose as the name of your site. 
+
+**Hosting**
+So that other people can see your site through your domain name, it has to be uploaded to a web server and hosted. Some characteristics of the hosting service are;
+1.The Disk Space refers to how much space your site takes up (html, css, images, etc.)
+2. Bandwidth represents the amount of data the hosting company will send to visitors. SO for instance if your site is a total of 5mb in size and 10 people view all pages of your website then you have used 50mb of bandwidth (usually, depending on the plan, you have in order of GB of bandwidth allotted to you).
+3.Site Backups to preserve the site in case of and issue
+4. Email Accounts
+5. Server Side Languages and Databases- usually if you are using a CMS like Wordpress with use of a database
+
+Some hosting services: GoDaddy, BlueHost, A Small Orange, Dreamhost
+
+**Hosted Service**
+Wordpress.com, Shopify, squarespace, and Tumblr provide the hosting. You can still POINT your domain to the hosted site so that your chosen domain looks like what is being hosted elsewhere 
+
+**SEO**
+SEO stands for Search Engine Optimization and is a huge topic. With the increased internet traffic and use of search engines to get at the info we want to see, it has become increasingly important to ensure that our website ranks as high as possible in search results. This is because it has been shown that most people don't click past the first page of search results. 
+
+At the heart of it is working out which terms people are likely to enter in a search engine on a topic and then using these terms int he right places on your site to increase the likelihood that it will show up high on the query results list. 
+
+But search engines also look at how many sites link to a site to determine its relevance and importance.
+
+Pay attention to keywords in these areas of your site:
+1.Page Title
+2.URL/Web address
+3.Headings
+4.General Text
+5.Link Text
+6.Alt Text
+7.Page Descriptions in meta tag
+
+**Analytics**
+Most people use google analytics as their source. Can sign up google.com/analytics in which you are given a piece of code to place on all pages you want to track.
+
+In turn, as people visit, you have access to multitudes of information on behavior that can help you gauge how effective your site is.  Aside from gathering information on the visitor like where they are from and what device they were using, you will also have information such as:
+1.How long they stuck around
+2.Which pages are the most popular
+3.Which pages people leave your site from
+
+I also went over a net user heat map analytics tool over at en.userheat.com. Its free and fairly easy to use. 
+
+Finally I went over how to host a site on github and have your custom domain name link to the site so you have free hosting. 
+
+Assumptions: GIT is downloaded to your computer ((link: http://git-scm.com/download/mac text: MAC), (link: http://msysgit.github.io/ text: WINDOWS), (link: http://git-scm.com/book/en/Getting-Started-Installing-Git text: LINUX)) AND you have an account on github.com AND you have purchased your domain name (I purchased mine from google domains and will be using it in this tutorial). 
+
+Go ahead and open Terminal or Git Bash to create a new folder with a new empty file `index.html` inside (btw: do not type the `$` sign):
+```
+$ mkdir YOUR_GITHUB_USERNAME.github.io
+$ cd YOUR_GITHUB_USERNAME.github.io
+$ touch index.html
+```
+Go ahead and open that index file in a code editor and place some sample html in there. Save it.
+
+Now, we are already inside of our local github folder, so lets run some commands to prep for uploading this file to our github.
+```
+$ git init
+$ git add -A
+$ git commit -m 'initial commit'
+$ git status
+
+On branch master
+nothing to commit, working tree clean
+```
+Now return to github.com and create a new repository.
+Name the repository `YOUR_GITHUB_USERNAME.github.io`.
+Make sure the repo is public and press "Create Repository".
+You should now see a blue box with some reference to "Quick Setup" containing a URL that looks something like `https://github.com/YOUR_NAME/YOUR_NAME.github.io.git`. Copy that URL.
+
+We will now add that remote URL to our local git repo.
+```
+$ git remote add origin https://github.com/YOUR_NAME/YOUR_NAME.github.io.git
+$ git remote -v
+origin https://github.com/YOUR_NAME/YOUR_NAME.github.io.git (fetch)
+origin https://github.com/YOUR_NAME/YOUR_NAME.github.io.git (push)
+$ git push origin master
+Counting objects: 58, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (57/57), done.
+Writing objects: 100% (58/58), 962.02 KiB | 0 bytes/s, done.
+Total 58 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/YOUR_NAME/YOUR_NAME.github.io.git
+* [new branch]      master -> master
+```
+As of now, your site should be live at YOUR_NAME.github.io
+
+Now we will begin the steps of making our purchased domain reroute to this github page. 
+You should still be in your project folder. If not, go ahead and return to that folder and make sure Terminal or Git Bash is open.
+
+Lets create an empty file called `CNAME`.
+`$ touch CNAME`
+You can either edit this in your code editor or use the following command to open up the NANO editor in terminal/bash
+`$ nano CNAME`
+Now, place your purchased domain in this file so that it looks something like this:
+```
+keanureefs.com
+www.keanureefs.com
+```
+Save and close out of the file. 
+Now lets add the changes to git and push it to our repo:
+```
+$ git add -A
+$ git commit -m 'add CNAME file'
+$ git push origin master
+```
+
+Finally, lets redirect our domain to github. I bought my domain on google domains, but the process is similar.  
+
+You want to head the "Configure DNS" option on google domains or the equivalent elsewhere. 
+We basically want to add custom resource records. On google, this is at the bottom of the page. 
+Here, you need to add one or two “@” type A records that point to the GitHub ips 192.30.252.153 and 192.30.252.154 and one “www” CNAME record that points to your USERNAME.github.io url. Google only needs one "@" type A record.
+(image:screen.png)
+
+Once that is done, your site should point to the github page and show whatever the content of your html file. Now, upload some real stuff and you are good to go!  A hosted site at around $12/year.

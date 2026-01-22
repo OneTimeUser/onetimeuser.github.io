@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113019983-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113019983-1');
+
+    </script>
+
+    <title>
+        Week 13-1:Javascript Examples - Intro to Web Design & Computer Principles    </title>
+
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="The fundamentals of building web presences" />
+    <!--[if lte IE 8]><script src="./../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="./../assets/css/main.css">
+<!--[if lte IE 9]><link rel="stylesheet" href="./../assets/css/ie9.css"><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="./../assets/css/ie8.css"><![endif]-->    <!-- User Heat Tag -->
+    <script type="text/javascript">
+        (function(add, cla) {
+            window['UserHeatTag'] = cla;
+            window[cla] = window[cla] || function() {
+                (window[cla].q = window[cla].q || []).push(arguments)
+            }, window[cla].l = 1 * new Date();
+            var ul = document.createElement('script');
+            var tag = document.getElementsByTagName('script')[0];
+            ul.async = 1;
+            ul.src = add;
+            tag.parentNode.insertBefore(ul, tag);
+        })('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');
+        _uhtracker({
+            id: 'uho0M4NamS'
+        });
+
+    </script>
+    <!-- End User Heat Tag -->
+</head>
+
+<body class="template-default page-week-13-1-javascript">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="./../index.html" class="logo">
+            <h1 class="title">Intro to Web Design &amp; Computer Principles</h1>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+        <!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="./../index.html">Home</a></li>
+
+                    <li><a href="./../syllabus/index.html">Syllabus</a></li>
+                    <li><a href="./../assignments/index.html">Assignments</a></li>
+                    <li><a href="./../grading/index.html">Grading</a></li>
+                    <li><a href="./../working-with-local-files/index.html">Working With Local Files</a></li>
+                    <li><a href="./../useful-links/index.html">Useful Links</a></li>
+                    <li><a href="./../unix/index.html">Unix</a></li>
+                    <li><a href="./../week-1/index.html">Week 01-1: Intro</a></li>
+                    <li><a href="./../week-01-2-unix/index.html">Week 01-2: Operating Systems and UNIX</a></li>
+                    <li><a href="./../week-02-1-html/index.html">Week 02-1: HTML</a></li>
+                    <li><a href="./../week-02-2-html/index.html">Week 02-2:HTML</a></li>
+                    <li><a href="./../week-03-1-html/index.html">Week 03-1:HTML</a></li>
+                    <li><a href="./../week-03-2-html-css/index.html">Week 03-2:HTML/CSS</a></li>
+                    <li><a href="./../week-04-1-css/index.html">Week 04-1:CSS</a></li>
+                    <li><a href="./../week-04-2-css/index.html">Week 04-2:CSS</a></li>
+                    <li><a href="./../week-05-1-css-layout/index.html">Week 05-1:CSS Layout</a></li>
+                    <li><a href="./../week-05-2-layout/index.html">Week 05-2:CSS Layout</a></li>
+                    <li><a href="./../week-06-1-images-and-animation/index.html">Week 06-1:Images and Animation</a></li>
+                    <li><a href="./../week-06-2-midterm-review/index.html">Week 06-2:Midterm Review</a></li>
+                    <li><a href="./../week-07-1-midterm/index.html">Week 07-1:Midterm</a></li>
+                    <li><a href="./../week-07-2-midterm/index.html">Week 07-2:Design</a></li>
+                    <li><a href="./../week-08-1-wireframes/index.html">Week 08-1: Wireframes</a></li>
+                    <li><a href="./../week-08-2-in-class-work/index.html">Week 08-2:In-Class-Work</a></li>
+                    <li><a href="./../week-09-1-responsive-web-design/index.html">Week 09-1:Responsive Web Design</a></li>
+                    <li><a href="./../week-9-2-responsive-web-design/index.html">Week 9-2:Responsive Web Design</a></li>
+                    <li><a href="./../week-10-1-css3-extravaganza/index.html">Week 10-1:CSS3 Extravaganza</a></li>
+                    <li><a href="./../week-10-2-bootstrap-intro/index.html">Week 10-2:Bootstrap Intro</a></li>
+                    <li><a href="./../week-11-1-bootstrap-fundamentals/index.html">Week 11-1:Bootstrap Fundamentals</a></li>
+                    <li><a href="./../week-11-2-forms/index.html">Week 11-2:Forms</a></li>
+                    <li><a href="./../week-12-1-audio-video/index.html">Week 12-1:Audio/Video</a></li>
+                    <li><a href="./../week-12-2-javascript/index.html">Week 12-2:Javascript Essentials</a></li>
+                    <li><a href="./index.html">Week 13-1:Javascript Examples</a></li>
+                    <li><a href="./../week-13-2-jquery/index.html">Week 13-2:JQuery</a></li>
+                    <li><a href="./../week-14-1-wrap/index.html">Week 14-1:Wrapping It Up</a></li>
+                    <li><a href="./../week-14-2-final-review/index.html">Week 14-2:Final Review</a></li>
+            </ul>
+</nav>
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <h1>
+                    Week 13-1:Javascript Examples                </h1>
+
+                
+                <p>Javascript Cheat Sheets:<br />
+<a href="http://overapi.com/javascript">Over API</a><br />
+<a href="https://codepen.io/davidicus/details/trhme">Codepen JS REference Sheet</a><br />
+<a href="https://github.com/mbeaudru/modern-js-cheatsheet">Another good one</a><br />
+<a href="http://htmlcheatsheet.com/js/">Easy to read and understand one</a></p>
+<p>We continued on with Javascript by doing some Javascript by example.</p>
+<p>The first example we went over talked about a Math method called Random. We used this to show or play for the user a random image or track. Turn your volume down for this one!</p>
+<p data-height="346" data-theme-id="0" data-slug-hash="YLqeeN" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="YLqeeN" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/YLqeeN/">YLqeeN</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>Next we did an example with the Date() object. There are some more Date() comments below the following example. </p>
+<p data-height="265" data-theme-id="0" data-slug-hash="RyaBzv" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="RyaBzv" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/RyaBzv/">RyaBzv</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>When you instantiate the <code>Date()</code> object, it returns something like this: <code>Tue Dec 05 2017 08:55:25 GMT-0500 (EST)</code></p>
+<p>So let's begin by setting up some code:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script
+&lt;script&gt;
+$('p').html(Date());
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>If we want to anything more fancy, we need to have the ability to store the date object so we can manipulate or handle it a bit easier and in a more efficient way.<br />
+We do that using variables- variables STORE bits of information so that we can more easily use it in our programming.</p>
+<pre><code>var d = new Date();
+$('p').html(d);</code></pre>
+<p>So the variable <code>d</code> has stored the Date() object.<br />
+When you create a Date() object, there are a number of methods (functions) that come along with it. This is similar to JQuery. We saw all of the methods associated with a JQuery object. The function <code>toDateString()</code> is a method of the <code>Date()</code> object. This displays the date object in a more readable form.</p>
+<pre><code>var d = new Date();
+$('p').html(d.toDateString());</code></pre>
+<p>But we can actually explore these methods a bit further and get and display precisely what it is we want to display:</p>
+<p><code>getDate()</code> Get the day as a number (1-31)<br />
+<code>getDay()</code>  Get the weekday as a number (0-6)<br />
+<code>getFullYear()</code> Get the four digit year (yyyy)<br />
+<code>getHours()</code>    Get the hour (0-23)<br />
+<code>getMilliseconds()</code> Get the milliseconds (0-999)<br />
+<code>getMinutes()</code>  Get the minutes (0-59)<br />
+<code>getMonth()</code>    Get the month (0-11)<br />
+<code>getSeconds()</code>  Get the seconds (0-59)<br />
+<code>getTime()</code> Get the time (milliseconds since January 1, 1970)</p>
+<p>So that's the date object. Now in order to program some interactivity and behavior, we need things to happen on conditions. And one way we program for conditions is using if statements. You can think about it in a very simple way. We want something to happen, IF a condition exists. So for example, the pseudocode would look something like:</p>
+<pre><code>if it's later than 6 pm, display 'Good Evening'.
+if it's later that noon, display 'Good Afternoon'.
+etc.</code></pre>
+<p>So let's look at that example in actual javascript code:</p>
+<pre><code>var today = new Date();
+var hourNow = today.getHours();
+var greeting;
+
+if (hourNow &gt; 18) {
+greeting = 'Good Evening';
+} else if (hourNow&gt;12) {
+greeting = 'Good Afternoon';
+} else if (hourNow&gt;0) {
+greeting = 'Good Morning';
+} else { greeting = 'Welcome'}
+
+$('p').text(greeting);
+</code></pre>
+<p>Next we launched into the madlibs example. I have included two versions: one from class and another that uses arrays to populate the madlibs with predetermined material while using the random function. Take a look at both.</p>
+<p>Madlibs with USER PROMPTS</p>
+<p data-height="299" data-theme-id="0" data-slug-hash="OZNZVJ" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="OZNZVJ" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/OZNZVJ/">OZNZVJ</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>Madlibs with ARRAYS and RANDOM</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="zjqEZV" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Simple Madlibs" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/zjqEZV/">Simple Madlibs</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>The start of a platformer game!</p>
+<p data-height="425" data-theme-id="0" data-slug-hash="vjGJKw" data-default-tab="result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Javascript Simple platformer demo" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/vjGJKw/">Javascript Simple platformer demo</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>A number guessing game!</p>
+<p data-height="330" data-theme-id="0" data-slug-hash="XqdPZY" data-default-tab="result" data-user="onetimeuser" data-embed-version="2" data-pen-title="XqdPZY" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/XqdPZY/">XqdPZY</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+            <section id="contact">
+        <h2>Have Questions?</h2>
+
+        
+        <form method="post" action="#contact">
+            <div class="field half first">
+                <input type="text" name="contact[name]" id="name" placeholder="Name" />
+            </div>
+
+            <div class="field half">
+                <input type="email" name="contact[email]" id="email" placeholder="Email" />
+            </div>
+
+            <div class="field">
+                <textarea name="contact[message]" id="message" placeholder="Message"></textarea>
+            </div>
+
+            <input type="text" name="contact[antibot]" id="antibot" style="display:none" />
+
+            <ul class="actions">
+                <li><input type="submit" value="Send" name="contact[submit]" class="special" /></li>
+            </ul>
+        </form>
+    </section>
+
+        <div class="copyright">
+            <ul>
+<li>© 2018 All right reserved</li>
+</ul>        </div>
+    </div>
+</footer>
+    </div>
+
+    <script src="./../assets/js/jquery.min.js"></script><script src="./../assets/js/skel.min.js"></script><script src="./../assets/js/util.js"></script><!--[if lte IE 8]><script src="./../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="./../assets/js/main.js"></script>
+</body>
+
+</html>

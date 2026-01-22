@@ -1,0 +1,53 @@
+Title: Wireframing-5
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+DUE MARCH 27
+**Wireframing**
+In this assignment, you will decide on a concept for your next website, do some cursory research and gather reference sites, draw a site map, and create a website wireframe. 
+
+**Part 1**
+Whereas your first website was about you or some other topic, this one should be about a topic of your choosing with a function of your choosing. Some examples of subjects include a hobby or collection, a specific type of food, a subculture you’re familiar with, or a place that you have specific knowledge about. This could also be a portfolio site or something else. Once you’ve decided what your website will be about, write a paragraph of at least 100 words describing your topic and how it will be presented on the Web. This should include information on what the site is, who it is meant for, as well as any additional and crucial information you would like to include. 
+
+**Part 2**
+Now that you have a guiding description of your website, do some research on the web. Gather reference sites and make note of what you like and don't like about sites with similar motivations and purpose. Feel free to incorporate design into this section, although this would be more of a separate step. For the purposes of this class, we are going to have to combine the two.
+
+**Part 3**
+Once you have a sense of what your website will be about, draw a site map of its navigational structure. Your site map should include at least four web pages, subpages for those web pages, and clearly demonstrate the relationship between these pages. Annotate each page with a short description of its content and draw lines to represent links between pages. When you have completed your site map, take a picture of it or scan it so that you have a digital image of your work.
+
+**Part 4**
+Using pencil and paper or collage or any number of digital tools, create a page layout that represents the design layout of your next website. This is an opportunity for you to make design decisions before applying them with code. The layout should include dummy text, image placeholders, and navigation. You need not concern yourself with specific content at this stage; instead, focus on the arrangement of compositional elements on the page. You’re welcome to use the same general layout for every page of the site; if you choose to vary the layout for different pages, create a separate wireframe for each. When you have completed your handmade wireframe(s), take a picture of it or scan it so that you have a digital image of your work. Most likely, you will have at least two different designs for pages, one for the home page and one for other pages. You may have many more than that though. 
+
+**Part 5: Extra Credit**
+Now that you have an idea of what your layout should look like via the wireframes, prototype the homepage with HTML and CSS only. Prepare actual text and image content for the page (preferably your own, original content but feel free to draw from other sources as well). For this assignment you will only be coding one page of the site. Therefore, use “null” links for the navigation by giving the href attributes a value of "#". Your goal is to translate the drawing/collage you made in part 3 with HTML and CSS code and text and image content. To that end, you should incorporate the CSS float property into your styles in some way and clear it as necessary.
+
+This is an extra credit step. In any case, for the next assignment on "Responsive Web", this step will have to be done in order for us to play around with making our site responsive. Doing it now not only gives you extra credit, but saves you time for the next assignment. 
+
+**Publishing Your Page**
+Upload your prototypal web page from part 4 to the i6 Unix server in its own, “wireframe” directory. Test your files again once they are “live” on the Web server to make sure they are accessible. Update your assignments directory to link to this page.
+
+**Submitting Your Assignment**
+Submit the following via NYU Classes. More information on submitting files with NYU Classes is also available here.
+
+The text description of your topic and website as well as research links and comments(part 1 and 2)—copied and pasted in the assignment text box
+A digital file,photo or scan of your site map (part 3)
+A digital file,photo or scan of your handmade wireframe (part 4)
+if you choose to attempt the extra credit:
+The URL to your prototypal web page on i6 (part 5)
+A compressed archive containing all the files of your prototypal web page (part 5)
+
+**Grading**
+This assignment is worth 10 points with three points of extra credit up for grabs.
+
+Text description of at least 100 words of the student’s website topic (2 point)
+Research comments and reference URLs (2 point)
+A digital image of the student’s site map drawing (2 points)
+A digital image of the student’s handmade website wireframes that thoughtfully represent the layout of text, image, and navigation (4 points)
+EXTRA CREDIT:
+A single-page prototype of the home page wireframe, published to i6, that translates the drawing into HTML and CSS (3 points)

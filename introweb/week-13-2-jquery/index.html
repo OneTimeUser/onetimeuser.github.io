@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113019983-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113019983-1');
+
+    </script>
+
+    <title>
+        Week 13-2:JQuery - Intro to Web Design & Computer Principles    </title>
+
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="The fundamentals of building web presences" />
+    <!--[if lte IE 8]><script src="./../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="./../assets/css/main.css">
+<!--[if lte IE 9]><link rel="stylesheet" href="./../assets/css/ie9.css"><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="./../assets/css/ie8.css"><![endif]-->    <!-- User Heat Tag -->
+    <script type="text/javascript">
+        (function(add, cla) {
+            window['UserHeatTag'] = cla;
+            window[cla] = window[cla] || function() {
+                (window[cla].q = window[cla].q || []).push(arguments)
+            }, window[cla].l = 1 * new Date();
+            var ul = document.createElement('script');
+            var tag = document.getElementsByTagName('script')[0];
+            ul.async = 1;
+            ul.src = add;
+            tag.parentNode.insertBefore(ul, tag);
+        })('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');
+        _uhtracker({
+            id: 'uho0M4NamS'
+        });
+
+    </script>
+    <!-- End User Heat Tag -->
+</head>
+
+<body class="template-default page-week-13-2-jquery">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="./../index.html" class="logo">
+            <h1 class="title">Intro to Web Design &amp; Computer Principles</h1>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+        <!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="./../index.html">Home</a></li>
+
+                    <li><a href="./../syllabus/index.html">Syllabus</a></li>
+                    <li><a href="./../assignments/index.html">Assignments</a></li>
+                    <li><a href="./../grading/index.html">Grading</a></li>
+                    <li><a href="./../working-with-local-files/index.html">Working With Local Files</a></li>
+                    <li><a href="./../useful-links/index.html">Useful Links</a></li>
+                    <li><a href="./../unix/index.html">Unix</a></li>
+                    <li><a href="./../week-1/index.html">Week 01-1: Intro</a></li>
+                    <li><a href="./../week-01-2-unix/index.html">Week 01-2: Operating Systems and UNIX</a></li>
+                    <li><a href="./../week-02-1-html/index.html">Week 02-1: HTML</a></li>
+                    <li><a href="./../week-02-2-html/index.html">Week 02-2:HTML</a></li>
+                    <li><a href="./../week-03-1-html/index.html">Week 03-1:HTML</a></li>
+                    <li><a href="./../week-03-2-html-css/index.html">Week 03-2:HTML/CSS</a></li>
+                    <li><a href="./../week-04-1-css/index.html">Week 04-1:CSS</a></li>
+                    <li><a href="./../week-04-2-css/index.html">Week 04-2:CSS</a></li>
+                    <li><a href="./../week-05-1-css-layout/index.html">Week 05-1:CSS Layout</a></li>
+                    <li><a href="./../week-05-2-layout/index.html">Week 05-2:CSS Layout</a></li>
+                    <li><a href="./../week-06-1-images-and-animation/index.html">Week 06-1:Images and Animation</a></li>
+                    <li><a href="./../week-06-2-midterm-review/index.html">Week 06-2:Midterm Review</a></li>
+                    <li><a href="./../week-07-1-midterm/index.html">Week 07-1:Midterm</a></li>
+                    <li><a href="./../week-07-2-midterm/index.html">Week 07-2:Design</a></li>
+                    <li><a href="./../week-08-1-wireframes/index.html">Week 08-1: Wireframes</a></li>
+                    <li><a href="./../week-08-2-in-class-work/index.html">Week 08-2:In-Class-Work</a></li>
+                    <li><a href="./../week-09-1-responsive-web-design/index.html">Week 09-1:Responsive Web Design</a></li>
+                    <li><a href="./../week-9-2-responsive-web-design/index.html">Week 9-2:Responsive Web Design</a></li>
+                    <li><a href="./../week-10-1-css3-extravaganza/index.html">Week 10-1:CSS3 Extravaganza</a></li>
+                    <li><a href="./../week-10-2-bootstrap-intro/index.html">Week 10-2:Bootstrap Intro</a></li>
+                    <li><a href="./../week-11-1-bootstrap-fundamentals/index.html">Week 11-1:Bootstrap Fundamentals</a></li>
+                    <li><a href="./../week-11-2-forms/index.html">Week 11-2:Forms</a></li>
+                    <li><a href="./../week-12-1-audio-video/index.html">Week 12-1:Audio/Video</a></li>
+                    <li><a href="./../week-12-2-javascript/index.html">Week 12-2:Javascript Essentials</a></li>
+                    <li><a href="./../week-13-1-javascript/index.html">Week 13-1:Javascript Examples</a></li>
+                    <li><a href="./index.html">Week 13-2:JQuery</a></li>
+                    <li><a href="./../week-14-1-wrap/index.html">Week 14-1:Wrapping It Up</a></li>
+                    <li><a href="./../week-14-2-final-review/index.html">Week 14-2:Final Review</a></li>
+            </ul>
+</nav>
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <h1>
+                    Week 13-2:JQuery                </h1>
+
+                
+                <p>Jquery is a javascript file in your web pages that lets you find elements using css-style selectors and then do something else. It is one step in encoding interactivity to your webpages. </p>
+<p>jQuery takes many common tasks and  wraps them inside “methods” that you  can call with a single line of code. We use it for HTML and CSS manipulation, effects, and events! jQuery does not do anything that  couldn’t be done with pure JavaScript, rather its goal is for you to be able to do more  with less code. Here is a <a href="https://oscarotero.com/jquery/">LINK</a> to a nice jQuery cheatsheet!</p>
+<p>While we can write pure javascript without the need of importing anything, jQuery is different. jQuery is a library that wraps javascript in easier to use methods. Thus, we must link to the jQuery library in order for jQuery to work.</p>
+<p>We can do this two ways:</p>
+<ol>
+<li>Link to the hosted library (remember we did this already with Bootstrap, so potentially you might not have to link to it again if you have already done so.</li>
+<li>Download jQuery from the downloads page and link to it relatively wherever you decide to put your scripts (maybe in a scripts folder). </li>
+</ol>
+<p>Make sure you link to the jQuery library BEFORE linking to your own javascript/jQuery file. Scripts should usually be located after all of the HTML in your <code>&lt;body&gt;</code> element (all of your visible stuff) just before the closing body tag.</p>
+<p>The following is a simple example of writing a JQuery object:<br />
+<code>$(‘li.hot’)</code><br />
+This example uses a <code>$</code> which means &quot;JQuery&quot;. Then there is selector inside parentheses which is used to locate the element to be acted on.  Thus, the example reads,&quot;JQuery, get me all list items with a class of hot&quot;.</p>
+<p>So the jQuery object returns an item or group of items so that you can then apply a Jquery function to, like in the following example:</p>
+<p><code>$(‘li.hot’).addClass(‘complete’)</code></p>
+<p>The <code>.</code> is the member operator which says whatever is on the right should update whatever is on the left. In this example, <code>addClass()</code> is the method/function that adds a class name to an element. There are many methods you can use and some of these take parameters, some mandatory and some optional. So <code>addClass()</code> takes a parameter and that is a string (text) which is the name of the additional class.</p>
+<p>Take a look at this example: </p>
+<pre><code>const login = document.getElementById('login');
+const loginMenu = document.getElementById('loginMenu');
+
+login.addEventListener('click', function() {
+  if(loginMenu.style.display === 'none'){
+    loginMenu.style.display = 'inline';
+  } else {
+    loginMenu.style.display = 'none';
+  }
+});</code></pre>
+<p>The above code is pure javascript that encodes a click behavior on an item to make a menu appear or disappear. Simple stuff. Now let's take a look at the equivalent in jQuery:</p>
+<pre><code>$('#login').click(function() {
+  $('#loginMenu').toggle()
+});</code></pre>
+<p>WHOA!</p>
+<p>Other examples:</p>
+<pre><code>document.getElementById("container").innerHTML += "&lt;p&gt;more content&lt;/p&gt;"; //javascript
+
+$("#container").append("&lt;p&gt;more content&lt;/p&gt;");//jQuery</code></pre>
+<pre><code>document.getElementById("container”).textContent = “Hello”; //javascript
+
+$(‘#container’).text(“Hello”);//jQuery</code></pre>
+<p>The jQuery .ready() method waits until the HTML page's DOM is ready to manipulate. You should wrap all JavaScript behavior inside of the .ready() method. This will make sure the web page is rendered in the browser before any jQuery code executes. </p>
+<pre><code>$( document ).ready(function() {
+
+    // Your code here.
+
+});</code></pre>
+<p>Like so:</p>
+<pre><code>$( document ).ready(function() {
+
+    $( "a" ).click(function( event ) {
+
+        alert( "Thanks for visiting!" );
+
+    });
+
+});</code></pre>
+<p>Developers often save jQuery objects in variables, like so:<br />
+<code>const $jQueryObject = $('.someClass');</code><br />
+It is best practice to name jQuery object variables with a leading <code>$</code>:</p>
+<pre><code>const $navDropdown = $('#nav-dropdown');
+$navDropdown.hide();</code></pre>
+<p>The jQuery <code>.on()</code> method adds event handlers to jQuery objects. The method takes two parameters: a string declaring the event to listen for (the handler) and a callback function to fire when the event is detected.</p>
+<pre><code>$('#login').on('click', function() {
+  $loginForm.show();
+})</code></pre>
+<p>In the example above, we use <code>.on()</code> to add the click event handler to the <code>#login</code> element. Inside of the callback function, we use the <code>.show()</code> method to show the jQuery object saved in the <code>$loginForm</code> variable. </p>
+<pre><code>$(document).ready(function() {
+  const $menuButton = $('.menu-button');
+  const $navDropdown = $('#nav-dropdown');
+
+  $menuButton.on('click', function() {
+    $navDropdown.show();
+  });
+
+  $navDropdown.on('mouseleave', function() {
+    $navDropdown.hide();
+  });
+})</code></pre>
+<p>EFFECTS<br />
+JQuery has a number of method effects that you will probably want to use. They are easy so go ahead and try them out. The code below shows some effects you can use with some parameters you can pass in to control the speed of the effect.</p>
+<pre><code>$(document).ready(function() {
+  $('.menu-button').on('click',function() {
+    $('#nav-dropdown').slideToggle('slow');
+  });
+
+  $(".login-button").on("click", function() {
+    $(".login-form").slideToggle();
+  });
+
+  $(".arrow-one").on("click", function() {
+    $(".shoe-details-one").toggle();
+  });
+
+  $(".sizes-one").on("click", function() {
+    $(".text-one").fadeIn(1000);
+  });
+
+  $(".arrow-two").on("click", function() {
+    $(".shoe-details-two").toggle();
+  });
+
+  $(".sizes-two").on("click", function() {
+    $(".text-two").fadeIn();
+  });
+
+  $(".arrow-three").on("click", function() {
+    $(".shoe-details-three").toggle();
+  });
+
+  $(".sizes-three").on("click", function() {
+    $(".text-three").fadeIn(1000);
+  });
+
+});</code></pre>
+<p>EVENTS<br />
+The jQuery library provides a collection of methods that serve one of two purposes.<br />
+1.To listen for an event        2.To add a visual effect<br />
+Events link the two in what is called an &quot;event handler&quot; -&gt; an event listener and a callback function together.<br />
+Event Listener is a method that listens for a specified event to occur like a click!<br />
+Callback function executes when something triggers the listener.</p>
+<pre><code>$('.example-class').on('click', function() {
+    // Execute code here when .example-class is clicked
+});</code></pre>
+<p>The code below declares a function first so that we can use it as the callback function in our event handler.</p>
+<pre><code>function notify() {
+  alert( "clicked" );
+}
+$( "button" ).on( "click", notify );</code></pre>
+<p>Others events we can use: <code>mouseenter</code>, <code>mouseleave</code>,<code>mousemove</code>, <code>dblclick</code>, <code>keydown</code>,<code>keyup</code><br />
+Here's some sample code:</p>
+<pre><code>$(document).ready(function() {
+  $('.login-button').on('click', function() {
+    $('.login-form').show();
+  });
+
+  $('.menu-button').on('mouseenter', function() {
+    $('.nav-menu').show()
+  });
+  $('.nav-menu').on('mouseleave', function() {
+    $('.nav-menu').hide();
+  });
+
+}); </code></pre>
+<p>We can also <strong>chain</strong> methods and events together, which is a wonderful thing about jQuery. Take a look at the following code which uses the addClass() and removeClass() methods to alter the style of a given element. </p>
+<pre><code>$('.product-photo').on('mouseenter', function() {
+    $('.product-photo').addClass('photo-active');
+  }).on('mouseleave', function() {
+    $('.product-photo').removeClass('photo-active');
+  });</code></pre>
+<p>Heres the thing about the above code. Let's say there are multiple photos with the above <code>.product-photo</code> class, when we add the <code>.photo-active</code> class, it adds it to all photos, and not just the one our mouse is over. To prevent this, we use something called <code>currentTarget</code>.<br />
+Using the above code, it should look more like this:</p>
+<pre><code>$('.product-photo').on('mouseenter', event =&gt; {
+    $(event.currentTarget).addClass('photo-active');
+  }).on('mouseleave', event =&gt; {
+    $(event.currrentTarget).removeClass('photo-active');
+  });</code></pre>
+<p>JQuery also allows us to change CSS on the fly using the <code>css()</code> method.<br />
+For a single style change, we would write it like this:<br />
+<code>$(‘.product-title’).css(‘color’,’#fff’);</code></p>
+<p>For multiple style changes on the same element, we would write it a bit differently:</p>
+<pre><code>$('.product-title').css({
+  color: '#FFFFFF',
+  backgroundColor: '#000000',
+  fontSize: '20px'
+});</code></pre>
+<p>Pay attention to the camelCase when referencing style properties that are normally spelled out in CSS like <code>background-color</code> and <code>font-size</code>. We would write those as <code>backgroundColor</code> and <code>fontSize</code>.</p>
+<p>We can also use the <code>animate()</code> method to animate css properties from their existing CSS.</p>
+<pre><code>$('.example-class').animate({
+  height: '100px',
+  width: '100px',
+  borderWidth: '10px'
+}, 500);</code></pre>
+<p>Finally, traversing the DOM will probably be one of the harder methods to remember and understand. These traversing methods however, are useful in applying effects to other parts of the document.<br />
+<code>const $kids = $('#holder').children();</code><br />
+This creates a variable that contains all children of the element with <code>#holder</code>.</p>
+<p>Other important methods for this:<br />
+<code>.children()</code> to target an element's child elements.<br />
+<code>.siblings()</code> to target elements adjacent to an element.<br />
+<code>.parent()</code> to target an element's parent.<br />
+<code>.closest()</code> travels up the DOM tree from the current element to target the closest element with a given selector.<br />
+<code>.next()</code> to target the element immediately following the selected element.<br />
+<code>.prev()</code> to target the element that is immediately preceding the selected element.<br />
+<code>.find()</code> to target descendant elements by some selector, ie- class, id, tag etc.</p>
+<p>YOu can see some working examples of the above in the codepen I was working with today. Apologies for some of the confusion on non-working methods...I got a bit disoriented in my code. </p>
+<p>Here for your perusal. I commented this heavily to help make it understandable. </p>
+<p data-height="469" data-theme-id="0" data-slug-hash="erzQRm" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="JQUERY" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/erzQRm/">JQUERY</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<hr />
+<p>Try copying, pasting, and modifying some of these examples:<br />
+Place this in the body element:</p>
+<pre><code>&lt;h1 id="header"&gt;LIST&lt;/h1&gt;
+        &lt;h2&gt;Buy Groceries&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Milk&lt;/li&gt;
+            &lt;li&gt;Eggs&lt;/li&gt;
+        &lt;/ul&gt;</code></pre>
+<p>Place this just before the closing body tag:</p>
+<pre><code>$('#header').addClass('headline');
+            $('li:first-child').hide().fadeIn(1500);
+            $('li').on('click', function() {
+                $(this).remove();
+            });</code></pre>
+<p>__<br />
+The following includes a style, HTML, and JQuery. Place everything where appropriate.</p>
+<pre><code>#square {
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+}</code></pre>
+<pre><code>&lt;div id="square"&gt;&lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li id="red"&gt;&lt;a href="#"&gt;Red square&lt;/a&gt;&lt;/li&gt;
+      &lt;li id="blue"&gt;&lt;a href="#"&gt;Blue square&lt;/a&gt;&lt;/li&gt;
+      &lt;li id="clear"&gt;&lt;a href="#"&gt;Clear square&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+<pre><code>$('#red').click(function() {
+    $('#square').css('background-color', 'red');
+  });
+
+  $('#blue').click(function() {
+    $('#square').css('background-color', 'blue');
+  });
+
+  $('#clear').click(function() {
+    $('#square').css('background-color', 'transparent');
+  });</code></pre>            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+            <section id="contact">
+        <h2>Have Questions?</h2>
+
+        
+        <form method="post" action="#contact">
+            <div class="field half first">
+                <input type="text" name="contact[name]" id="name" placeholder="Name" />
+            </div>
+
+            <div class="field half">
+                <input type="email" name="contact[email]" id="email" placeholder="Email" />
+            </div>
+
+            <div class="field">
+                <textarea name="contact[message]" id="message" placeholder="Message"></textarea>
+            </div>
+
+            <input type="text" name="contact[antibot]" id="antibot" style="display:none" />
+
+            <ul class="actions">
+                <li><input type="submit" value="Send" name="contact[submit]" class="special" /></li>
+            </ul>
+        </form>
+    </section>
+
+        <div class="copyright">
+            <ul>
+<li>© 2018 All right reserved</li>
+</ul>        </div>
+    </div>
+</footer>
+    </div>
+
+    <script src="./../assets/js/jquery.min.js"></script><script src="./../assets/js/skel.min.js"></script><script src="./../assets/js/util.js"></script><!--[if lte IE 8]><script src="./../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="./../assets/js/main.js"></script>
+</body>
+
+</html>

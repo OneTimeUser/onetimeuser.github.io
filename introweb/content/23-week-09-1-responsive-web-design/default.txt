@@ -1,0 +1,48 @@
+Title: Week 09-1:Responsive Web Design
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture:**
+Today we talked about media queries and the various uses of them in working ideally mobile first design. 
+
+A typical media query looks something like the following:
+```
+@media (min-width: 600px){
+     body{
+        background-color: black;
+    }
+}
+```
+This is typically placed at the bottom of one's style sheet, after all of the default styles. So for instance, in mobile first targeted design, the default styles all address mobile screen sizes. Then with each additional media query, larger screen sizes are addressed in order of smallest to largest using primarily a `min-width: [pixel width]` size.
+
+So `@media (min-width: 600px)` targets any device or screen size larger than and including 600px while `@media (min-width: 900px)` targets any device or screen size larger than and including 900px. From here, you can have styles that exist on any device larger and including 600px to infinity and simply leave them in that media query and not overwrite them in subsequent media queries. Or if you have a style that needs to service just between 600px and 899px, the you can overwrite the style in the next media query. 
+
+Take below for example:
+
+```
+@media (min-width: 600px){
+    .col{
+        width: 100%;
+    }
+}
+```
+At any device or screen width 600px and above, elements with class `col` will have a width of 100%. 
+Now see the next media query below:
+```
+@media (min-width: 900px){
+    .col{
+        width: 50%;
+        float: left;
+    }
+}
+```
+On any devices or screens with a larger width of 900px and beyond, I have turned my 100% width single column `col` class into an element that allows for two columns. I made it width of 50% and floated it to the left so the elements should be side by side.
+
+**Slides:**
+(file: 9-1.pdf text:Download presentation here)

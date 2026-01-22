@@ -1,0 +1,297 @@
+Title: Week 13-2:JQuery
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Jquery is a javascript file in your web pages that lets you find elements using css-style selectors and then do something else. It is one step in encoding interactivity to your webpages. 
+
+jQuery takes many common tasks and  wraps them inside “methods” that you  can call with a single line of code. We use it for HTML and CSS manipulation, effects, and events! jQuery does not do anything that  couldn’t be done with pure JavaScript, rather its goal is for you to be able to do more  with less code. Here is a (link: https://oscarotero.com/jquery/ text: LINK) to a nice jQuery cheatsheet!
+
+While we can write pure javascript without the need of importing anything, jQuery is different. jQuery is a library that wraps javascript in easier to use methods. Thus, we must link to the jQuery library in order for jQuery to work.
+
+We can do this two ways:
+1. Link to the hosted library (remember we did this already with Bootstrap, so potentially you might not have to link to it again if you have already done so.
+2. Download jQuery from the downloads page and link to it relatively wherever you decide to put your scripts (maybe in a scripts folder). 
+
+Make sure you link to the jQuery library BEFORE linking to your own javascript/jQuery file. Scripts should usually be located after all of the HTML in your `<body>` element (all of your visible stuff) just before the closing body tag.
+
+The following is a simple example of writing a JQuery object:
+`$(‘li.hot’)` 
+This example uses a `$` which means "JQuery". Then there is selector inside parentheses which is used to locate the element to be acted on.  Thus, the example reads,"JQuery, get me all list items with a class of hot".
+
+So the jQuery object returns an item or group of items so that you can then apply a Jquery function to, like in the following example:
+
+`$(‘li.hot’).addClass(‘complete’)`
+
+The `.` is the member operator which says whatever is on the right should update whatever is on the left. In this example, `addClass()` is the method/function that adds a class name to an element. There are many methods you can use and some of these take parameters, some mandatory and some optional. So `addClass()` takes a parameter and that is a string (text) which is the name of the additional class.
+
+Take a look at this example: 
+```
+const login = document.getElementById('login');
+const loginMenu = document.getElementById('loginMenu');
+
+login.addEventListener('click', function() {
+  if(loginMenu.style.display === 'none'){
+    loginMenu.style.display = 'inline';
+  } else {
+    loginMenu.style.display = 'none';
+  }
+});
+```
+The above code is pure javascript that encodes a click behavior on an item to make a menu appear or disappear. Simple stuff. Now let's take a look at the equivalent in jQuery:
+```
+$('#login').click(function() {
+  $('#loginMenu').toggle()
+});
+```
+WHOA!
+
+Other examples:
+```
+document.getElementById("container").innerHTML += "<p>more content</p>"; //javascript
+
+$("#container").append("<p>more content</p>");//jQuery
+```
+```
+document.getElementById("container”).textContent = “Hello”; //javascript
+
+$(‘#container’).text(“Hello”);//jQuery
+```
+
+The jQuery .ready() method waits until the HTML page's DOM is ready to manipulate. You should wrap all JavaScript behavior inside of the .ready() method. This will make sure the web page is rendered in the browser before any jQuery code executes. 
+```
+$( document ).ready(function() {
+ 
+    // Your code here.
+ 
+});
+```
+Like so:
+```
+$( document ).ready(function() {
+ 
+    $( "a" ).click(function( event ) {
+ 
+        alert( "Thanks for visiting!" );
+ 
+    });
+ 
+});
+```
+
+Developers often save jQuery objects in variables, like so:
+`const $jQueryObject = $('.someClass');`
+It is best practice to name jQuery object variables with a leading `$`:
+```
+const $navDropdown = $('#nav-dropdown');
+$navDropdown.hide();
+```
+
+The jQuery `.on()` method adds event handlers to jQuery objects. The method takes two parameters: a string declaring the event to listen for (the handler) and a callback function to fire when the event is detected.
+```
+$('#login').on('click', function() {
+  $loginForm.show();
+})
+```
+In the example above, we use `.on()` to add the click event handler to the `#login` element. Inside of the callback function, we use the `.show()` method to show the jQuery object saved in the `$loginForm` variable. 
+```
+$(document).ready(function() {
+  const $menuButton = $('.menu-button');
+  const $navDropdown = $('#nav-dropdown');
+
+  $menuButton.on('click', function() {
+    $navDropdown.show();
+  });
+  
+  $navDropdown.on('mouseleave', function() {
+    $navDropdown.hide();
+  });
+})
+```
+EFFECTS
+JQuery has a number of method effects that you will probably want to use. They are easy so go ahead and try them out. The code below shows some effects you can use with some parameters you can pass in to control the speed of the effect.
+```
+$(document).ready(function() {
+  $('.menu-button').on('click',function() {
+    $('#nav-dropdown').slideToggle('slow');
+  });
+	
+  $(".login-button").on("click", function() {
+    $(".login-form").slideToggle();
+  });
+  
+  $(".arrow-one").on("click", function() {
+    $(".shoe-details-one").toggle();
+  });
+  
+  $(".sizes-one").on("click", function() {
+    $(".text-one").fadeIn(1000);
+  });
+  
+  $(".arrow-two").on("click", function() {
+    $(".shoe-details-two").toggle();
+  });
+  
+  $(".sizes-two").on("click", function() {
+    $(".text-two").fadeIn();
+  });
+  
+  $(".arrow-three").on("click", function() {
+    $(".shoe-details-three").toggle();
+  });
+  
+  $(".sizes-three").on("click", function() {
+    $(".text-three").fadeIn(1000);
+  });
+  
+});
+```
+EVENTS
+The jQuery library provides a collection of methods that serve one of two purposes.
+1.To listen for an event 		2.To add a visual effect 
+Events link the two in what is called an "event handler" -> an event listener and a callback function together. 
+Event Listener is a method that listens for a specified event to occur like a click!
+Callback function executes when something triggers the listener.
+```
+$('.example-class').on('click', function() {
+    // Execute code here when .example-class is clicked
+});
+```
+The code below declares a function first so that we can use it as the callback function in our event handler.
+```
+function notify() {
+  alert( "clicked" );
+}
+$( "button" ).on( "click", notify );
+```
+Others events we can use: `mouseenter`, `mouseleave`,` mousemove`, `dblclick`, `keydown`,`keyup`
+Here's some sample code:
+```
+$(document).ready(function() {
+  $('.login-button').on('click', function() {
+    $('.login-form').show();
+  });
+  
+  $('.menu-button').on('mouseenter', function() {
+    $('.nav-menu').show()
+  });
+  $('.nav-menu').on('mouseleave', function() {
+    $('.nav-menu').hide();
+  });
+  
+}); 
+```
+We can also **chain** methods and events together, which is a wonderful thing about jQuery. Take a look at the following code which uses the addClass() and removeClass() methods to alter the style of a given element. 
+```
+$('.product-photo').on('mouseenter', function() {
+    $('.product-photo').addClass('photo-active');
+  }).on('mouseleave', function() {
+    $('.product-photo').removeClass('photo-active');
+  });
+```
+Heres the thing about the above code. Let's say there are multiple photos with the above `.product-photo` class, when we add the `.photo-active` class, it adds it to all photos, and not just the one our mouse is over. To prevent this, we use something called `currentTarget`.
+Using the above code, it should look more like this:
+```
+$('.product-photo').on('mouseenter', event => {
+    $(event.currentTarget).addClass('photo-active');
+  }).on('mouseleave', event => {
+    $(event.currrentTarget).removeClass('photo-active');
+  });
+```
+JQuery also allows us to change CSS on the fly using the `css()` method. 
+For a single style change, we would write it like this:
+`$(‘.product-title’).css(‘color’,’#fff’);`
+
+For multiple style changes on the same element, we would write it a bit differently:
+```
+$('.product-title').css({
+  color: '#FFFFFF',
+  backgroundColor: '#000000',
+  fontSize: '20px'
+});
+```
+Pay attention to the camelCase when referencing style properties that are normally spelled out in CSS like `background-color` and `font-size`. We would write those as `backgroundColor` and `fontSize`.
+
+We can also use the `animate()` method to animate css properties from their existing CSS.
+```
+$('.example-class').animate({
+  height: '100px',
+  width: '100px',
+  borderWidth: '10px'
+}, 500);
+```
+Finally, traversing the DOM will probably be one of the harder methods to remember and understand. These traversing methods however, are useful in applying effects to other parts of the document. 
+`const $kids = $('#holder').children();`
+This creates a variable that contains all children of the element with `#holder`.
+
+Other important methods for this:
+`.children()` to target an element's child elements.
+`.siblings()` to target elements adjacent to an element.
+`.parent()` to target an element's parent.
+`.closest()` travels up the DOM tree from the current element to target the closest element with a given selector.
+`.next()` to target the element immediately following the selected element.
+`.prev()` to target the element that is immediately preceding the selected element.
+`.find()` to target descendant elements by some selector, ie- class, id, tag etc.
+
+YOu can see some working examples of the above in the codepen I was working with today. Apologies for some of the confusion on non-working methods...I got a bit disoriented in my code. 
+
+Here for your perusal. I commented this heavily to help make it understandable. 
+
+<p data-height="469" data-theme-id="0" data-slug-hash="erzQRm" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="JQUERY" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/erzQRm/">JQUERY</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+____
+Try copying, pasting, and modifying some of these examples:
+Place this in the body element:
+```
+<h1 id="header">LIST</h1>
+        <h2>Buy Groceries</h2>
+        <ul>
+            <li>Milk</li>
+            <li>Eggs</li>
+        </ul>
+```
+Place this just before the closing body tag:
+```
+$('#header').addClass('headline');
+            $('li:first-child').hide().fadeIn(1500);
+            $('li').on('click', function() {
+                $(this).remove();
+            });
+```
+__
+The following includes a style, HTML, and JQuery. Place everything where appropriate.
+```
+#square {
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+}
+```
+```
+<div id="square"></div>
+    <ul>
+      <li id="red"><a href="#">Red square</a></li>
+      <li id="blue"><a href="#">Blue square</a></li>
+      <li id="clear"><a href="#">Clear square</a></li>
+    </ul>
+```
+```
+$('#red').click(function() {
+    $('#square').css('background-color', 'red');
+  });
+
+  $('#blue').click(function() {
+    $('#square').css('background-color', 'blue');
+  });
+
+  $('#clear').click(function() {
+    $('#square').css('background-color', 'transparent');
+  });
+```

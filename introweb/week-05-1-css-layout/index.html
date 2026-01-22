@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113019983-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113019983-1');
+
+    </script>
+
+    <title>
+        Week 05-1:CSS Layout - Intro to Web Design & Computer Principles    </title>
+
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="The fundamentals of building web presences" />
+    <!--[if lte IE 8]><script src="./../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="./../assets/css/main.css">
+<!--[if lte IE 9]><link rel="stylesheet" href="./../assets/css/ie9.css"><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="./../assets/css/ie8.css"><![endif]-->    <!-- User Heat Tag -->
+    <script type="text/javascript">
+        (function(add, cla) {
+            window['UserHeatTag'] = cla;
+            window[cla] = window[cla] || function() {
+                (window[cla].q = window[cla].q || []).push(arguments)
+            }, window[cla].l = 1 * new Date();
+            var ul = document.createElement('script');
+            var tag = document.getElementsByTagName('script')[0];
+            ul.async = 1;
+            ul.src = add;
+            tag.parentNode.insertBefore(ul, tag);
+        })('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');
+        _uhtracker({
+            id: 'uho0M4NamS'
+        });
+
+    </script>
+    <!-- End User Heat Tag -->
+</head>
+
+<body class="template-default page-week-05-1-css-layout">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="./../index.html" class="logo">
+            <h1 class="title">Intro to Web Design &amp; Computer Principles</h1>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+        <!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="./../index.html">Home</a></li>
+
+                    <li><a href="./../syllabus/index.html">Syllabus</a></li>
+                    <li><a href="./../assignments/index.html">Assignments</a></li>
+                    <li><a href="./../grading/index.html">Grading</a></li>
+                    <li><a href="./../working-with-local-files/index.html">Working With Local Files</a></li>
+                    <li><a href="./../useful-links/index.html">Useful Links</a></li>
+                    <li><a href="./../unix/index.html">Unix</a></li>
+                    <li><a href="./../week-1/index.html">Week 01-1: Intro</a></li>
+                    <li><a href="./../week-01-2-unix/index.html">Week 01-2: Operating Systems and UNIX</a></li>
+                    <li><a href="./../week-02-1-html/index.html">Week 02-1: HTML</a></li>
+                    <li><a href="./../week-02-2-html/index.html">Week 02-2:HTML</a></li>
+                    <li><a href="./../week-03-1-html/index.html">Week 03-1:HTML</a></li>
+                    <li><a href="./../week-03-2-html-css/index.html">Week 03-2:HTML/CSS</a></li>
+                    <li><a href="./../week-04-1-css/index.html">Week 04-1:CSS</a></li>
+                    <li><a href="./../week-04-2-css/index.html">Week 04-2:CSS</a></li>
+                    <li><a href="./index.html">Week 05-1:CSS Layout</a></li>
+                    <li><a href="./../week-05-2-layout/index.html">Week 05-2:CSS Layout</a></li>
+                    <li><a href="./../week-06-1-images-and-animation/index.html">Week 06-1:Images and Animation</a></li>
+                    <li><a href="./../week-06-2-midterm-review/index.html">Week 06-2:Midterm Review</a></li>
+                    <li><a href="./../week-07-1-midterm/index.html">Week 07-1:Midterm</a></li>
+                    <li><a href="./../week-07-2-midterm/index.html">Week 07-2:Design</a></li>
+                    <li><a href="./../week-08-1-wireframes/index.html">Week 08-1: Wireframes</a></li>
+                    <li><a href="./../week-08-2-in-class-work/index.html">Week 08-2:In-Class-Work</a></li>
+                    <li><a href="./../week-09-1-responsive-web-design/index.html">Week 09-1:Responsive Web Design</a></li>
+                    <li><a href="./../week-9-2-responsive-web-design/index.html">Week 9-2:Responsive Web Design</a></li>
+                    <li><a href="./../week-10-1-css3-extravaganza/index.html">Week 10-1:CSS3 Extravaganza</a></li>
+                    <li><a href="./../week-10-2-bootstrap-intro/index.html">Week 10-2:Bootstrap Intro</a></li>
+                    <li><a href="./../week-11-1-bootstrap-fundamentals/index.html">Week 11-1:Bootstrap Fundamentals</a></li>
+                    <li><a href="./../week-11-2-forms/index.html">Week 11-2:Forms</a></li>
+                    <li><a href="./../week-12-1-audio-video/index.html">Week 12-1:Audio/Video</a></li>
+                    <li><a href="./../week-12-2-javascript/index.html">Week 12-2:Javascript Essentials</a></li>
+                    <li><a href="./../week-13-1-javascript/index.html">Week 13-1:Javascript Examples</a></li>
+                    <li><a href="./../week-13-2-jquery/index.html">Week 13-2:JQuery</a></li>
+                    <li><a href="./../week-14-1-wrap/index.html">Week 14-1:Wrapping It Up</a></li>
+                    <li><a href="./../week-14-2-final-review/index.html">Week 14-2:Final Review</a></li>
+            </ul>
+</nav>
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <h1>
+                    Week 05-1:CSS Layout                </h1>
+
+                
+                <p>Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout. FOr example the following displays like so:</p>
+<pre><code>&lt;p&gt;Gonna get these groceries:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Baby Corn, duh.&lt;/li&gt;
+  &lt;li&gt;Jumbo Shrimp&lt;/li&gt;
+  &lt;li&gt;Cottage Cheese&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The end!&lt;/p&gt;</code></pre>
+<p>Note here how the HTML is displayed in the exact order in which it appears in the source code<br />
+Layout techniques tend to override this default behavior, using:</p>
+<ol>
+<li>The <em>position property</em> — static is the default in normal flow, but you can cause elements to be laid out differently using other values, for example always fixed to the top left of the browser viewport.</li>
+<li><em>Floats</em> — applying a float value such as left can cause block level elements to line up alongside one another rather than sit on top of one another</li>
+<li>The <em>display property</em> — standard values such as block, inline or inline-block can change how elements behave in normal flow (see Types of CSS boxes for more information), whereas uncommon or specialised values allow us to lay out elements in completely different ways using tools like Flexbox.</li>
+</ol>
+<p>Let's first observe the <code>display</code> property really quick. This property specifies the type of rendering box used for an element. We talked a bit about how elements are inline (displayed on or in the same line provided there is space) or block (blocks out successive elements from rendering on the same line). You can actually reset how these elements are by setting the <code>display</code>. Thus you can make inline elements (like <code>img</code> elements) act block like or make block elements (like <code>h1</code> or <code>p</code> elements) act inline. Lets try really quick using the above list as our source HTML.</p>
+<p>Adding the following CSS renders the <code>&lt;li&gt;</code> differently than how they normally would render. </p>
+<p>styles.css</p>
+<pre><code>li {
+   display: inline;
+}</code></pre>
+<p>You could essentially do the same for a list of images (typically rendered inline) by changing their <code>display</code> property to <code>block</code>. This would render each image on top of each other versus next to each other. </p>
+<p>styles.css</p>
+<pre><code>img {
+   display: block;
+}</code></pre>
+<p>Also keep in mind that <code>display:none;</code> does not render the element or its descendents. It's almost as if the element is not there. This is useful down the line for making alements interactive with jQuery or javascript (making them appear or disappear).</p>
+<p><strong><em>FLOATS</em></strong><br />
+Floats is a technique that allows the elements to float to the left or right of one another, rather than the default of sitting on top of one another. The main uses of floats are to lay out columns and float text around an image.<br />
+The float property has four possible values:</p>
+<p>1.left — floats the element to the left.<br />
+2.right — floats the element to the right.<br />
+3.none — specified no floating at all. This is the default value.<br />
+4.inherit — specifies that the value of the float property should be inherited from the parent element.</p>
+<p>Let's try and build a simple two column layout using the following HTML:</p>
+<pre><code>&lt;h1&gt;This will be 2 Columns&lt;/h1&gt;
+&lt;div class="first"&gt;
+  &lt;h2&gt;First column&lt;/h2&gt;
+  &lt;p&gt; Look at me! I am the first column! Hear me roar! &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="second"&gt;
+  &lt;h2&gt;Second column&lt;/h2&gt;
+  &lt;p&gt;I am the second column. Second is the best, duh.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>We actually want these two <code>div</code>'s to sit side by side rather than on top of each other. </p>
+<p>Let's use the following CSS to do set this up:</p>
+<pre><code>div.first {
+  float: left;
+}
+
+div.second {
+  float: right;
+}</code></pre>
+<p>YOu can see in the example that so long as there is space for the floated object, it will affix itself around the other object(s). Try dragging the window to make it smaller and you will see that the floated right object moves below the left floated one. In order to make this more &quot;real-world&quot;, set some fixed or variable widths to some of the elements so that we may better predict their behavior. </p>
+<pre><code>body {
+  width: 90%; /*width will stay at 90% width of window until it reaches 900px in which it is then static. */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+div.first {
+  float: left;
+  width: 48%;
+}
+
+div.second {
+  float: right;
+  width: 48%;
+}</code></pre>
+<p>Now try changing <code>div.second</code> float property to left and see what happens. Instead of floating to the right and having the right edge of the div right at the right margin, the left edge of the div moves as close to the left floated element as it can. </p>
+<p>Now try adding an additional column and adjusting the widths so that they are proportional. See if you can style in some gutter space so that the columns have some breathing room. since we are using percentages to assign width, keep using percentages to assign either padding or margin. Your code MAY look like this:</p>
+<pre><code>&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        div {
+            width: 32%;
+            float: left;
+            margin-right: 2%;
+        }
+
+        div:nth-of-type(3n) {
+            margin-right: 0;
+            background-color: red;
+        }
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+        &lt;h1&gt;2 column layout example&lt;/h1&gt;
+        &lt;div&gt;
+            &lt;h2&gt;First column&lt;/h2&gt;
+            &lt;p&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;h2&gt;Second column&lt;/h2&gt;
+            &lt;p&gt;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;h2&gt;Third column&lt;/h2&gt;
+            &lt;p&gt;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;h2&gt;First column&lt;/h2&gt;
+            &lt;p&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;h2&gt;Second column&lt;/h2&gt;
+            &lt;p&gt;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;h2&gt;Third column&lt;/h2&gt;
+            &lt;p&gt;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.&lt;/p&gt;
+        &lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>In the above example, our CSS adds some margin to every <code>div</code> but ideally we'd rather not have right margin on the last element in each row since it would be unnecessary. So we use the selector <code>nth-of-type</code> to iterate over every third div to strike the spacing. Now, try it with images to create your own little image gallery! Something to remember:</p>
+<p>The <code>div:nth-child(3n)</code> selector, in &quot;Plain English,&quot; means select an element if:</p>
+<ol>
+<li>It is a <code>&lt;div&gt;</code></li>
+<li>It is every third child of a parent</li>
+</ol>
+<p>Our <code>div:nth-of-type(3n)</code> selector, in &quot;Plain English,&quot; means:</p>
+<ol>
+<li>Select every third <code>&lt;div&gt;</code> of a parent</li>
+</ol>
+<p>Feel free to test more out here: <a href="https://css-tricks.com/examples/nth-child-tester/">https://css-tricks.com/examples/nth-child-tester/</a></p>
+<p>One thing I forgot to go over in class was the <code>clear</code> property.  When yo start building layouts with the <code>float</code> property, you will eventually come across a situation where you want an element to float around another element but do not want subsequent elements to do the same. This often happens with images and text and images with corresponding text.  Try looking at the following code in your browser:</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+img {
+    float: left;
+}
+
+p.clear {
+
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;CLEAR&lt;/h1&gt;
+
+&lt;img src="https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.k7Y-PuDeruM7TWq13eUs9AAAAA%26amp%3Bpid%3D15.1&amp;f=1"  height="132"&gt;
+&lt;p&gt;This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.&lt;/p&gt;
+&lt;p class="clear"&gt;This is also some text. This is also some text. This is also some text. This is also some text. This is also some text. This is also some text.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remove the "clear" class to see the effect.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Here you can see that all text floats around the image of the tree. Maybe this is what you want. Great. Let's say you just want the first paragraph to float next to the image but want the next one to begin below the image. This is where we use <code>clear</code>. The <code>clear</code> property essentially dissolves the <code>float</code> interaction between the cleared element and the floated element.  Try placing the following code in the <code>p.clear</code> style rule: <code>clear: left;</code>.  This clears any floated objects to the left of the element so now the text appears below the image instead of to the right of the image. Try placing some other values for the <code>clear</code> property in there: <code>right</code> and <code>both</code>.  You see right does nothing since there are no right floated objects. Both clears right and left and in this instance, acts similar to <code>clear: left;</code>.  </p>
+<p>Let's move on. </p>
+<p><strong><em>POSITIONING</em></strong><br />
+There are four main types of positioning to recognize:</p>
+<p>1.Static positioning is the default that every element gets — it just means &quot;put the element into its normal position in the document layout flow — nothing special to see here&quot;.</p>
+<p>2.Relative positioning allows you to modify an element's position on the page, moving it relative to its position in normal flow — including making it overlap other elements on the page. Use case: minor layout tweaks</p>
+<p>3.Absolute positioning moves an element completely out of the page's normal layout flow, like it is sitting on its own separate layer. From there, you can fix it in a position relative to the edges of the page's <code>&lt;html&gt;</code> element or its nearest positioned ancestor element (that is the closest ancestor with an assigned position). Use case: more complex layout effects, tabbed boxes elements that sit on top of each other, information panels that sit off screen by default, but can be made to slide on screen using a control button.</p>
+<p>4.Fixed positioning is very similar to absolute positioning, except that it fixes an element relative to the browser viewport, not another element. Use case: persistent navigation menu or header that always stays in the same place on the screen as the rest of the content scrolls.</p>
+<p>Let's look at some examples.</p>
+<pre><code>&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        *{
+          box-sizing: border-box; /*includes padding and border in sizing*/
+        }
+
+        body {
+          width: 500px;
+          margin: 0 auto; /*Combined with a declared width will automaticaly center*/
+        }
+
+        p {
+          background: red;
+          border: 3px solid orange;
+          padding: 10px;
+          margin: 10px;
+        }
+        img{
+          width: 50%;
+          padding: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+   &lt;h1&gt;Positions&lt;/h1&gt;
+
+    &lt;p&gt;I am a paragraph element so basically a block level element&lt;/p&gt;
+    &lt;img src="https://www.pexels.com/search/tree/" alt="I am inline!"&gt;&lt;img src="https://www.pexels.com/search/tree/" alt="I am inline!"&gt;
+    &lt;p class="positioned"&gt;I am a paragraph element so basically a block level element&lt;/p&gt;
+    &lt;p&gt;I am a paragraph element so basically a block level element&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>RELATIVE POSITIONING</p>
+<p>Relative positioning is generally used for making small alignment and design tweaks to elements. Maybe an icon should be moved down a bit to be more inline with text, etc. </p>
+<p>Lets add the following CSS to the above and see what happens.</p>
+<pre><code>.positioned {
+  position: relative;
+  background: yellow;
+  top: 30px;
+  left: 30px;
+}</code></pre>
+<p>The <code>.positioned</code> box is re-positioned relative to its original position. So starting from where it would normally be, we move it down 30px to the right 30px. <code>top</code> means whatever measurement &quot;from the top&quot;. Same goes for all other directions moving inward. Negative measurements move outward toward the property, so <code>top:-30px</code> moves an element up towards to top of the window or beyond.</p>
+<p>ABSOLUTE POSITIONING</p>
+<p>Absolute positioning is used to move your elements anywhere around the web page, to create complex layouts and is often used with relative positioning.</p>
+<p>Now replace the <code>.positioned</code> CSS styles we just added with the following:</p>
+<pre><code>.positioned {
+  position: absolute;
+  background: yellow;
+  top: 30px;
+  left: 30px;
+}</code></pre>
+<p>Now our positioned element is way off to the side of the page. This is because absolute positioning an element places the element position in absolute terms relative to the nearest descendent with a stated position. Because we have no other descendents with a position, it is positioning itself relative to the <code>&lt;html&gt;</code> or rather, our entire page. Trying resizing the browser and you can see what I mean. </p>
+<p>Now lets try this. I've wrapped our working HTML in a <code>section</code> element and replaced our <code>body</code> CSS declaration with the <code>section</code> declaration. Then added a <code>postion:relative</code> to the <code>section</code>. This inherently does nothing since I haven't specified any movement measurements. BUT...it does create a positioned descendent for the absolute positioned <code>p</code> element to interact with. The layout looks very different now. </p>
+<pre><code>&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        *{
+          box-sizing: border-box; /*includes padding and border in sizing*/
+        }
+
+        section {
+          width: 500px;
+          margin: 0 auto;
+          position:relative;
+          /*Combined with a declared width will automaticaly center*/
+        }
+
+        p {
+          background: red;
+          border: 3px solid orange;
+          padding: 10px;
+          margin: 10px;
+        }
+        img{
+          width: 50%;
+          padding: 5px;
+          position: absolute;
+        }
+        .positioned {
+          position: absolute;
+          background: yellow;
+          top: 30px;
+          left: 30px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;section&gt;
+        &lt;h1&gt;Positions&lt;/h1&gt;
+
+        &lt;p&gt;I am a paragraph element so basically a block level element&lt;/p&gt;
+        &lt;img src="https://images.unsplash.com/photo-1487451686860-7507fcd0d65e?ixlib=rb-0.3.5&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=3609b1e6e4baacd596b771ff8fdd9eec" alt="I am inline!"&gt;&lt;img src="https://images.unsplash.com/photo-1487451686860-7507fcd0d65e?ixlib=rb-0.3.5&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=3609b1e6e4baacd596b771ff8fdd9eec" alt="I am inline!"&gt;
+        &lt;p class="positioned"&gt;I am a paragraph element so basically a block level element&lt;/p&gt;
+        &lt;p&gt;I am a paragraph element so basically a block level element&lt;/p&gt;
+    &lt;/section&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>Now, you can get pretty crazy with positioning elements but you will soon run into an overlap problem. Try adding the <code>position:absolute</code> property to another element in the above like the <code>img</code>, like this:</p>
+<pre><code>img:first-of-type{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: 5px solid orange;
+
+}</code></pre>
+<p>Now you can see that these elements are stacked on top of each other. We can control the stacking order using the <code>z-index</code> property. So now, in the above CSS for <code>img</code>, lets add <code>z-index: 3;</code> in the declaration block. Now you'll see that the image moves above the text block it was previously under. You can give all positioned elements a z-index to control their stacking order.</p>
+<p>Note that z-index only accepts unitless index values; you can't specify that you want one element to be 23 pixels up the Z-axis — it doesn't work like that. Higher values will go above lower values, and it is up to you what values you use. Using 2 and 3 would give the same effect as 300 and 40000.</p>
+<p>FIXED POSITIONING</p>
+<p>This works in exactly the same way as absolute positioning, with one key difference — whereas absolute positioning fixes an element in place relative to the <code>&lt;html&gt;</code> element or its nearest positioned ancestor, fixed positioning fixes an element in place relative to the browser viewport itself. This means that you can create useful UI items that are fixed in place, like persisting navigation menus.</p>
+<p>Ok, so lets delete the <code>.position</code> class CSS properties from our current code as well as what we just did with <code>img:first-of-type</code>. You should have something like our initial layout. </p>
+<p>Now add a <code>height: 1400px;</code> property to the <code>body</code> or <code>section</code> rule. Now add the <code>position:fixed;</code> property to a newly created <code>h1</code> rule like so:</p>
+<pre><code>h1{
+   position: fixed;
+   top:0;
+}</code></pre>
+<p>Now scroll down and you see our &quot;Position&quot; title stays fixed to the top. You also see that by positioning it, all other elements moved up. You may need to fine tune paddings and margins to account for this gap. Feel free to add <code>top, bottom, left, right</code> properties to get this element where you ideally want it.</p>
+<p>Also, check out the new &quot;I Love NY&quot; site here: <a href="https://cims.nyu.edu/~aston/i-love-ny/">https://cims.nyu.edu/~aston/i-love-ny/</a></p>            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+            <section id="contact">
+        <h2>Have Questions?</h2>
+
+        
+        <form method="post" action="#contact">
+            <div class="field half first">
+                <input type="text" name="contact[name]" id="name" placeholder="Name" />
+            </div>
+
+            <div class="field half">
+                <input type="email" name="contact[email]" id="email" placeholder="Email" />
+            </div>
+
+            <div class="field">
+                <textarea name="contact[message]" id="message" placeholder="Message"></textarea>
+            </div>
+
+            <input type="text" name="contact[antibot]" id="antibot" style="display:none" />
+
+            <ul class="actions">
+                <li><input type="submit" value="Send" name="contact[submit]" class="special" /></li>
+            </ul>
+        </form>
+    </section>
+
+        <div class="copyright">
+            <ul>
+<li>© 2018 All right reserved</li>
+</ul>        </div>
+    </div>
+</footer>
+    </div>
+
+    <script src="./../assets/js/jquery.min.js"></script><script src="./../assets/js/skel.min.js"></script><script src="./../assets/js/util.js"></script><!--[if lte IE 8]><script src="./../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="./../assets/js/main.js"></script>
+</body>
+
+</html>

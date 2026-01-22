@@ -1,0 +1,386 @@
+Title: Week 05-1:CSS Layout
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout. FOr example the following displays like so:
+
+```
+<p>Gonna get these groceries:</p>
+
+<ul>
+  <li>Baby Corn, duh.</li>
+  <li>Jumbo Shrimp</li>
+  <li>Cottage Cheese</li>
+</ul>
+
+<p>The end!</p>
+```
+
+Note here how the HTML is displayed in the exact order in which it appears in the source code
+Layout techniques tend to override this default behavior, using:
+
+1. The *position property* — static is the default in normal flow, but you can cause elements to be laid out differently using other values, for example always fixed to the top left of the browser viewport.
+2. *Floats* — applying a float value such as left can cause block level elements to line up alongside one another rather than sit on top of one another
+3. The *display property* — standard values such as block, inline or inline-block can change how elements behave in normal flow (see Types of CSS boxes for more information), whereas uncommon or specialised values allow us to lay out elements in completely different ways using tools like Flexbox.
+
+Let's first observe the `display` property really quick. This property specifies the type of rendering box used for an element. We talked a bit about how elements are inline (displayed on or in the same line provided there is space) or block (blocks out successive elements from rendering on the same line). You can actually reset how these elements are by setting the `display`. Thus you can make inline elements (like `img` elements) act block like or make block elements (like `h1` or `p` elements) act inline. Lets try really quick using the above list as our source HTML.
+
+Adding the following CSS renders the `<li>` differently than how they normally would render. 
+
+styles.css
+```
+li {
+   display: inline;
+}
+```
+
+You could essentially do the same for a list of images (typically rendered inline) by changing their `display` property to `block`. This would render each image on top of each other versus next to each other. 
+
+styles.css
+```
+img {
+   display: block;
+}
+```
+
+Also keep in mind that `display:none;` does not render the element or its descendents. It's almost as if the element is not there. This is useful down the line for making alements interactive with jQuery or javascript (making them appear or disappear).
+
+***FLOATS***
+Floats is a technique that allows the elements to float to the left or right of one another, rather than the default of sitting on top of one another. The main uses of floats are to lay out columns and float text around an image.
+The float property has four possible values:
+
+1.left — floats the element to the left.
+2.right — floats the element to the right.
+3.none — specified no floating at all. This is the default value.
+4.inherit — specifies that the value of the float property should be inherited from the parent element.
+
+Let's try and build a simple two column layout using the following HTML:
+```
+<h1>This will be 2 Columns</h1>
+<div class="first">
+  <h2>First column</h2>
+  <p> Look at me! I am the first column! Hear me roar! </p>
+</div>
+
+<div class="second">
+  <h2>Second column</h2>
+  <p>I am the second column. Second is the best, duh.</p>
+</div>
+```
+We actually want these two `div`'s to sit side by side rather than on top of each other. 
+
+Let's use the following CSS to do set this up:
+```
+div.first {
+  float: left;
+}
+
+div.second {
+  float: right;
+}
+```
+YOu can see in the example that so long as there is space for the floated object, it will affix itself around the other object(s). Try dragging the window to make it smaller and you will see that the floated right object moves below the left floated one. In order to make this more "real-world", set some fixed or variable widths to some of the elements so that we may better predict their behavior. 
+```
+body {
+  width: 90%; /*width will stay at 90% width of window until it reaches 900px in which it is then static. */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+div.first {
+  float: left;
+  width: 48%;
+}
+
+div.second {
+  float: right;
+  width: 48%;
+}
+```
+Now try changing `div.second` float property to left and see what happens. Instead of floating to the right and having the right edge of the div right at the right margin, the left edge of the div moves as close to the left floated element as it can. 
+
+Now try adding an additional column and adjusting the widths so that they are proportional. See if you can style in some gutter space so that the columns have some breathing room. since we are using percentages to assign width, keep using percentages to assign either padding or margin. Your code MAY look like this:
+```
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        div {
+            width: 32%;
+            float: left;
+            margin-right: 2%;
+        }
+
+        div:nth-of-type(3n) {
+            margin-right: 0;
+            background-color: red;
+        }
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+        <h1>2 column layout example</h1>
+        <div>
+            <h2>First column</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate.</p>
+        </div>
+
+        <div>
+            <h2>Second column</h2>
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.</p>
+        </div>
+
+        <div>
+            <h2>Third column</h2>
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.</p>
+        </div>
+        <div>
+            <h2>First column</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate.</p>
+        </div>
+
+        <div>
+            <h2>Second column</h2>
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.</p>
+        </div>
+
+        <div>
+            <h2>Third column</h2>
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.</p>
+        </div>
+
+</body>
+
+</html>
+```
+In the above example, our CSS adds some margin to every `div` but ideally we'd rather not have right margin on the last element in each row since it would be unnecessary. So we use the selector `nth-of-type` to iterate over every third div to strike the spacing. Now, try it with images to create your own little image gallery! Something to remember:
+
+The `div:nth-child(3n)` selector, in "Plain English," means select an element if:
+
+1. It is a `<div>`
+2. It is every third child of a parent
+
+Our `div:nth-of-type(3n)` selector, in "Plain English," means:
+
+1. Select every third `<div>` of a parent
+
+Feel free to test more out here: https://css-tricks.com/examples/nth-child-tester/
+
+One thing I forgot to go over in class was the `clear` property.  When yo start building layouts with the `float` property, you will eventually come across a situation where you want an element to float around another element but do not want subsequent elements to do the same. This often happens with images and text and images with corresponding text.  Try looking at the following code in your browser:
+```
+<html>
+<head>
+<style>
+img {
+    float: left;
+}
+
+p.clear {
+
+}
+</style>
+</head>
+<body>
+<h1>CLEAR</h1>
+
+<img src="https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.k7Y-PuDeruM7TWq13eUs9AAAAA%26amp%3Bpid%3D15.1&f=1"  height="132">
+<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+<p class="clear">This is also some text. This is also some text. This is also some text. This is also some text. This is also some text. This is also some text.</p>
+<p><strong>Remove the "clear" class to see the effect.</strong></p>
+
+</body>
+</html>
+```
+Here you can see that all text floats around the image of the tree. Maybe this is what you want. Great. Let's say you just want the first paragraph to float next to the image but want the next one to begin below the image. This is where we use `clear`. The `clear` property essentially dissolves the `float` interaction between the cleared element and the floated element.  Try placing the following code in the `p.clear` style rule: `clear: left;`.  This clears any floated objects to the left of the element so now the text appears below the image instead of to the right of the image. Try placing some other values for the `clear` property in there: `right` and `both`.  You see right does nothing since there are no right floated objects. Both clears right and left and in this instance, acts similar to `clear: left;`.  
+
+Let's move on. 
+
+***POSITIONING***
+There are four main types of positioning to recognize:
+
+1.Static positioning is the default that every element gets — it just means "put the element into its normal position in the document layout flow — nothing special to see here".
+
+2.Relative positioning allows you to modify an element's position on the page, moving it relative to its position in normal flow — including making it overlap other elements on the page. Use case: minor layout tweaks
+
+3.Absolute positioning moves an element completely out of the page's normal layout flow, like it is sitting on its own separate layer. From there, you can fix it in a position relative to the edges of the page's `<html>` element or its nearest positioned ancestor element (that is the closest ancestor with an assigned position). Use case: more complex layout effects, tabbed boxes elements that sit on top of each other, information panels that sit off screen by default, but can be made to slide on screen using a control button.
+
+4.Fixed positioning is very similar to absolute positioning, except that it fixes an element relative to the browser viewport, not another element. Use case: persistent navigation menu or header that always stays in the same place on the screen as the rest of the content scrolls.
+
+Let's look at some examples.
+
+```
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        *{
+          box-sizing: border-box; /*includes padding and border in sizing*/
+        }
+
+        body {
+          width: 500px;
+          margin: 0 auto; /*Combined with a declared width will automaticaly center*/
+        }
+
+        p {
+          background: red;
+          border: 3px solid orange;
+          padding: 10px;
+          margin: 10px;
+        }
+        img{
+          width: 50%;
+          padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+   <h1>Positions</h1>
+
+    <p>I am a paragraph element so basically a block level element</p>
+    <img src="https://www.pexels.com/search/tree/" alt="I am inline!"><img src="https://www.pexels.com/search/tree/" alt="I am inline!">
+    <p class="positioned">I am a paragraph element so basically a block level element</p>
+    <p>I am a paragraph element so basically a block level element</p>
+
+</body>
+
+</html>
+
+```
+
+RELATIVE POSITIONING
+
+Relative positioning is generally used for making small alignment and design tweaks to elements. Maybe an icon should be moved down a bit to be more inline with text, etc. 
+
+Lets add the following CSS to the above and see what happens.
+```
+.positioned {
+  position: relative;
+  background: yellow;
+  top: 30px;
+  left: 30px;
+}
+```
+The `.positioned` box is re-positioned relative to its original position. So starting from where it would normally be, we move it down 30px to the right 30px. `top` means whatever measurement "from the top". Same goes for all other directions moving inward. Negative measurements move outward toward the property, so `top:-30px` moves an element up towards to top of the window or beyond.
+
+ABSOLUTE POSITIONING
+
+Absolute positioning is used to move your elements anywhere around the web page, to create complex layouts and is often used with relative positioning.
+
+Now replace the `.positioned` CSS styles we just added with the following:
+```
+.positioned {
+  position: absolute;
+  background: yellow;
+  top: 30px;
+  left: 30px;
+}
+```
+Now our positioned element is way off to the side of the page. This is because absolute positioning an element places the element position in absolute terms relative to the nearest descendent with a stated position. Because we have no other descendents with a position, it is positioning itself relative to the `<html>` or rather, our entire page. Trying resizing the browser and you can see what I mean. 
+
+Now lets try this. I've wrapped our working HTML in a `section` element and replaced our `body` CSS declaration with the `section` declaration. Then added a `postion:relative` to the `section`. This inherently does nothing since I haven't specified any movement measurements. BUT...it does create a positioned descendent for the absolute positioned `p` element to interact with. The layout looks very different now. 
+
+```
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        *{
+          box-sizing: border-box; /*includes padding and border in sizing*/
+        }
+
+        section {
+          width: 500px;
+          margin: 0 auto;
+          position:relative;
+          /*Combined with a declared width will automaticaly center*/
+        }
+
+        p {
+          background: red;
+          border: 3px solid orange;
+          padding: 10px;
+          margin: 10px;
+        }
+        img{
+          width: 50%;
+          padding: 5px;
+          position: absolute;
+        }
+        .positioned {
+          position: absolute;
+          background: yellow;
+          top: 30px;
+          left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>Positions</h1>
+
+        <p>I am a paragraph element so basically a block level element</p>
+        <img src="https://images.unsplash.com/photo-1487451686860-7507fcd0d65e?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=3609b1e6e4baacd596b771ff8fdd9eec" alt="I am inline!"><img src="https://images.unsplash.com/photo-1487451686860-7507fcd0d65e?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=3609b1e6e4baacd596b771ff8fdd9eec" alt="I am inline!">
+        <p class="positioned">I am a paragraph element so basically a block level element</p>
+        <p>I am a paragraph element so basically a block level element</p>
+    </section>
+
+</body>
+
+</html>
+
+```
+
+Now, you can get pretty crazy with positioning elements but you will soon run into an overlap problem. Try adding the `position:absolute` property to another element in the above like the `img`, like this:
+```
+img:first-of-type{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: 5px solid orange;
+  
+}
+```
+
+Now you can see that these elements are stacked on top of each other. We can control the stacking order using the `z-index` property. So now, in the above CSS for `img`, lets add `z-index: 3;` in the declaration block. Now you'll see that the image moves above the text block it was previously under. You can give all positioned elements a z-index to control their stacking order.
+
+Note that z-index only accepts unitless index values; you can't specify that you want one element to be 23 pixels up the Z-axis — it doesn't work like that. Higher values will go above lower values, and it is up to you what values you use. Using 2 and 3 would give the same effect as 300 and 40000.
+
+FIXED POSITIONING
+
+This works in exactly the same way as absolute positioning, with one key difference — whereas absolute positioning fixes an element in place relative to the `<html>` element or its nearest positioned ancestor, fixed positioning fixes an element in place relative to the browser viewport itself. This means that you can create useful UI items that are fixed in place, like persisting navigation menus.
+
+Ok, so lets delete the `.position` class CSS properties from our current code as well as what we just did with `img:first-of-type`. You should have something like our initial layout. 
+
+Now add a `height: 1400px;` property to the `body` or `section` rule. Now add the `position:fixed;` property to a newly created `h1` rule like so:
+
+```
+h1{
+   position: fixed;
+   top:0;
+}
+```
+Now scroll down and you see our "Position" title stays fixed to the top. You also see that by positioning it, all other elements moved up. You may need to fine tune paddings and margins to account for this gap. Feel free to add `top, bottom, left, right` properties to get this element where you ideally want it.
+
+Also, check out the new "I Love NY" site here: https://cims.nyu.edu/~aston/i-love-ny/

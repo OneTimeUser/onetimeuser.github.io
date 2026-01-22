@@ -1,0 +1,51 @@
+Title: Home
+
+----
+
+Head-title: Class Overview
+
+----
+
+Head-text: 
+
+<strong>
+New York University
+Intro to Web Design & Computer Principles
+CSCI-UA.0004-​002 
+
+Spring 2018
+Tuesdays and Thursdays 11:00-12:15PM 
+CI Warren Weaver Hall ROOM 102
+</strong>
+
+###Course Description###
+This lecture-based course will provide you with hands-on experience using a variety of digital communications technologies. Topics covered include Web design, image editing, animation, and a variety of multimedia tools. Principles of design, media theory, and history will also be addressed in class discussion.
+
+In addition to coding with HTML and CSS, we’ll be using software applications such as Photoshop for in-class demonstrations and assignments. Introduction to Web Design and Computer Principles moves through a lot of material over the course of one semester. Any time you have a question or concern about the class or its content, let me know and I’ll be happy to work with you.
+
+###Grading and Exams###
+
+Your greatest reward is the knowledge and experience that you receive by taking the course. You will also receive a grade based on the following rubric.
+ 
+Assignments: 40%
+Midterm Exam: 25%
+Final Exam: 35%
+
+Our exam schedule for the semester is as follows:
+
+Midterm:
+TBA
+
+Final Exam:
+Tue., May, 15, 2018
+10:00am-11:50am 
+CI Warren Weaver Hall ROOM 102
+
+###Professor Info###
+Name: Jason Aston
+Email: aston@cs.nyu.edu
+Office Hours: Tuesday 12:15PM – 1:15PM in Room 328 (but please schedule an appointment so I know to expect you).
+
+----
+
+Tiles: 

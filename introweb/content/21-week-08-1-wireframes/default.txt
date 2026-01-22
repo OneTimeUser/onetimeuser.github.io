@@ -1,0 +1,24 @@
+Title: Week 08-1: Wireframes
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture: **
+
+Today we explored what goes into planning a website with specific reference to our design descriptions, research, sitemaps and wireframes of various fidelity.  
+
+Our descriptions are important because they include valuable information to keep us on track, making sure our decisions are always referring back to the content of the site and who the site is for. 
+
+The research becomes invaluable if only to understand the various trends in the type of site we are building, and the elements, layout, design that does a service or disservice to the site's functioning and style.
+
+Sitemaps and wireframes are well thought out documents that are meant for the designers and developers. They are incredibly important as they incorporate research and analytics into the site hierarchy and information architecture as well as allow the designers to remain uncluttered in their design research and implementation and developers to code up a working, functional site. 
+
+The U/X and layout needs of a website can be tailored to a user (mostly) or can take the shape of something more artistic, serving the unique needs of the content.  
+
+**Slides:**
+(file:8-1.pdf text: download slides)

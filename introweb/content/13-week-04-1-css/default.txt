@@ -1,0 +1,144 @@
+Title: Week 04-1:CSS
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**LECTURE**
+(file: 4-1.pdf text: Download Slides)
+Today we ventured officially into CSS territory, starting out with some historical bits that you should know. See the slides for info on that. 
+
+We have three methods of adding styles to our web pages:
+
+1. Inline - to be used sparingly if at all.
+Ex. ` <h1 style="color: red; font-weight: bold"> GREETINGS </h1>`
+
+2. Internal - can be used if styles are limited
+Ex. 
+```
+...
+<head>
+   <title>I LOVE NEW YORK</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Jason Aston">
+    <meta name="description" content="A website devoted to the things I love about New York">
+    <link rel="icon" href="favicon.ico" type="icon-x">
+    <style>
+        h1{
+            color: red;
+        }
+        p{
+            font-weight: 300;
+        }
+   </style>
+</head>
+...
+```
+
+3. External - preferred method for organizational and usability purposes
+Ex.
+*index.html*
+```
+...
+<head>
+   <title>I LOVE NEW YORK</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Jason Aston">
+    <meta name="description" content="A website devoted to the things I love about New York">
+    <link rel="icon" href="favicon.ico" type="icon-x">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+...
+```
+*style.css*
+```
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+...
+```
+
+We also learned the different components that make up a **style rule**:
+```
+h1{
+    color: red;
+}
+```
+-the selector indicates which HTML shall be formatted. This selector can be as broad or specific as needed 
+Ex. `h1` or `h1.complete`
+
+-the declaration block describes the formatting/styles (this is everything contained between the curly brackets)
+ex. { color: red; }
+
+-within the declaration block are a number of property/value pairs
+ex. color:red;
+
+Cascading is a namesake feature of CSS. This essentially means that styles cascade or trickle down to elements in a number of ways based on importance and specificity.
+
+1. The firmest way to force a style on an element is to use the `!important` block in the style element. This can be done inline, internal, or externally like so:
+`<h1 style="color: red !important; font-weight: bold"> GREETINGS </h1>`
+```
+h1{
+            color: red !important;
+        }
+```
+
+2. Next down in importance is specificity. Remember the following: style attribute (inline) is more specific than an `id` which is more specific than a `class` which is more specific than an element. So for example:
+`<h1 style="color: red;">` > `#complete` > `h1.finished` > `h1` 
+
+3. Lastly, when element styles are in direct conflict, all other things being equal, the later rule is used. 
+```
+h1{ color: red;}
+...
+h1{color: blue;}
+```
+The heading 1 element's text color will be blue. 
+
+Remember that some style rules are inherited (specifically font related rules) while others are not (most other rules like padding and margins).
+
+The CSS box model is important to understand so that you can space elements appropriately. 
+(image:boxmodel.png)
+Writing css for margins and paddings looks something like this:
+```
+margin: 15px;
+padding: 10px 5px;
+```
+In the above example, the margin will be 15px all the way around the element whereas the padding, having been supplied two increments, will be 10px on the top and bottom AND 5px to the left and right. 
+
+You can also supply all four sides like so:
+`margin: 10px 0 15px 0;` 
+which can also be written out in long form:
+```
+margin-top: 10px;
+margin-right: 0;
+margin-bottom: 15px;
+margin-left: 0;
+```
+A typical way of marking up borders looks like so:
+```
+p{
+    border: 1px solid black; //the first part is the width of the border, followed by the border-style then border-color
+}
+```
+You can really mix up your borders, having different weights and styles to make them look different. Check it out (link: https://www.w3schools.com/css/css_border.asp text: here).
+
+We also went over some of the units of measurements we will be using to define some sizing and widths/heights of our elements. 
+Pixels or `px` dimensions are absolute dimensions, meaning they are static. 
+Relative dimensions are a bit more flexible and can change in accordance with the containing box or screen size. 
+`em` is a relative dimension that is relative to font-size of current element (normally 16px, so 1em = 16px;)
+`%` is the percentage of the **containing unit (area)** or percentage of font-size of current container. 
+`vw` - viewport width (basically size of window or display, so 100vw = 100% width)
+`vh` - viewport height  
+
+
+**ASSIGNMENT**
+Read Chapters 13 and 14!
+(link:assignments/css-assignment-3 text: Assignment 3 - CSS due Feb 27)

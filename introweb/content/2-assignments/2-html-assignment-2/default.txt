@@ -1,0 +1,59 @@
+Title: HTML: Assignment-2
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+In this assignment, you will create a three-page website about yourself.
+
+
+**Project Setup**
+Create a new directory (folder) on your computer called “me”. HTML and image files associated with your new website should be placed inside of this directory. The home page of your website should be named “index.html”. Other pages can be named as you like, as long as filenames are lowercase, with no spaces.
+
+When your website is finished, you will upload the “me” directory, along with its contents, to your i6 account. Your new website will then be available at: i6.cims.nyu.edu/~netid/me/
+
+**Your Website**
+Three HTML web pages—about you—form the heart of the current assignment. Any combination of your background, interests, or experiences will do! You are to write these pages using a plain text editor such as Atom or Brackets. The focus of this assignment is on describing web page content with HTML; refrain from styling (unless it's font stuff we went over) the pages until the next assignment, CSS.
+
+**Here is a list of required elements you should include in these pages.**
+
+-There should be paragraph (`<p>`) and heading (`<h1>`, `<h2>`, etc.) text on each page.
+-The pages should link to each other with “relative” URLs.
+-Each page should also include at least one “absolute” URL linking to an external website.
+-You should include at least one image (JPG, PNG, or GIF) on each page. (We’ve not covered image editing yet but feel free to use images from your digital camera or smartphone as well as images downloaded from the Web.)
+-All img elements should include src, width, height, and alt attributes with appropriate values.
+-You should also include an HTML table somewhere on one of your pages.
+-Pay close attention to your HTML tags and be sure to test your pages locally using Firefox, Safari, or Chrome.
+
+**Publishing Your Site**
+Upload your “me” directory, including the HTML and the image files, to the i6 Unix server with an FTP client such as Fetch (from ITS) or WinSCP. Your files should go in the same, “public_html” directory that your assignments page is in. Test your pages again using Firefox, Safari, or Chrome once they are “live” on the Web server to make sure they are accessible.
+
+Finally, create a link from the “HTML” line of your assignments directory to the home page of your new website.
+
+**Submitting Your Assignment**
+Submit the following via NYU Classes. More information on submitting files with NYU Classes is available here.
+
+The URL to your pages in the general form of http://i6.cims.nyu.edu/~netid/
+A compressed file containing all the files of your new website
+Please note that you are required to submit files along with URLs in order to receive credit for your work.
+
+**Grading**
+This assignment is worth 10 points.
+
+A new website of at least three pages about the student. (3 points)
+Website should be in its own subdirectory called “me” and the home page should be an “index.html” file. (1 point)
+Each page should contain both paragraph and heading text. (1 point)
+Pages should link to each other with relative URLs. (1 point)
+Each page should also include an absolute URL linking to an external website. (1 point)
+Each page should include at least one image in JPG, PNG, or GIF format. (1 point)
+All image elements should include src, width, height, and alt attributes with appropriate values. (0.5 point)
+At least one of the pages should include an HTML table (1 point)
+The assignments directory page from Assignment 1 should include a relative URL linking to the home page of this assignment. (0.5 point)
+Points may be deducted for improperly formed HTML elements.
+
+Extra Credit:
+Correct use of HTML5 header, nav, footer, section, and article elements  on one or more pages. (2 points)

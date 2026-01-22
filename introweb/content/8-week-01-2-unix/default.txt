@@ -1,0 +1,21 @@
+Title: Week 01-2: Operating Systems and UNIX
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture**
+
+This week we got a brief primer on and about Operating Systems and went into some basic but important UNIX commands. Peruse them (link: http://www.jason-aston.com/introweb-s18/unix text: here). 
+Perhaps most confusingly but important as you get your initial pages published to your i6 server is the permissions. Permissions allow you to set different access modes to three groups: yourself the owner, a group, and the public. 
+
+(file: 1b.pdf text: Download Lecture PDF)
+
+**Homework/Assignments**
+
+1. Read Chapters 1 and 2 from our book.
+2. (link: http://www.jason-aston.com/introweb-s18/assignments/assignment-1/ text: Unix Assignment) due Thursday Sept 14.

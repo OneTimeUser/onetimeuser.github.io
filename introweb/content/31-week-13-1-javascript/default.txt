@@ -1,0 +1,112 @@
+Title: Week 13-1:Javascript Examples
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Javascript Cheat Sheets:
+(link: http://overapi.com/javascript text: Over API)
+(link: https://codepen.io/davidicus/details/trhme text: Codepen JS REference Sheet)
+(link: https://github.com/mbeaudru/modern-js-cheatsheet text: Another good one)
+(link: http://htmlcheatsheet.com/js/ text: Easy to read and understand one)
+
+We continued on with Javascript by doing some Javascript by example.
+
+The first example we went over talked about a Math method called Random. We used this to show or play for the user a random image or track. Turn your volume down for this one!
+
+<p data-height="346" data-theme-id="0" data-slug-hash="YLqeeN" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="YLqeeN" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/YLqeeN/">YLqeeN</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+Next we did an example with the Date() object. There are some more Date() comments below the following example. 
+
+<p data-height="265" data-theme-id="0" data-slug-hash="RyaBzv" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="RyaBzv" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/RyaBzv/">RyaBzv</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+When you instantiate the `Date()` object, it returns something like this: `Tue Dec 05 2017 08:55:25 GMT-0500 (EST)`
+
+So let's begin by setting up some code:
+```
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script
+<script>
+$('p').html(Date());
+</script>
+
+</body>
+</html>
+```
+If we want to anything more fancy, we need to have the ability to store the date object so we can manipulate or handle it a bit easier and in a more efficient way. 
+We do that using variables- variables STORE bits of information so that we can more easily use it in our programming.
+```
+var d = new Date();
+$('p').html(d);
+```
+So the variable `d` has stored the Date() object. 
+When you create a Date() object, there are a number of methods (functions) that come along with it. This is similar to JQuery. We saw all of the methods associated with a JQuery object. The function `toDateString()` is a method of the `Date()` object. This displays the date object in a more readable form.
+```
+var d = new Date();
+$('p').html(d.toDateString());
+```
+
+But we can actually explore these methods a bit further and get and display precisely what it is we want to display:
+
+`getDate()`	Get the day as a number (1-31)
+`getDay()`	Get the weekday as a number (0-6)
+`getFullYear()`	Get the four digit year (yyyy)
+`getHours()`	Get the hour (0-23)
+`getMilliseconds()`	Get the milliseconds (0-999)
+`getMinutes()`	Get the minutes (0-59)
+`getMonth()`	Get the month (0-11)
+`getSeconds()`	Get the seconds (0-59)
+`getTime()`	Get the time (milliseconds since January 1, 1970)
+
+So that's the date object. Now in order to program some interactivity and behavior, we need things to happen on conditions. And one way we program for conditions is using if statements. You can think about it in a very simple way. We want something to happen, IF a condition exists. So for example, the pseudocode would look something like:
+
+```
+if it's later than 6 pm, display 'Good Evening'.
+if it's later that noon, display 'Good Afternoon'.
+etc.
+```
+So let's look at that example in actual javascript code:
+```
+var today = new Date();
+var hourNow = today.getHours();
+var greeting;
+
+if (hourNow > 18) {
+greeting = 'Good Evening';
+} else if (hourNow>12) {
+greeting = 'Good Afternoon';
+} else if (hourNow>0) {
+greeting = 'Good Morning';
+} else { greeting = 'Welcome'}
+
+$('p').text(greeting);
+
+```
+
+Next we launched into the madlibs example. I have included two versions: one from class and another that uses arrays to populate the madlibs with predetermined material while using the random function. Take a look at both.
+
+Madlibs with USER PROMPTS
+<p data-height="299" data-theme-id="0" data-slug-hash="OZNZVJ" data-default-tab="css,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="OZNZVJ" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/OZNZVJ/">OZNZVJ</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+Madlibs with ARRAYS and RANDOM
+<p data-height="265" data-theme-id="0" data-slug-hash="zjqEZV" data-default-tab="js,result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Simple Madlibs" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/zjqEZV/">Simple Madlibs</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+The start of a platformer game!
+<p data-height="425" data-theme-id="0" data-slug-hash="vjGJKw" data-default-tab="result" data-user="onetimeuser" data-embed-version="2" data-pen-title="Javascript Simple platformer demo" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/vjGJKw/">Javascript Simple platformer demo</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+A number guessing game!
+<p data-height="330" data-theme-id="0" data-slug-hash="XqdPZY" data-default-tab="result" data-user="onetimeuser" data-embed-version="2" data-pen-title="XqdPZY" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/XqdPZY/">XqdPZY</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>

@@ -1,0 +1,81 @@
+Title: Week 06-1:Images and Animation
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Lecture Slides:
+(file: 6-1.pdf text: download pdf)
+
+Today, we started class going through file types and use cases for each: JPG, GIF, PNG, and SVG. Visit the slides for todays class to learn more about those files, when to use them, and how their size could affect how they are viewed. 
+
+Then we opened up Adobe Illustrator for a little lesson on how to export our vector creations to SVG.
+First we illustrate something using the tools. If you are a complete noob, (link: https://helpx.adobe.com/illustrator/how-to/illustration-techniques.html text: head here for a little primer)!
+Once we have something on the canvas that we want to export, we use the following menu option to export:
+(image: ill1.png width: 800px)
+Which will bring up the following screen:
+(image: ill2.png width: 800px)
+At this point you have some options to export some other versions of your image. We can revisit this at a later date but for now, we just want the `svg` version of what we have created exported to the folder of our choice. Feel free to play around with some of the options. 
+
+As a result, you should see your `filename.svg` file in the folder you have declared. 
+(image: ill3.png width: 800px)
+
+Putting this in our file is as simple as declaring an HTML `img` element and pointing it to where we have stored our `svg`. 
+
+```
+...
+<nav>
+    <div class="logo">
+        <img src="bluestar.svg" alt="Blue Star Pizza Laundromats">
+    </div>
+    <ul>
+        ...
+    </ul>
+</nav>
+...
+```
+
+Next, we moved into Photoshop for our major lesson on image editing and animation. (link: https://helpx.adobe.com/support/photoshop.html text: Please visit the Adobe site )for more really good tutorials on how to create image composites and animation! You can do tons of really neat things.
+
+First we start a new project. Try using the default web project and resizing as you need using the crop tool.
+(image: ph1.png width: 800px)
+Then we want to either draw shapes or import some images to create some sort of composite. Try putting all of your images on the canvas so you can take inventory of what you have and what you need to do to each. 
+(image: ph2.png width:800px)
+
+So, next I want to mask out Lil Wayne. Luckily, the image I have of him has a solid background. So I am going to use the Magic Wand tool to select a background pixel. 
+(image:ph3.png width: 400px)
+Hopefully, with the right Tolerance variable at the top, my selection will grab all of the background (only pixels that are contiguous). If there are some enclosed background pixels that you need, hold down SHIFT while you have some of the background selected and click in the enclosed areas to add them to the selection.
+Once you have your entire background selected, press `SHIFT+COMMAND+I` to invert the selection so that the subject, Lil Wayne, is selected.
+(image:ph4.png width:400px)
+You have created a mask! Now go ahead and continue masking other elements that need it. 
+And go ahead and mess with any other elements, playing around with the limitless options Photoshop offers you to create your work of art!
+Here's my tasteful, sensible still image:
+(image:ph5.png width:800px)
+
+Now let's animate this thing. First off, I won't go over how I animate this. I'd like you to learn more about this (link: https://www.smashingmagazine.com/2015/06/creating-advanced-animations-in-photoshop/ text: here). It's a solid tutorial (a bit older but applicable!) that reveals some cool tricks of animation in Photoshop. 
+
+Hopefully you have all of your elements ready to go, on separate layers. If you think some of you elements are going to be scaled and rotated in animation, the go ahead and highlight the layer, then head up to the Layer Menu at top->Smart Object->Convert to Smart Object. This will then allow you animate the Transformation aspect of your asset. 
+Now head back up to the top menu and select Window->Timeline. Here you will see the default view is video timeline. The other timeline, accessible at the bottom left (looks like a few squares) is the frame by frame animation. Decide which suits your needs and go ahead and animate! One thing to remember about GIF's is that they can be very very large in file size and are heavily dependent on dimensions as well as frames to throttle file size. If you think about how many frames you have, you are essentially including a full image in each frame. So if you have 100 frames of animation with an image that comprises maybe 500kb, then your GIF will be 5mb as is. You can of course change the width and height to make it smaller or reduce frames. 
+
+Now that you have your scene animated, it's time to export! Head to the Export menu option and choose Save for Web Legacy:
+(image:ph6.png width:800px)
+
+Since we are just working with GIF format, go ahead and choose "Optimized" tab and begin messing with the options to get your file as small as possible without sacrificing quality (alter the output dimensions, dithering algorithm, and lossy options to bring your file size down to as close to 1mb as possible). 
+(image:ph7.png width:800px)
+
+Then choose Save and voila! Your gif is ready!
+
+(image: example.gif width: 800px)
+
+
+
+
+
+
+
+Assignment:
+(link: assignments/images-and-animation-assignment-4 text: Photoshop Assignment DUE MARCH 8)

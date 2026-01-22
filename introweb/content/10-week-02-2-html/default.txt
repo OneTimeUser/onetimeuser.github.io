@@ -1,0 +1,120 @@
+Title: Week 02-2:HTML
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture**
+
+(file:class2-2.pdf text:Download Slides)
+
+We addressed the `a` element (anchor) and it's possible actions and references (`href`) which is typically where some sort of url goes.
+It can
+-link to another page (via absolute or relative url's)
+-link to another section of the same page or another page (using `#*idname*` so long as the section contains an addressable `id` attribute, or a simple `#` will move window back up to top).
+-email (`emailto:email@email.com` link)
+-open a new window (`target="_blank"` attribute) or a new tab - depending on browser settings.
+
+Anchor elements usually are parents of the linkable content within, this could be simply text, or an image, or a group of elements. 
+
+This is an anchor element with an absolute url:
+```
+<a href="https://www.mozilla.com/">
+External Link
+</a>
+```
+
+This is a same page link:
+```
+<a href="#attr-href">
+Description of Same-Page Links
+</a>
+```
+
+This is a link to a section on another *relative* page:
+```
+<a href="gallery/trees#pictures">
+Description of Same-Page Links
+</a>
+```
+
+This is a link to a section on a different website:
+```
+<a href="http://www.coolpics.com/gallery/trees#pictures">
+Description of Same-Page Links
+</a>
+```
+
+Clickable image that opens up a new page(or tab):
+```
+<a href="https://coolpics.com" target="_blank">
+  <img src="images/tree.jpg"
+       alt="Green Tree" >
+</a>
+```
+
+This is an email link with clickable text:
+```
+<a href="mailto:me@me.com">Send email to me</a>
+```
+
+This is a phone link, usable for mobile and some phone-linked computers:
+```
+<a href="tel:+19491234567">949-123-4567</a>
+```
+
+This links to a file (that will open up in the browser):
+```
+<a href="assets/hello.pdf">Download the PDF</a>
+```
+
+
+In order to use the anchor element we need to learned about url's and how to traverse a directory.
+(image: screenshot.png)
+
+URL is one of the key concepts of the Web. It is the mechanism used by browsers to retrieve any published resource on the web. URL stands for Uniform Resource Locator. A URL is nothing more than the address of a given unique resource on the Web.
+
+`http:` is called the protocol. This could also be the more secure version `https:` or could also take the form of `emailto:` as we have already seen or even `ftp:`.
+The main address, something like `www.example.com` is called the domain name. ***Example.com*** is a semantic way of writing the actual IP address that points to where the site is hosted- could look something like `169.65.778`
+In the url, what follows the domain name is the *path/to/the/file.html*.
+For this class, also as we have seen, tagged onto the end of this may be an anchor ( a location to scroll to) as in `http://www.coolpics.com/gallery/trees#pictures`. 
+
+***URL's***
+The required parts of a URL depend to a great extent on the context in which the URL is used. In your browser's address bar, a URL doesn't have any context, so you must provide a full (or absolute) URL. You would also need to provide this in cases of linking off of your site to a new site.
+
+When a URL is used within a document, such as in an HTML page,  things are a bit different. Because the browser already has the document's own URL, it can use this information to fill in the missing parts of any URL available inside that document. 
+
+Examples of absolute URLs:
+```
+http://www.coolpics.com/gallery/trees#pictures
+//www.coolpics.com/gallery/trees#pictures
+/gallery/trees#pictures
+```
+In the last one, the protocol as well as the domain are implied- which means these are absolute urls used within the context of the current site. 
+
+Examples of relative URLs:
+```
+gallery/trees/tree.jpg
+pages/me/index.html
+../assets/tree.jpg
+```
+
+We learn about general use elements `<div>` and `<span>` and how overuse of those elements brought about new HTML5 elements aimed to semantically improve our web documents (Divs are still used for general grouping and styling, like content wrappers).
+
+HTML5 semantic elements:
+(image: elements.gif)
+`<header>` - Used to contain the header content of a site. Do not confuse this with the `<head>` element.
+`<nav>`- Contains the navigation menu, or other navigation functionality for the page.
+`<footer>`- Contains the footer content of a site.
+`<section>`- Used to either group articles into different purposes or subjects, or to define the different sections of a single article.
+`<article>`- Contains a standalone piece of content that would make sense as a separate item; for example, a news story, a project, an image of your portfolio, etc.
+Sections and articles are completely nestable- that is you can put them inside of each other. Be wise to not get too confusing when you do this!
+There are many more highlighted in the book and beyond. You will not be tested on them but it's good to know that they are there and when you might use them.
+
+
+**Homework**
+Read Chapters 5 and 6

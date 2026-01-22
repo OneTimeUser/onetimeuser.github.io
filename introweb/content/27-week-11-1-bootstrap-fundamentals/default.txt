@@ -1,0 +1,18 @@
+Title: Week 11-1:Bootstrap Fundamentals
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+We continued exploring some elements of responsive markup and Bootstrap. 
+
+Responsive media embeds using the `<iframe>` element are trickier when it comes to being responsive. (link: https://codepen.io/onetimeuser/pen/pLBxZm text: This codepen should help with formatting.)
+
+I also released some resources to help make understanding and identifying the necessary CLASSES (Bootstrap's strength) for use in your html.
+
+(link: https://hackerthemes.com/bootstrap-cheatsheet/ text: Hacker Themes Cheat Sheet)
+(link: https://hackerthemes.com/bootstrap-buffet/#! text: Hacker Themes Buffet Component Picker)

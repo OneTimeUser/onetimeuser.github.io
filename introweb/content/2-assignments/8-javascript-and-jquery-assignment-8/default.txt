@@ -1,0 +1,56 @@
+Title: Javascript and JQuery: Assignment-8
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**jQuery and Javascript**
+
+In this assignment you will use jQuery and Javascript to add interactivity to your website.
+
+**Instructions**
+Make revisions and improvements to the site as necessary—you know more about making websites now. Using the JavaScript library, jQuery, and plain Javascript, add a new layer of interactivity to your website. We have gone over ideas already of what you can do, so take the reins and run with it. Nothing too complicated, but I will not stand for copying and pasting my code and just changing the `src` attribute. I will alert the grader of this. Don't forget to use variables when possible!
+
+For Javascript, here is what should be done in your code:
+- there should be an external .js file that contains all javascript. Call this `pureJS.js`
+1.use Javascript to access elements (i.e. `querySelector`)
+2.use Javascript to change element content (such as text or images)
+3.use Javascript to change element style 
+
+For JQuery:
+-the jQuery library should be included or referenced with your website files along with an **external** .js file with your jQuery code. Call this` jquery.js`
+-Wrap your script in a jQuery ready event.
+-Use jQuery syntax to apply an effect to an element, i.e. hide(), show(), fadeIn(), etc.
+-At least one of these changes should occur in response to a user event, such as “click.”
+
+For the following, use JQuery to rewrite the Javascript requirements above.
+1.Use jQuery syntax to access elements (i.e. with CSS-style selectors).
+2.Use jQuery syntax to change element content (such as text or images).
+3.Use jQuery syntax to change element style.
+
+
+**Publishing Your Website**
+Upload your website to the i6 Unix server in its own directory. Test your files again once they are “live” on the Web server to make sure they are accessible. Update your assignments directory to link to this page.
+
+**Submitting Your Assignment**
+Submit the following via NYU Classes. More information on submitting files with NYU Classes is also available here.
+
+**The URL to your website on i6**
+A compressed archive containing all the files of your website
+
+**Grading**
+This assignment is worth 10 points.
+
+**In your working HTML, please link to the `jquery.js` file. But be sure to include the `pureJS.js` file in your zipped folder!
+**
+jQuery library included with the website files and an external .js file with jQuery code wrapped in a ready event (1 point)
+jQuery and Javascript syntax to access elements (2 point)
+jQuery and Javascript syntax to change element content (2 point)
+jQuery and Javascript syntax to change element style (2 point)
+jQuery syntax to apply an effect to an element (1 point)
+At least one change should occur in response to a user event (1 point)
+Use of variables (1 point)

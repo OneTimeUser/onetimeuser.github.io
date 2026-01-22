@@ -1,0 +1,91 @@
+Title: Syllabus
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+There are two primary aspects to this course. The first is learning how to build websites and prepare the various elements that comprise them. The second is understanding concepts behind computers in general and the Web in particular.
+
+For the common syllabus of all sections, see (link: http://cs.nyu.edu/courses/fall17/CSCI-UA.0004-001/common-syllabus/ text: this page).
+
+##Lecture Topics and Assignments##
+-Computer principles
+-Unix command line
+-HTML
+-CSS
+-Image editing and animation
+-Design and wireframing
+-Responsive web design
+-Web frameworks
+-Web audio and video
+-jQuery
+-Web forms
+-Web hosting and domain names
+
+All assignments—including attachments—should be submitted via (link: https://newclasses.nyu.edu/ text:  NYU Classes). See instructions below.
+
+Assignments that you turn in should be your own work. It’s fine to talk to other students and to get assistance in how to do something, but you should not ask another person to do the work for you. For reference, here is the (link: http://www.cs.nyu.edu/webapps/content/academic/undergrad/academic_integrity text: Computer Science Department’s statement on academic integrity).
+
+It is important not to get behind in turning in assignments. If you do get behind, we still want you to do the assignment; it is better to turn in a late assignment than to skip it. However, late assignments are penalized as follows: 10% during the first week late, 20% during the second week late, and 30% during the third week after the due date. Homework will not be accepted past the third week after its assigned due date without prior permission. Likewise, no assignments will be accepted after the final exam.
+
+**Using NYU Classes to Submit Assignments**
+1.Log into NYU Classes with your NYU NetID and password.
+2.Click on the tab for the appropriate class (if there is more than one).
+3.Click on Assignments in the navigation bar on the left.
+4.Click on the link for the corresponding assignment in the main window.
+5.Add whatever comments to the grader that you may need to under "Assignment Text."
+6.If file attachments are required, compress them and use the following naming convention: lastname_firstname_assignmentnumber
+7.To attach files, click the Choose File button under “Attachments” to find the file you wish to submit and select it. Add additional files as necessary. Make sure that the file appears as an attachment before you continue.
+8.When you are ready to, click on the Submit button and wait for confirmation before closing the browser window.
+9.Please note that once you have submitted an assignment you can only resubmit it twice, so make sure that what you are submitting is the final version of your assignment. See your instructor with any questions about resubmissions.
+  
+
+###Required Textbook that is in COLOR!###
+(link: http://www.wiley.com/WileyCDA/WileyTitle/productCd-1118008189.html text: *HTML and CSS: Design and Build Websites*)
+Jon Duckett
+ ISBN: 978-1-118-00818-8
+
+
+###i6 Account###
+In addition to your NYU Home Account, we will be using a special computer account on a Unix Web server which will be assigned to you automatically based on your enrollment. This is called an (link: http://cims.nyu.edu/webapps/content/systems/resources/i6 text: “i6” )account and we will use it to host our websites. Common questions about i6 accounts are answered on (link: https://cims.nyu.edu/webapps/content/systems/resources/i6/faq text: this FAQ page). If you forget your i6 password and would like to reset it, go to (link: https://cims.nyu.edu/webapps/content/systems/resources/i6/resetpassword text:  this page) for instructions on how to do so.
+
+
+###Software###
+Macintosh computers with all of the necessary software installed are available to you in the (link: https://www.nyu.edu/life/information-technology/locations-and-facilities/student-technology-centers.html text: Student Technology Centers). You do not need  your own computer nor do you need to purchase any software. However, you will be learning how to use various programs and may wish to have access to them at home or on your laptop. In this case, you must purchase a subscription or use a trial version, which is sometimes available from the publisher. You can download software provided by ITS to all students, including SFTP programs, by going to the (link: https://www.nyu.edu/its/software/ text:  ITS software page).
+
+
+###Student Technology Centers and Tutoring###
+The main Student Technology Center (STC) to use for this class is the (link: https://www.nyu.edu/life/information-technology/locations-and-facilities/student-technology-centers.html text: LaGuardia Co-op). There are other STCs on campus, but this is also where tutors will be available to meet with you. The LaGuardia Co-op is located at 539-541 LaGuardia Place.
+
+***TUTORS EMAIL ADDRESSES***
+marcojanio@nyu.edu
+sas1107@nyu.edu
+zx415@nyu.edu
+
+Monday
+10 - 11AM (Zhean)
+1 - 2PM (Zhean)
+3 - 8PM (Sabrina: 3:15-6:15PM; Marco: 5:45-8PM)
+Tuesday
+10 - 10:45AM (Dora)
+11 - 1:30PM (Will)
+2 - 4PM (Zhean)
+5 - 6PM (Sabrina)
+7:45 - 10PM (Dora)
+Wednesday
+10 - 11AM (Zhean)
+1 - 2PM (Zhean)
+3:30 - 8PM (Zhean: 3:30-5PM; Sabrina: 5:15-6:15PM; Marco: 4-8PM)
+Thursday
+10 - 10:45AM (Dora)
+11 - 5PM (Will: 11-1:30PM; Marco: 1-4:45PM; Dora: 3:45-5PM)
+1 - 4:45PM (Marco)
+Friday
+11 - 5:30PM (Sabrina: 11-4PM; Zhean: 3-5:30PM)
+Academic support is also available through the University Learning Center.
+
+Make sure to save copies of your programs and back them up to other media (such as a flash drive or external hard drive). You can store copies of files on your NYU Home account as well.

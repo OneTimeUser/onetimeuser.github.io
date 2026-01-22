@@ -1,0 +1,80 @@
+Title: Week 02-1: HTML
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture**
+
+(file: 2a.pdf text: Download slides here)
+
+HTML stands for HyperText Markup Language. 
+
+Today we covered what HTML is and a brief overview of its history as well as a higher level view of how we and the browser interact with an HTML document.
+
+HTML is made up of elements which are interpreted by browsers and are used to help the browser understand what content the element contains. An element looks something like this: `<p> I am content. </p>` 
+So an element contains an opening tag (`<p>`) followed by content (`I am content.`) followed by a closing tag (`</p>`). Just about all elements will have an opening and closing tag with a few exceptions. Often times, not properly closing a tag can lead to code errors or browser interpreting mistakes. 
+
+The most important and necessary **structural** elements you need to include in every html document are the `<html>`, `<head>`, and `<body>` elements. Structurally in situ, it looks like this:
+
+```
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <title>Page Title</title>
+   </head>
+   <body>
+   </body>
+</html>
+```
+-The HTML element contains all of the html of your page or document. 
+-The head element contains information on your website like title, description and keywords, links to your stylesheet or javascript, and other information that is not itself **visible**.
+-The body element contains all **visible** elements of the site, essentially the things you see or interact with when you visit a site or page. 
+
+Structural elements are meant to give the page structure. They don't really speak of the nature of the content inside of it. Markup that does this is called "semantic." Semantic elements are important for browsers to interpret the content of your page, not only for web taxonomy and search but also for accessibility (web readers for those who are unable to see the content for example).
+
+Examples of Structural elements:
+-`<h1>, <h2>, <h3>, <h4>, <h5>, <h6>` elements. These are "headlines" and are rendered in the browser accordingly. `<h1>` will render as the largest emboldened font-size. 
+-`<p>` element stands for "paragraph". These are used to separate content into paragraphs and are also rendered in the browser by default with added spacing between elements above and below it. 
+-`<b>` stands for "bold". 
+-`<i>` stands for "italic".
+`<br />` stands for "line break". This is an empty element that doesn't need a closing tag as it is self closed if written correctly. 
+`<hr />` stands for "horizontal rule." This is also an empty element that doesn't need a closing tag. This creates a line that stretches across the document.
+
+Examples of Semantic elements:
+-`<strong>` imparts importance to the content within the tags. By default the browser will make all content bold.
+-`<em>` imparts emphasis. By default the browser will italicize this content. 
+-`<q>`signifies a quote. By default this adds quotation marks the content within. 
+-`<form>` 
+-`<ul>` or `<ol>` means and unordered list (bulleted, etc.) or ordered list (numbered). Nested within these tags is content that includes `<li>` - a list item, for however many items are part of those lists. So a complete list might look something like:
+```
+<ol>
+   Groceries
+   <li>Milk</li>
+   <li>Eggs</li>
+   <li>Baby Corn</li>
+</ol>
+```
+-`<img>` is an image element. This does not need to be closed. For now, let's ensure that our image elements take three attributes: `src` attribute is necessary and includes an absolute or relative link to the image, `height` or `width` in pixels, `alt` alternative text in case the image fails to load or for accessibility. 
+An example with an absolute url:
+`<img src="http://www.jason-aston.com/images/tree.jpg" width="150" alt="Tree with green leaves">`
+An example with a relative url:
+`<img src="images/tree.jpg" width="150" alt="Tree with green leaves">`
+
+Those of you who will stick around in academia may benefit from keeping an eye on the many more semantic and text based elements from Chapters 1 and 2.  
+
+Also, remember if you are using an FTP client like Fetch or Cyberduck, you still might have to change permissions on the files you upload. 
+
+For example in Cyberduck, if you press 'cmd-i' it will 'get info' on the highlighted file or folder. From there you can select 'Permissions' to ensure that Group and Other have Read privileges. 
+
+
+**Homework/Assignments**
+
+Read Chapters 3 and 4.
+
+(link: assignments/html-assignment-2 text: Assignment 2: HTML) due Thursday, February 8 at midnight.

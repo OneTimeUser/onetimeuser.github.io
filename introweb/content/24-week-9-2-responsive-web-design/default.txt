@@ -1,0 +1,36 @@
+Title: Week 9-2:Responsive Web Design
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+Today we continued talking about other elements of responsive web design. In addition to media queries, we talked about the necessity to include the following meta tag to the `<head>` element:
+`<meta name="viewport" content="width=device-width,  initial-scale=1.0">`
+
+We also learned about best ways to treat `<img>` images. In general, it's best to keep the css for images like so:
+`img{ width= 100%; height= auto;}` or setting the `max-width= 100%`.  This ensures the image doesn't distort out of its natural aspect ratio and it doesn't grow beyond its natural pixel size. Usually this means that in order to size your images in your layout correctly, they are contained in a `div` or `section` element which is where a variable width is placed. 
+
+We introduced a new attribute in the `img` tag that allows us to have the browser choose the best image out of an image set to display to the user based on the user's device. Examples:
+`<img src="small-500.jpg" srcset="medium-700.jpg 700w, large-900.jpg 900w" alt="This Image Here">`
+Here, in the `srcset` we write the image name, a space, then the actual width of the image using `w` instead of `px` to denote the actual width of the image. 
+`<img src="images/normal.jpg" srcset="images/retina.jpg 2x" alt="This Image Here">`
+Here, `2x` means retina display. A normal display is `1x`. In instances of retina displays viewing the website, the retina image would be swapped in.  
+
+For inspiration: (link: mediaqueri.es text: mediaqueri.es)
+
+Here is a link to some of the responsive coding we looked at today. Feel free to inspect the code of this website to see how you might code up your mobile first responsive site.
+
+(link: http://cims.nyu.edu/~aston/bot-soccer/ text: Bot-Soccer responsive coded wireframe)
+
+(file: 9-2.pdf text:Download presentation slides)
+
+**TIPS**
+- keep it simple! Coding up the mobile version first should be easy! Remember in general your layouts will be highly simplified- generally single column full width. If you markup your websites correctly, then the sections of your website should naturally fall vertically one after the other. 
+
+-use your developer tools. Chrome has a nice tool to help you see what your site looks like on smaller screen sizes. Go ahead and leave it open as you code up the mobile version of your site. Then, when you're satisfied, drag the window out a bit more to your next breakpoint and begin to alter the CSS within appropriate media query to suit the layout your initially designed.
+
+-reference my site! I've built a fairly easy template with which you can work from. Feel free to grab the Html and CSS and modify as you need!

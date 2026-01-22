@@ -1,0 +1,34 @@
+Title: Week 01-1: Intro
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture**
+
+In this first class, we briefly go over elements and principles of the Internet, since that will be the medium we work with throughout the semester. 
+
+What is the Internet? 
+It is a network of networks that consists of private, public, academic, business, and government networks of local to global scope, linked by a broad array of electronic, wireless, and optical networking technologies. The Internet carries an extensive range of information resources and services, such as the inter-linked hypertext documents and applications of the World Wide Web(WWW), electronic mail, telephony, and file sharing.
+
+We also highlight the Digital Revolution which represents the shift from analog and electric to digital- digital circuits which begin to drive our machines and day-to-day life. The characteristics of digital are quite different from analog. Perhaps the most expressive difference is embodied in the signal. We know digital signals to be a combination of 1's and 0's. We go over this in greater detail as well as other characteristics.
+
+Moore's Law primarily describes a constant rate of change in computer processor speed but also:
+-The number of transistors that can be placed inexpensively on an integrated circuit doubles every two years.
+-The number of transistors is closely connected to processor speed, memory, etc.
+-Computer processor speed has doubled approximately every two years.
+-Moore’s Law seems to be plateauing but has held steady for the past 40 years.
+
+
+
+Introduction
+(file: 1a.pdf text: Download Introduction Lecture)
+
+**Homework**
+Browse class site- there are many resources on this site that will help you. At different points int the year we will address some of these resources.
+Read introduction chapter in book
+(link: http://jason-aston.com/introweb-s18/useful-links text: Download a text editor and SFTP client and Chrome or Firefox if you don't have it already.)

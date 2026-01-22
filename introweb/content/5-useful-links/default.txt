@@ -1,0 +1,40 @@
+Title: Useful Links
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**MORE TO COME** 
+*If you have any you would like to add, email them to me. *
+
+**Design**
+(link: http://www.awwwards.com/ text: Awwwards)
+(link: http://dribbble.com/ text: Dribbble)
+(link: http://www.webbyawards.com/ text: Webby Awards)
+(link: http://httpster.net/ text: Httpster)
+(link: http://www.thefwa.com text: The FWA)
+(link: http://www.teehanlax.com/tools/ text: Mobile Tablet  Design Templates)
+(link: http://thenounproject.com/ text: The Noun Project)
+
+**HTML, CSS, Javascript**
+(link: http://alistapart.com/ text: alistapart)
+(link: http://www.codecademy.com/ text: Code Academy)
+(link: http://css-tricks.com/ text: css-tricks)
+(link: http://getbootstrap.com/ text: Twitter Bootstrap)
+(link: http://www.dontfeartheinternet.com/ text: dontfeartheinternet)
+(link: https://github.com/ text: Github)
+(link: http://stackoverflow.com/ text: Stack Overflow)
+(link: http://www.html5rocks.com/ text: HTML5 Rocks)
+(link: http://jquery.com/ text: jQuery)
+
+**Software and Tools**
+(link: https://www.google.com/intl/en/chrome/browser/ text: Chrome Browser)
+(link: http://www.sublimetext.com/ text: Sublime Text 3)
+(link: https://brackets.io text: Brackets - Open Source Code Editor from Adobe)
+(link: http://panic.com/transmit/ text: Transmit [Paid FTP Management])
+(link: https://cyberduck.io/?l=en text: CyberDuck [Free FTP Management])
+(link: http://codepen.io text: Codepen)

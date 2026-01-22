@@ -1,0 +1,98 @@
+Title: Week 11-2:Forms
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+HTML Forms are one of the main points of interaction between a user and a web site or application. They allow users to send data to the web site. Most of the time that data is sent to the web server, but the web page can also intercept it to use it on its own.
+
+An HTML Form is made of one or more widgets. Those widgets can be text fields (single line or multiline), select boxes, buttons, checkboxes, or radio buttons. Most of the time those widgets are paired with a label that describes their purpose — properly implemented labels are able to clearly instruct both sighted and blind users on what to enter into a form input.
+
+Let's go through making a simple contact form that looks something like this:
+(image:form-sketch-low.jpg)
+
+Let's start with our starter HTML:
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+  </body>
+</html>
+```
+
+To build our contact form, we will use the following HTML elements: `<form>`,` <label>`, `<input>`, `<textarea>`, and `<button>`.
+All HTML forms start with a <form> element like this:
+
+```
+<form action="emailto:xxxx@nyu.edu" method="post" enctype="text/plain">
+
+</form>
+```
+This element formally defines a form. It's a container element like a `<div> `or` <p> `element, but it also supports some specific attributes to configure the way the form behaves. All of its attributes are optional but it's considered best practice to always set at least the `action` attribute and the `method` and for email text the `enctype`attribute.
+
+-The action attribute defines the location (URL) where the form's collected data should be sent when it is submitted.
+-The method attribute defines which HTTP method to send the data with (it can be "get" or "post").
+
+Our contact form is really simple and contains three text fields, each with a label. The input field for the name will be a basic single-line text field, the input field for the e-mail will be a single-line text field that accepts only an e-mail address, and the input field for the message will be a basic multiline text field.
+
+In terms of HTML code we need something like the following to implement these form widgets:
+```
+<form action="/my-handling-form-page" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="user_mail">
+    </div>
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="user_message">
+</div>
+</form>
+```
+
+Note the use of the `for `attribute on all` <label> `elements; it's a formal way to link a label to a form widget. This attribute references the `id` of the corresponding widget. There is some benefit to doing this. The most obvious one is to allow the user to click on the label to activate the corresponding widget.
+
+On the `<input>` element, the most important attribute is the `type` attribute. This attribute is extremely important because it defines the way the `<input>` element behaves. It can radically change the element so pay attention to it. You can read more about other attributes of these kinds (link: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/The_native_form_widgets text: here).
+
+Last but not least, note the syntax of `<input>` vs. `<textarea>`.This is one of the oddities of HTML. The `<input>` tag is an empty element, meaning that it doesn't need a closing tag. On the contrary, `<textarea>` is not an empty element, so you have to close it with the proper ending tag. This has an impact on a specific feature of HTML forms: the way you define the default value. To define the default value of an `<input>` element you have to use the value attribute like this:
+
+`<input type="text" value="by default this element is filled with this text" />`
+
+On the contrary, if you want to define the default value of a `<textarea>`, you just have to put that default value between the starting and ending tag of the `<textarea>` element like in any `<p>` or text element. 
+
+Our form is almost ready; we just have to add a button to allow the user to send their data once they have filled out the form. This is simply done by using the `<button>` element; add the following just above the closing `</form>` tag:
+```
+<div class="button">
+  <button type="submit">Send your message</button>
+</div>
+```
+
+You'll see that the `<button>` element also accepts a type attribute — this accepts one of three values: submit, reset, or button.
+
+A click on a submit button (the default value) sends the form's data to the web page defined by the action attribute of the` <form>` element.
+A click on a reset button resets all the form widgets to their default value immediately. From a UX point of view, this is considered bad practice.
+A click on a button button does... nothing! That sounds silly, but it's amazingly useful for building custom buttons with JavaScript.
+
+<p data-height="474" data-theme-id="0" data-slug-hash="pLBmoZ" data-default-tab="result" data-user="onetimeuser" data-embed-version="2" data-pen-title="pLBmoZ" class="codepen">See the Pen <a href="https://codepen.io/onetimeuser/pen/pLBmoZ/">pLBmoZ</a> by Onetimeuser (<a href="https://codepen.io/onetimeuser">@onetimeuser</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+Cool. We can build a form. Almost no one builds them from scratch anymore. 
+
+Check out (link: https://formspree.io/ text: Formspree). It handles a good amount of form legwork for you. Its simple and clean and free. Comes with some other features (scroll down on the page).
+
+Also, if you want to follow these steps in order to get your form information saved to a Google Spreadsheet, then check (link: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server text: THIS OUT!)
+You can really leverage the power of Google Sheets in many ways...even using it as your own (link: https://www.drivecms.xyz/ text: CMS (Content Management system) to create web sites from!)
+
+(link: https://getbootstrap.com/docs/4.1/components/forms/ text: Don't forget, Bootstrap provides tons of stuff related to forms, down to validation and messaging. )

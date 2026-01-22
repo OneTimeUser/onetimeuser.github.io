@@ -1,0 +1,71 @@
+Title: Week 03-2:HTML/CSS
+
+----
+
+Cover: 
+
+----
+
+Text: 
+
+**Lecture**
+
+I started class by going over the role of index.html in all of your files and file directories, specifically what we created with the UNIX assignment and what we will be creating with the subsequent assignments. 
+
+Today I had you <del>observe the process of me making</del> the following site: (link: https://cims.nyu.edu/~aston/week3.html text: I LOVE NY). Make sure to view the source using the Chrome or Firefox developer tools to see **all** of the final code!   **All** of the code! 
+
+(image: https://media.giphy.com/media/l3V0BCbe9YgCZN8hW/giphy.gif)
+
+Then I went through 1 of 3 ways to add css styles to your page using the `<style></style>` located in the `<head>` element with a more formal introduction to follow next week. This class we focused solely on adding some fonts and font styling to your page. Feel free to incorporate it into the HTML assignment. Not required!
+
+The easiest way to change your webpage's font is to use the `font-family` property on an element selector or an id selector (`p` or `h1` or `body` or `h1, h2, h3` or `#gallery`. The easiest way to do this would be something like the following entered within the `<style>` element described above:
+```
+body {
+    font-family: Helvetica;
+}
+```
+Changing font in this method relies on the fonts that are available on the computer that is viewing the webpage. Since Helvetica is primarily a Mac font, we need to add a fallback font for computers without Helvetica (like PC's). It's very easy to do this:
+```
+body {
+    font-family: Helvetica, Arial;
+}
+```
+There is still an issue here. While generally most computers and devices will have one of these fonts, perhaps someone's device will not have either of those. We should then choose either another font to fall back on or a general font group which usually falls into one of these categories: serif, sans-serif, monospace, cursive, and fantasy. 
+So we should end up with something like this:
+```
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+```
+Read (link: https://practicaltypography.com/system-fonts.html text: this) and (link: https://www.w3.org/Style/Examples/007/fonts.en.html text: this) for more information about fonts!
+
+I'll cover two more ways to add custom fonts on your site next week! 
+
+There are a few other properties you can manipulate in regards to fonts:
+`font-weight`, `font-style`, and then `color`.  Look these up in your book to see styles you can apply to these properties. 
+
+Then in preparation for our full on CSS week next week, we review the importance of the `id` attribute and add in the `class` attribute. The distinction between these two attributes is very important. The `id` attribute should generally be used as an identifier for unique elements on your page. Just as you have an id card that is meant only for you, the `id` attribute should be unique to the element your attributing it too. As you see with our experience with the `id` attribute so far, it's useful to know the id of some elements on the page so that we can, for example, link to it from other pages, and style it distinctively. We will go into this a bit more next week. The `class` attribute is similar to an `id` in that it gives a name to an element, but the `class` attribute is best used on multiple elements of the same type, hence "class." 
+
+For example, let's say we have a section on the site that is comprised of pictures-something of a gallery section. 
+I can go ahead and give the section an ID of gallery like so: `<section id="gallery">`.
+Then, let's say that each image inside of that gallery is an `<article>`. I want these images to look similar in size, border, etc., so I want to add a class name so that I can do this later on with css: `<article class="gallery-image">`. The opening tag would look like that for all of the article/images in the gallery section. 
+```
+<section id="gallery">
+   <article class="gallery-image"><img src="image.jpg" alt="trees"></article>
+   <article class="gallery-image"><img src="image2.jpg" alt="trees"></article>
+   <article class="gallery-image"><img src="image3.jpg" alt="trees"></article>
+</section>
+```
+If I wanted any text inside of the gallery to look a certain way, I would write it like so:
+```
+#gallery{
+    font-family: Comic Sans, cursive;
+    font-weight: 700;
+    font-style: italic;
+    color: red;
+]
+```
+
+
+**Reading/Assignment**
+Please read Chapters 10 and 11 in the book.

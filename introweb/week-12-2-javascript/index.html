@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113019983-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113019983-1');
+
+    </script>
+
+    <title>
+        Week 12-2:Javascript Essentials - Intro to Web Design & Computer Principles    </title>
+
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="The fundamentals of building web presences" />
+    <!--[if lte IE 8]><script src="./../assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="./../assets/css/main.css">
+<!--[if lte IE 9]><link rel="stylesheet" href="./../assets/css/ie9.css"><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="./../assets/css/ie8.css"><![endif]-->    <!-- User Heat Tag -->
+    <script type="text/javascript">
+        (function(add, cla) {
+            window['UserHeatTag'] = cla;
+            window[cla] = window[cla] || function() {
+                (window[cla].q = window[cla].q || []).push(arguments)
+            }, window[cla].l = 1 * new Date();
+            var ul = document.createElement('script');
+            var tag = document.getElementsByTagName('script')[0];
+            ul.async = 1;
+            ul.src = add;
+            tag.parentNode.insertBefore(ul, tag);
+        })('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');
+        _uhtracker({
+            id: 'uho0M4NamS'
+        });
+
+    </script>
+    <!-- End User Heat Tag -->
+</head>
+
+<body class="template-default page-week-12-2-javascript">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="./../index.html" class="logo">
+            <h1 class="title">Intro to Web Design &amp; Computer Principles</h1>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+        <!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="./../index.html">Home</a></li>
+
+                    <li><a href="./../syllabus/index.html">Syllabus</a></li>
+                    <li><a href="./../assignments/index.html">Assignments</a></li>
+                    <li><a href="./../grading/index.html">Grading</a></li>
+                    <li><a href="./../working-with-local-files/index.html">Working With Local Files</a></li>
+                    <li><a href="./../useful-links/index.html">Useful Links</a></li>
+                    <li><a href="./../unix/index.html">Unix</a></li>
+                    <li><a href="./../week-1/index.html">Week 01-1: Intro</a></li>
+                    <li><a href="./../week-01-2-unix/index.html">Week 01-2: Operating Systems and UNIX</a></li>
+                    <li><a href="./../week-02-1-html/index.html">Week 02-1: HTML</a></li>
+                    <li><a href="./../week-02-2-html/index.html">Week 02-2:HTML</a></li>
+                    <li><a href="./../week-03-1-html/index.html">Week 03-1:HTML</a></li>
+                    <li><a href="./../week-03-2-html-css/index.html">Week 03-2:HTML/CSS</a></li>
+                    <li><a href="./../week-04-1-css/index.html">Week 04-1:CSS</a></li>
+                    <li><a href="./../week-04-2-css/index.html">Week 04-2:CSS</a></li>
+                    <li><a href="./../week-05-1-css-layout/index.html">Week 05-1:CSS Layout</a></li>
+                    <li><a href="./../week-05-2-layout/index.html">Week 05-2:CSS Layout</a></li>
+                    <li><a href="./../week-06-1-images-and-animation/index.html">Week 06-1:Images and Animation</a></li>
+                    <li><a href="./../week-06-2-midterm-review/index.html">Week 06-2:Midterm Review</a></li>
+                    <li><a href="./../week-07-1-midterm/index.html">Week 07-1:Midterm</a></li>
+                    <li><a href="./../week-07-2-midterm/index.html">Week 07-2:Design</a></li>
+                    <li><a href="./../week-08-1-wireframes/index.html">Week 08-1: Wireframes</a></li>
+                    <li><a href="./../week-08-2-in-class-work/index.html">Week 08-2:In-Class-Work</a></li>
+                    <li><a href="./../week-09-1-responsive-web-design/index.html">Week 09-1:Responsive Web Design</a></li>
+                    <li><a href="./../week-9-2-responsive-web-design/index.html">Week 9-2:Responsive Web Design</a></li>
+                    <li><a href="./../week-10-1-css3-extravaganza/index.html">Week 10-1:CSS3 Extravaganza</a></li>
+                    <li><a href="./../week-10-2-bootstrap-intro/index.html">Week 10-2:Bootstrap Intro</a></li>
+                    <li><a href="./../week-11-1-bootstrap-fundamentals/index.html">Week 11-1:Bootstrap Fundamentals</a></li>
+                    <li><a href="./../week-11-2-forms/index.html">Week 11-2:Forms</a></li>
+                    <li><a href="./../week-12-1-audio-video/index.html">Week 12-1:Audio/Video</a></li>
+                    <li><a href="./index.html">Week 12-2:Javascript Essentials</a></li>
+                    <li><a href="./../week-13-1-javascript/index.html">Week 13-1:Javascript Examples</a></li>
+                    <li><a href="./../week-13-2-jquery/index.html">Week 13-2:JQuery</a></li>
+                    <li><a href="./../week-14-1-wrap/index.html">Week 14-1:Wrapping It Up</a></li>
+                    <li><a href="./../week-14-2-final-review/index.html">Week 14-2:Final Review</a></li>
+            </ul>
+</nav>
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <h1>
+                    Week 12-2:Javascript Essentials                </h1>
+
+                
+                <p>Check out a small program written in Javascript <a href="https://codepen.io/onetimeuser/pen/GdJGLe">here</a></p>
+<p><strong>INTRO</strong><br />
+JavaScript is a widely used web-based programming language that powers the dynamic behavior on most websites. It enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else, sorta.</p>
+<p>You can store values and data in things called variables, work with text in a dynamic way (to print out messages or show the user, you can run code in response to certain events (so something more advanced that what css allows. You can tie in API’s other javascript that extends your abilities and functionalities</p>
+<p>Javascript runs in order...from top down. Situated in html, in runs in place...usually why you see javascript below all of the html content (just before closing body tag) that is because usually we are manipulating css or html and we need those to load first before we start iterating or modifying it.  Sometimes you’ll see it in the head and usually that is js that isn’t content dependent. Js can also be put elsewhere in our html and it will run in place. </p>
+<p>How do you add it? Using the <code>&lt;script&gt;&lt;/script&gt;</code> element. Javascript can just be written inside of these tags. Or you can link to it similarly to css like so: <code>&lt;script src="path/to/script.js"&gt;&lt;/script&gt;</code></p>
+<p>So for our cases, our use of javascript can take a number of forms: user interactions that are simple, like button clicks or prompts/messages; style changes or content changes that have nothing to do with the user (dates, update information regarding availablitily); full on programs; app like functionality that ties into the various API’s; countless other things.</p>
+<p>First off, let me introduce you to a way for you to debug and understand your javascript code- this necessitates the use of a console. The console helps you understand where there may be code misses.<br />
+Think of it as a debug...you can put a console statement anywhere to print out a variable or a message or status of some kind. </p>
+<p>We do this with <code>console.log();</code>. The parentheses means that this is a function. This function takes in an argument- basically something to show you when it is run in the course of your javascript. This can be a value or variable or even a string message (all described below!), like <code>console.log("I'm running!");</code>.</p>
+<p><strong>Data Types</strong><br />
+Data types are the building blocks of all languages and essential pieces of any program.<br />
+In JS there are four of whats called “primitive” data types which form the foundation of all JS programs. - they are just the simplest built-in forms of data.</p>
+<p><strong>STRINGS</strong> - any keyboard characters (letters, spaces, numbers, symbols- text as text essentially- surrounded by single or double quotes. <code>"I am a string"</code>, <code>1,345</code><br />
+<strong>NUMBERS </strong>- any number, inc. decimals. <code>4, 4.13, 10093</code><br />
+<strong>BOOLEANS</strong> - true or false<br />
+<strong>NULL</strong> - represented by null and represents no value or absence of a value</p>
+<p><strong>Operators</strong><br />
+Math operators are  <code>+ - * /</code><br />
+These math operators allow you to do some simple math (more complex math equations are also possible).<br />
+So far we have been logging direct data types to the console. Let’s do something with some logic to it.  Type of the following in a script element or codepen's JS section and open the console window in codepen or developer's window.<br />
+<code>console.log(3 + 4 / 2 - 6 * 2); //which operators are rendered first?</code></p>
+<p>Other math operators:<br />
+<code>++</code> -increment by one, like <code>numberOfDogs++</code><br />
+<code>--</code> -decrement by one<br />
+<code>%</code>- remainder <code>5%2</code> returns <code>1</code> becase 5/2 has a remainder of 1)<br />
+<code>+=</code> or <code>-=</code> is a simple way of writing a variable equals its value plus the number.<br />
+So </p>
+<pre><code>let x=4;
+x+=2; //returns 6; could also be written x=x+2;</code></pre>
+<p>We have other operators too.  </p>
+<p><code>=</code> is the assignment operator...this basically says one thing is another. Literally...thats what it says. Use with caution because you could  possibly overwrite smth.</p>
+<p><code>+</code> to combine strings together like `&quot;Hello&quot; + &quot;Everyone&quot;; //returns &quot;HelloEveryone&quot;</p>
+<p>Comparison operators<br />
+<code>&gt;</code>,<code>&lt;</code>, <code>==</code><br />
+We use these in some of our programs to check for value.</p>
+<p><strong>Properties</strong><br />
+In javascript, certain types of data carry certain types of properties and each data type you introduce is stored in the computers memory as an instance of that data type.<br />
+So an instance of a string <code>‘New York’</code>has additional information attached to it.<br />
+For example, every string instance has a property called <code>length</code> that stores the number of characters in it.<br />
+Retrieving this property information is as easy as appending the property to the data type with a period and the property name. </p>
+<p>Try this:<br />
+<code>console.log(‘New York’.length);</code>//prints 8</p>
+<p>Read up on this here:<br />
+<a href="https://www.w3schools.com/js/js_string_methods.asp">https://www.w3schools.com/js/js_string_methods.asp</a><br />
+<a href="https://www.w3schools.com/js/js_number_methods.asp">https://www.w3schools.com/js/js_number_methods.asp</a></p>
+<p><strong>Built in JS Methods</strong><br />
+Methods are functions or programs that execute something or calculate something as needed and usually generate an output. This looks similar to a property, it has a period and a name but also includes parentheses afterwords....like:</p>
+<p><code>Console.log(’New York’.toUpperCase());</code> </p>
+<p>Empty parentheses usually means the method executes on what precedes it and returns without needing any information or data to run.</p>
+<p>Some methods needs data or value to run:<br />
+<code>console.log(’New York’.startsWith(’N’)); //returns true</code></p>
+<p>Read up on all of the JS methods here:<br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index</a></p>
+<p><strong>LIBRARIES</strong><br />
+Javascript Libraries  contain methods that you can call without having an instance like above? What do you mean?  Lets say I want a random number that I am using to eventually choose a random picture to show the user on my site. </p>
+<p><code>console.log(Math.random());//returns random between 0-1</code></p>
+<p>I use the Math library above and use the random method.<br />
+The Math library is very handy and useful in the way math fits in with logic...which you will soon come to see. </p>
+<p>Want to increase the result like say...beetween 0-100<br />
+<code>Math.random() * 100</code></p>
+<p><code>Math.floor</code>- round down to nearest whole number<br />
+<code>Math.ceil</code>- round up</p>
+<p><code>Math.floor(Math.random() * 50);</code></p>
+<p>Similarly we have libraries for Number and Date</p>
+<p><code>console.log(Number.isInteger(2017));</code></p>
+<p>Read up a bit more about this below:<br />
+<a href="https://www.w3schools.com/js/js_number_methods.asp">https://www.w3schools.com/js/js_number_methods.asp</a><br />
+<a href="https://www.w3schools.com/js/js_date_methods.asp">https://www.w3schools.com/js/js_date_methods.asp</a><br />
+<a href="https://www.w3schools.com/js/js_math.asp">https://www.w3schools.com/js/js_math.asp</a></p>
+<p><strong>Comments</strong><br />
+We all know comments...they are just for us or someone else and don’t run in code.<br />
+<code>//</code> is used for single line comments</p>
+<pre><code>/*
+Multiple line comments 
+HERE!
+*/</code></pre>
+<p>Comments are great for several reasons.  Sometimes its nice while debugging to just strike a possible problem line of code or section of code to see if the code runs without errors. </p>
+<p><strong>Variables</strong><br />
+We use variables to write code that is easy to understand and work with. So far our examples use hard values that we write over and over again. Variables let us store this information so we can reuse it, change it, or modify it in some other way. </p>
+<p><code>const</code> is short for constant...its a keyword that creates a new variable with a value that doesn’t change, your name is the name given to the variable. This variable cannot be reassigned or revalued. It also must be defined when you create it.</p>
+<pre><code>const yourName = ‘bob’;
+console.log(yourName);</code></pre>
+<p>Check out the following using concatenation:<br />
+<code>Console.log(‘Your name is’ + yourName + ‘.’);</code></p>
+<p><code>Const</code> variables cannot be reassigned, but <code>let</code>variables can be reassigned</p>
+<pre><code>let timesExercisedThisWeek = 3;
+timesExercisedThisWeek = 4; //results in 4</code></pre>
+<p>You don’t have to define the <code>let</code> variable in the beginning if there is no value yet.<br />
+<code>let timesExercisedThisWeek;</code></p>
+<p>Inserting variable into strings:</p>
+<pre><code>const myName = 'Jason';
+const myCity = 'NYC';
+console.log(`My name is ${myName}. My favorite city is ${myCity}`);</code></pre>
+<p><strong>HOMEWORK</strong><br />
+Think about something simple and dynamic you would want to introduce into your current site. Try not to be bothered by what you don't know and just think about something that fits into your site theme.<br />
+Past projects:<br />
+Making the date show on the page, which also affects the background color of the page.<br />
+Creating a little mini interactive game for the page.<br />
+Showing random images </p>
+<p>Once you have an idea, try to Pseudo Code it, that is... try and break the process down of creating this into little programmatic bites. You don't have to know how to program yet in order to do this as this is preliminary. As you learn more about code, you will begin to understand the best method for breaking this down.</p>
+<p>Here are some simple examples:</p>
+<pre><code>Examples:
+
+1. If student's grade is greater than or equal to 60
+
+Print "passed"
+else
+Print "failed"
+
+2. Set total to zero
+
+Set grade counter to one
+
+While grade counter is less than or equal to ten
+
+Input the next grade
+Add the grade into the total
+Set the class average to the total divided by ten
+
+Print the class average.
+
+3.
+
+Initialize total to zero
+
+Initialize counter to zero
+
+Input the first grade
+
+while the user has not as yet entered the sentinel
+
+add this grade into the running total
+add one to the grade counter
+input the next grade (possibly the sentinel)
+if the counter is not equal to zero
+
+set the average to the total divided by the counter
+print the average
+else
+
+print 'no grades were entered'
+
+4.
+
+initialize passes to zero
+
+initialize failures to zero
+
+initialize student to one
+
+while student counter is less than or equal to ten
+
+input the next exam result
+if the student passed
+add one to passes
+else
+
+add one to failures
+add one to student counter
+
+print the number of passes
+
+print the number of failures
+
+if eight or more students passed
+
+print "raise tuition"</code></pre>            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+            <section id="contact">
+        <h2>Have Questions?</h2>
+
+        
+        <form method="post" action="#contact">
+            <div class="field half first">
+                <input type="text" name="contact[name]" id="name" placeholder="Name" />
+            </div>
+
+            <div class="field half">
+                <input type="email" name="contact[email]" id="email" placeholder="Email" />
+            </div>
+
+            <div class="field">
+                <textarea name="contact[message]" id="message" placeholder="Message"></textarea>
+            </div>
+
+            <input type="text" name="contact[antibot]" id="antibot" style="display:none" />
+
+            <ul class="actions">
+                <li><input type="submit" value="Send" name="contact[submit]" class="special" /></li>
+            </ul>
+        </form>
+    </section>
+
+        <div class="copyright">
+            <ul>
+<li>© 2018 All right reserved</li>
+</ul>        </div>
+    </div>
+</footer>
+    </div>
+
+    <script src="./../assets/js/jquery.min.js"></script><script src="./../assets/js/skel.min.js"></script><script src="./../assets/js/util.js"></script><!--[if lte IE 8]><script src="./../assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="./../assets/js/main.js"></script>
+</body>
+
+</html>
