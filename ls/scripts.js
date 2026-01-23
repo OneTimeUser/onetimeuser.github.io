@@ -1,6 +1,6 @@
         // Hex color palette for background colors
         const hexColors = [
-            '#effe54', '#575c45', '#e6e1de','#625dc1',
+            '#625dc1', '#effe54', '#575c45', '#e6e1de',
             '#061316'
         ];
 
@@ -104,7 +104,6 @@
             const rotateSpeed = 0.005;
             mesh.rotation.y += deltaX * rotateSpeed;
             mesh.rotation.x += deltaY * rotateSpeed;
-            mesh.rotation.z += (deltaX + deltaY) * rotateSpeed * 0.3;
 
             velocityX = deltaX * rotateSpeed;
             velocityY = deltaY * rotateSpeed;
@@ -206,7 +205,7 @@
             'assets/ls.obj',
             (obj) => {
                 const isMobile = window.innerWidth <= 768;
-                const baseScale = 30;
+                const baseScale = 50;
                 const mobileScale = 50;
                 const scaleValue = isMobile ? mobileScale : baseScale;
                 obj.scale.set(scaleValue, scaleValue, scaleValue);
@@ -242,7 +241,6 @@
                 const inertia = 0.92;
                 mesh.rotation.y += velocityX;
                 mesh.rotation.x += velocityY;
-                mesh.rotation.z += (velocityX + velocityY) * 0.3;
                 velocityX *= inertia;
                 velocityY *= inertia;
             }
