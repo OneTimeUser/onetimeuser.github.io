@@ -71,11 +71,51 @@
         cursor.style.opacity = '1';
         });
 
-        let targetRotationY = 0;
+        let isDragging = false;
+        let lastPointerX = 0;
+        let lastPointerY = 0;
+        let velocityX = 0;
+        let velocityY = 0;
 
-        window.addEventListener('mousemove', (event) => {
-            const normalizedX = (event.clientX / window.innerWidth) * 2 - 1;
-            targetRotationY = normalizedX * 2.5;
+        function isInteractiveTarget(target) {
+            return target.closest('a, button, input, textarea, select, [role="button"], [role="link"]');
+        }
+
+        window.addEventListener('pointerdown', (event) => {
+            if (isInteractiveTarget(event.target)) {
+                return;
+            }
+            isDragging = true;
+            lastPointerX = event.clientX;
+            lastPointerY = event.clientY;
+            velocityX = 0;
+            velocityY = 0;
+        });
+
+        window.addEventListener('pointermove', (event) => {
+            if (!isDragging || !mesh) {
+                return;
+            }
+            const deltaX = event.clientX - lastPointerX;
+            const deltaY = event.clientY - lastPointerY;
+            lastPointerX = event.clientX;
+            lastPointerY = event.clientY;
+
+            const rotateSpeed = 0.005;
+            mesh.rotation.y += deltaX * rotateSpeed;
+            mesh.rotation.x += deltaY * rotateSpeed;
+            mesh.rotation.z += (deltaX + deltaY) * rotateSpeed * 0.3;
+
+            velocityX = deltaX * rotateSpeed;
+            velocityY = deltaY * rotateSpeed;
+        });
+
+        window.addEventListener('pointerup', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('pointercancel', () => {
+            isDragging = false;
         });
 
         // Three.js setup
@@ -198,9 +238,13 @@
         function animate() {
             requestAnimationFrame(animate);
             
-            // Rotate on Y-axis based on cursor X position
-            if (mesh) {
-                mesh.rotation.y += (targetRotationY - mesh.rotation.y) * 0.08;
+            if (mesh && !isDragging) {
+                const inertia = 0.92;
+                mesh.rotation.y += velocityX;
+                mesh.rotation.x += velocityY;
+                mesh.rotation.z += (velocityX + velocityY) * 0.3;
+                velocityX *= inertia;
+                velocityY *= inertia;
             }
             
             renderer.render(scene, camera);

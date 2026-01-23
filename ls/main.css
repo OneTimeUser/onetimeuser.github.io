@@ -258,6 +258,8 @@
         padding-top: clamp(10px, 2vh, 20px);
     }
 
+
+
     .contact-info {
         
         display: flex;
@@ -267,7 +269,7 @@
     }
 
     .contact-info > div{
-        font-size: clamp(1.5rem, 1.1vw, 1.8rem);
+        font-size: clamp(1.1rem, 2.5vw, 1.8rem);
         font-weight: 400;
     }
 
@@ -286,8 +288,8 @@
 
 
     #nylogo img{
-        width: 60px;
-        height: 60px;
+        width: clamp(2rem, 10vw, 4rem);
+        /* height: 60px; */
         display: inline-block;
         vertical-align: middle;
         margin: -5px 0;
@@ -297,19 +299,6 @@
         .main-content {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr auto;
-        }
-
-        .model-container {
-            justify-self: center;
-            max-width: 200px;
-            max-height: 200px;
-            position: absolute;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .tagline {
-            font-size: clamp(1.5rem, 2vw, 2rem)
         }
 
         .model-container {
@@ -324,29 +313,41 @@
             z-index: -2;
             pointer-events: none;
         }
+    }
+
+    @media (max-width: 768px) {
+        .tagline {
+            font-size: clamp(1.5rem, 2vw, 2rem);
+        }
+
+        
 
         .philosophy {
             font-size: clamp(1.3rem, 2vw, 1.8rem);
         }
 
         .description {
-            font-size: clamp(1.3rem, 2vw, 1.8rem);
+            font-size: clamp(1rem, 2vw, 1.8rem);
         }
 
         .hex-selector{
             font-size: clamp(1.3rem, 2vw, 1.8rem);
         }
 
+        #contact-name {
+        display: none;
+    }
+
 
         .contact-info {
-            flex-direction: column;
-            align-items: center;
+            /* flex-direction: column; */
+            /* align-items: center; */
             gap: 10px;
         }
 
-        .contact-item {
+        /* .contact-item {
             font-size: clamp(0.7rem, 2.5vw, 0.85rem);
-        }
+        } */
     }
 
     @media (min-width: 1024px) {
