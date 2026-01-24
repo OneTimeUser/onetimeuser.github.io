@@ -287,12 +287,16 @@
     }
 
 
-    #nylogo img{
+    #nylogo svg{
         width: clamp(2rem, 5vw, 4rem);
-        /* height: 60px; */
+        height: auto;
         display: inline-block;
         vertical-align: middle;
         margin: -5px 0;
+    }
+
+    #nylogo .ny-text {
+        fill: currentColor;
     }
 
     /* @media (max-width: 1024px) {
@@ -320,6 +324,8 @@
             min-height: 100svh;
             height: auto;
             overflow-y: auto;
+            overscroll-behavior: none;
+            touch-action: none;
         }
 
         .container {
