@@ -316,6 +316,17 @@
     } */
 
     @media (max-width: 768px) {
+        body {
+            min-height: 100svh;
+            height: auto;
+            overflow-y: auto;
+        }
+
+        .container {
+            min-height: 100svh;
+            height: auto;
+        }
+
         .tagline {
             /* font-size: clamp(1.2rem, 2vw, 2rem); */
         }
