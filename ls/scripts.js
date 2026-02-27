@@ -87,41 +87,47 @@
 
 
 window.addEventListener('pointerdown', (event) => {
-    if (isInteractiveTarget(event.target)) {
-        return;
+    if (isInteractiveTarget(event.target)) return;
+
+    // ONLY allow dragging if it's NOT a mouse (i.e., touch or pen)
+    if (event.pointerType !== 'mouse') {
+        isDragging = true;
+        lastPointerX = event.clientX;
+        lastPointerY = event.clientY;
+        velocityX = 0;
+        velocityY = 0;
     }
-    // Only set dragging to true for touch/pen or mouse clicks
-    isDragging = true;
-    lastPointerX = event.clientX;
-    lastPointerY = event.clientY;
-    velocityX = 0;
-    velocityY = 0;
 });
 
 window.addEventListener('pointermove', (event) => {
     if (!mesh) return;
 
-    // Desktop/Mouse: Passive tracking (No click required)
-    if (event.pointerType === 'mouse' && !isDragging) {
-        // Map mouse position to a rotation value
-        // Using window width/height to normalize the movement
-        targetRotationY = (event.clientX / window.innerWidth - 0.5) * 2;
-        targetRotationX = (event.clientY / window.innerHeight - 0.5) * 2;
+    // DESKTOP: Passive high-response tracking
+    if (event.pointerType === 'mouse') {
+        // Calculate normalized position (-1 to 1)
+        const mouseX = (event.clientX / window.innerWidth - 0.5) * 2;
+        const mouseY = (event.clientY / window.innerHeight - 0.5) * 2;
+
+        // "Target" rotation (Adjust 1.5 to increase/decrease total rotation range)
+        const targetRotY = mouseX * 1.5; 
+        const targetRotX = mouseY * 1.5;
+
+        // High-responsiveness: Direct assignment with a tiny bit of smoothing
+        // This bypasses the inertia loop for a more 'pinned' feel to the cursor
+        mesh.rotation.y += (targetRotY - mesh.rotation.y) * 0.15;
+        mesh.rotation.x += (targetRotX - mesh.rotation.x) * 0.15;
         
-        // Update velocity so it moves smoothly in the animate loop
-        velocityX = (targetRotationY * 0.02 - velocityX) * 0.1;
-        velocityY = (targetRotationX * 0.02 - velocityY) * 0.1;
-        return;
+        return; // Exit here so dragging logic never runs for mouse
     }
 
-    // Mobile/Drag: Standard drag logic
+    // MOBILE: Keep your existing drag logic
     if (isDragging) {
         const deltaX = event.clientX - lastPointerX;
         const deltaY = event.clientY - lastPointerY;
         lastPointerX = event.clientX;
         lastPointerY = event.clientY;
 
-        const rotateSpeed = 0.005;
+        const rotateSpeed = 0.008; // Slightly boosted for mobile feel
         mesh.rotation.y += deltaX * rotateSpeed;
         mesh.rotation.x += deltaY * rotateSpeed;
 
@@ -129,7 +135,6 @@ window.addEventListener('pointermove', (event) => {
         velocityY = deltaY * rotateSpeed;
     }
 });
-
         window.addEventListener('pointerup', () => {
             isDragging = false;
         });
